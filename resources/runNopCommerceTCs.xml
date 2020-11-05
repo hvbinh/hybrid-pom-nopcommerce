@@ -2,8 +2,7 @@
 <suite name="Nop Commerce" parallel="false">
   <test name="Run On Firefox">
     <classes>
-      <class name="facebook.web.users.Validate"/>
-      <class name="facebook.web.users.Login"/>
+      <class name="com.nopcommerce.users.Level_02_Register_Login_Abstract_Page"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

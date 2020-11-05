@@ -376,6 +376,6 @@ public class AbstractPage {
 	private JavascriptExecutor jsExecutor;
 	private Actions action;
 	private Select select;
-	List<WebElement> elements;
+	private List<WebElement> elements;
 
 }
