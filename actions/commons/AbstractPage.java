@@ -147,7 +147,7 @@ public class AbstractPage {
 	}
 	public void selectTheItemInCustomeDropdown(WebDriver driver,String parentXpath, String childXpath, String expectedText) {
 
-		getElement(driver,parentXpath).click();;
+		getElement(driver,parentXpath).click();
 		sleepInSecond(1);
 		explicitWait = new WebDriverWait(driver, 30);
 		explicitWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(getByXpath(childXpath)));

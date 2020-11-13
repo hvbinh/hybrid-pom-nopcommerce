@@ -20,7 +20,7 @@ import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
 	
-public class Level_03_Register_Login_Page_Object_01 extends AbstractPage {
+public class Level_03_Register_Login_Page_Object extends AbstractPage {
 	WebDriver driver;
 	String projectFolder = System.getProperty("user.dir");
 	Select selectDay, selectMonth, selectYear;

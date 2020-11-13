@@ -5,6 +5,4 @@ public class LoginPageUI {
 	public static final String PASSWORD_TEXTBOX = "//input[@id='Password']";
 	public static final String LOGIN_BUTTON = "//input[@value='Log in']";
 	
-	
-
 }
