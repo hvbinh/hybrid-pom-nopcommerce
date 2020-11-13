@@ -137,7 +137,7 @@ public class Level_03_Register_Login_Page_Object extends AbstractPage {
 			e.printStackTrace();
 		}
 	}
-	@AfterClass	
+	@AfterClass
 	public void afterClass() {
 	}
 	HomePageObject homePage;
