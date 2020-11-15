@@ -1,5 +1,8 @@
 package automationtesting;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class Selenium {
 	private String name = "Selenium Webdriver";
 	// protected
@@ -51,6 +54,11 @@ public class Selenium {
 		//public
 		System.out.println(selenium.version);
 		System.out.println(selenium.getVersion());
+		
+		WebDriver driver;
+		String projectFolder = System.getProperty("user.dir");
+		System.setProperty("webdriver.gecko.driver", projectFolder + "\\browserDriver\\geckodriver.exe");
+		driver = new FirefoxDriver();
 
 	}
 

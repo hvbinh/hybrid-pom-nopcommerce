@@ -7,6 +7,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,15 +19,16 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.AbstractPage;
+import commons.AbstractTest;
+import net.bytebuddy.implementation.bytecode.Throw;
 import pageObjects.CustomerInforPageObject;
 import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
 	
-public class Level_04_Register_Login_Multiple_Browser extends AbstractPage {
+public class Level_04_Register_Login_Multiple_Browser extends AbstractTest {
 	WebDriver driver;
-	String projectFolder = System.getProperty("user.dir");
 	Select selectDay, selectMonth, selectYear;
 
 	String firstName, lastName, email, companyName, pass, confirmPass;
@@ -36,17 +41,13 @@ public class Level_04_Register_Login_Multiple_Browser extends AbstractPage {
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
-		System.setProperty("webdriver.chrome.driver", projectFolder + "\\browserDriver\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-		driver.get("http://demo.nopcommerce.com/");
+		driver = getBrowserDriver(browserName);
 
 		// data
 		firstName = "Tony";
 		lastName = "Buoi Sang";
-		email = "tonybuoisang" + getRandomNumber() + "@gmail.com";
+		email = "tonybuoisang" + randomNumber() + "@gmail.com";
 		companyName = "Tony Buoi Sang company";
 		pass = "123456";
 		
@@ -123,10 +124,7 @@ public class Level_04_Register_Login_Multiple_Browser extends AbstractPage {
 	}
 
 
-	public int getRandomNumber() {
-		Random random = new Random();
-		return random.nextInt(9999);
-	}
+
 	/**
 	 * @param time
 	 * @throws InterruptedException
