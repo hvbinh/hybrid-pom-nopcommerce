@@ -7,14 +7,14 @@
       <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
     </classes>
   </test>
-    <test name="Run On FIREFOX UI">
+  <!--   <test name="Run On FIREFOX UI">
   <parameter name="browser" value="firefox_ui"/>
     <classes>
       <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
     </classes>
     </test>
      <test name="Run On EDGE UI">
-  <parameter name="browser" value="edge_chromium_ui"/>
+  <parameter name="browser" value="edge_chromium"/>
     <classes>
       <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
     </classes>
@@ -30,5 +30,5 @@
     <classes>
       <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
     </classes>
-  </test>  
+  </test>   -->
 </suite> 
