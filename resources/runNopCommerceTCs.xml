@@ -4,16 +4,16 @@
   <test name="Run On CHROME UI">
   <parameter name="browser" value="chrome_ui"/>
     <classes>
-      <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
+      <class name="com.nopcommerce.users.Level_05_Register_Login_Page_Factory"/>
     </classes>
   </test>
-  <!--   <test name="Run On FIREFOX UI">
+    <test name="Run On FIREFOX UI">
   <parameter name="browser" value="firefox_ui"/>
     <classes>
-      <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
+      <class name="com.nopcommerce.users.Level_05_Register_Login_Page_Factory"/>
     </classes>
     </test>
-     <test name="Run On EDGE UI">
+    <!--  <test name="Run On EDGE UI">
   <parameter name="browser" value="edge_chromium"/>
     <classes>
       <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/>
