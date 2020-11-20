@@ -14,15 +14,17 @@ public class HomePageObject extends AbstractPage {
 		this.driver = driver;
 	}
 
-	public void clickToRegisterLink() {
+	public RegisterPageObject clickToRegisterLink() {
 		waitToElementClickable(driver, HomePageUI.REGISTER_LINK);
 		clickToElement(driver, HomePageUI.REGISTER_LINK);
+		return PageGeneratorManager.getregisterPage(driver);
 		
 	}
 
-	public void clickToLoginLink() {
+	public LoginPageObject clickToLoginLink() {
 		waitToElementClickable(driver, HomePageUI.LOG_IN_LINK);
 		clickToElement(driver, HomePageUI.LOG_IN_LINK);
+		return PageGeneratorManager.getLoginPage(driver);
 		
 	}
 
@@ -36,9 +38,10 @@ public class HomePageObject extends AbstractPage {
 		return isElementDisplayed(driver, HomePageUI.LOG_OUT_LINK);
 	}
 
-	public void clickToMyAccountLink() {
+	public CustomerInforPageObject clickToMyAccountLink() {
 		waitToElementClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
 		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
+		return PageGeneratorManager.getCustomerInforPage(driver);
 		
 	}
 
