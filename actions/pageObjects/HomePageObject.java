@@ -17,7 +17,7 @@ public class HomePageObject extends AbstractPage {
 	public RegisterPageObject clickToRegisterLink() {
 		waitToElementClickable(driver, HomePageUI.REGISTER_LINK);
 		clickToElement(driver, HomePageUI.REGISTER_LINK);
-		return PageGeneratorManager.getregisterPage(driver);
+		return PageGeneratorManager.getRegisterPage(driver);
 		
 	}
 

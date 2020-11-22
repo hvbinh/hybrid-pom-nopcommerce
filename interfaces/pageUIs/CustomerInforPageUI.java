@@ -10,6 +10,7 @@ public class CustomerInforPageUI {
 	public static final String EMAIL_TEXTBOX = "//input[@id='Email']";
 	public static final String COMPANY_TEXTBOX = "//input[@id='Company']";
 	public static final String NEWS_LETTER_CHECKBOX = "//input[@id='Newsletter']";
+	
 
 
 }
