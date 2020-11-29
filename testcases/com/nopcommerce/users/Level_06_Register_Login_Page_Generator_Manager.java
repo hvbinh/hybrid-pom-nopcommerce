@@ -21,11 +21,11 @@ import org.testng.annotations.Test;
 import commons.AbstractPage;
 import commons.AbstractTest;
 import net.bytebuddy.implementation.bytecode.Throw;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
 import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserRegisterPO;
 
 	
 public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest {
@@ -58,7 +58,7 @@ public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest
 	@Test
 	public void Tc_01_Register() {
 		//1
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		registerPage = homePage.clickToRegisterLink();
 		
 		//2
@@ -143,8 +143,8 @@ public class Level_06_Register_Login_Page_Generator_Manager extends AbstractTest
 	@AfterClass	
 	public void afterClass() {
 	}
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInforPageObject customerInformPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInforPO customerInformPage;
 }

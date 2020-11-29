@@ -1,6 +1,6 @@
 package pageUIs;
 
-public class HomePageUI {
+public class UserHomePageUI {
 	public static final String REGISTER_LINK = "//a[@class='ico-register']";
 	public static final String LOG_IN_LINK = "//a[@class='ico-login']";
 	public static final String LOG_OUT_LINK = "//a[@class='ico-logout']";

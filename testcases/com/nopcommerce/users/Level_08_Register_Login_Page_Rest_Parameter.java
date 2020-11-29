@@ -30,7 +30,7 @@ import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 
-public class Level_07_Register_Login_Page_Switch_Page_Type extends AbstractTest {
+public class Level_08_Register_Login_Page_Rest_Parameter extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
@@ -127,26 +127,40 @@ public class Level_07_Register_Login_Page_Switch_Page_Type extends AbstractTest 
 	}
 
 	@Test
-	public void Tc_04_Switch_Page() {
+	public void Tc_04_Switch_Page_solution1() {
 		// customer infor -> Addresses
-		addressesPage = customerInforPage.openAddressesPage(driver);
-		customerInforPage = addressesPage.openCustomerInforPage(driver);
-		myProductPage = customerInforPage.openMyProductReviewsPage(driver);
-		customerInforPage =  myProductPage.openCustomerInforPage(driver);
-		addressesPage = customerInforPage.openAddressesPage(driver);
+		addressesPage =(UserAddressesPO) customerInforPage.openLinkByPageName(driver, "Addresses");
+		customerInforPage = (UserCustomerInforPO)addressesPage.openLinkByPageName(driver, "Customer info");
+		myProductPage =(UserMyProductReviewsPO) customerInforPage.openLinkByPageName(driver, "My product reviews");
+		customerInforPage = (UserCustomerInforPO) myProductPage.openLinkByPageName(driver, "Customer info");
+		addressesPage =(UserAddressesPO) customerInforPage.openLinkByPageName(driver, "Addresses");
 		// addresses -> my product review
-		myProductPage = addressesPage.openMyProductReviewsPage(driver);
-
+		myProductPage = (UserMyProductReviewsPO)addressesPage.openLinkByPageName(driver, "My product reviews");
 		// my product review -> order
-		ordersPage = myProductPage.openOrdersPage(driver);
+		ordersPage =(UserOrdersPO) myProductPage.openLinkByPageName(driver, "Order");
 
 		// order -> addresses
-		addressesPage = ordersPage.openAddressesPage(driver);
+		addressesPage =(UserAddressesPO) ordersPage.openLinkByPageName(driver, "Addresses");
 
 		// addresses -> customer infor
-		customerInforPage = addressesPage.openCustomerInforPage(driver);
+		customerInforPage =(UserCustomerInforPO) addressesPage.openLinkByPageName(driver, "Customer info");
 
 	}
+	@Test
+	public void Tc_05_Switch_Page_solution2() {
+		customerInforPage.openLinkWithPageName(driver, "Addresses");
+		addressesPage = PageGeneratorManager.getUserAddressesPage(driver);
+		
+		addressesPage.openLinkWithPageName(driver, "Customer info");
+		customerInforPage = PageGeneratorManager.getUserCustomerInforPage(driver);
+		
+		customerInforPage.openLinkWithPageName(driver, "My product reviews");
+		myProductPage = PageGeneratorManager.getUserMyProductReviewsPage(driver);
+		
+		
+
+	}
+	
 
 	/**
 	 * @param time

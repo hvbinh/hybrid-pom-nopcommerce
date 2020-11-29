@@ -6,8 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import pageFactory.AbstractPage;
-import pageUIs.HomePageUI;
-import pageUIs.RegisterPageUI;
+import pageUIs.UserHomePageUI;
+import pageUIs.UserRegisterPageUI;
 
 public class HomePageObject extends AbstractPage {
 	WebDriver driver;

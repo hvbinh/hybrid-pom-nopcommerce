@@ -52,6 +52,40 @@ public class AbstractTest {
 
 		return driver;
 	}
+	protected WebDriver getBrowserDriver(String browserName, String url) {
+		//setBrowserDriver();
+		Browser browser = Browser.valueOf(browserName.toUpperCase());
+		if (browser == Browser.CHROME_UI) {
+			WebDriverManager.chromedriver().setup(); //.driverVersion("86.0.4240.22").setup();
+			driver = new ChromeDriver();
+		} else if (browser == Browser.FIREFOX_UI) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+		} else if (browser == Browser.EDGE_CHROMIUM) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		} else if (browser == Browser.CHROME_HEADLESS) {
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions options = new ChromeOptions();
+			options.addArguments("headless");
+			options.addArguments("window-size=1920x1080");
+			driver = new ChromeDriver(options);
+		} else if (browser == Browser.FIREFOX_HEADLESS) {
+			WebDriverManager.firefoxdriver().setup();
+			FirefoxOptions options = new FirefoxOptions();
+			options.setHeadless(true);
+			options.addArguments("window-size=1920x1080");
+			driver = new FirefoxDriver(options);
+		} else {
+			throw new RuntimeException("please input valid browser name");
+		}
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		driver.get(url);
+
+		return driver;
+	}
 
 	void setBrowserDriver() {
 		if (isWindows()) {

@@ -4,7 +4,7 @@
   <test name="Run On CHROME UI">
   <parameter name="browser" value="chrome_ui"/>
     <classes>
-      <class name="com.nopcommerce.users.Level_07_Register_Login_Page_Switch_Page_Type"/>
+      <class name="com.nopcommerce.users.TC_01_User_Test_Cases"/>
     </classes>
   </test>
 <!--     <test name="Run On FIREFOX UI">

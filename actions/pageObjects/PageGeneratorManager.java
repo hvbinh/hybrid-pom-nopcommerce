@@ -3,33 +3,45 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 public class PageGeneratorManager {
-	public static HomePageObject getHomePage(WebDriver driver)
+	public static UserHomePO getUserHomePage(WebDriver driver)
 	{
-		return new HomePageObject(driver);
+		return new UserHomePO(driver);
 	}
-	public static LoginPageObject getLoginPage(WebDriver driver)
+	public static UserLoginPO getUserLoginPage(WebDriver driver)
 	{
-		return new LoginPageObject(driver);
+		return new UserLoginPO(driver);
 	}
-	public static CustomerInforPageObject getCustomerInforPage(WebDriver driver)
+	public static UserCustomerInforPO getUserCustomerInforPage(WebDriver driver)
 	{
-		return new CustomerInforPageObject(driver);
+		return new UserCustomerInforPO(driver);
 	}
-	public static RegisterPageObject getRegisterPage(WebDriver driver)
+	public static UserRegisterPO getUserRegisterPage(WebDriver driver)
 	{
-		return new RegisterPageObject(driver);
+		return new UserRegisterPO(driver);
 	}
-	public static AddressesPageObject getAddressesPage(WebDriver driver)
+	public static UserAddressesPO getUserAddressesPage(WebDriver driver)
 	{
-		return new AddressesPageObject(driver);
+		return new UserAddressesPO(driver);
 	}
-	public static OrdersPageObject getOrdersPage(WebDriver driver)
+	public static UserOrdersPO getUserOrdersPage(WebDriver driver)
 	{
-		return new OrdersPageObject(driver);
+		return new UserOrdersPO(driver);
 	}
-	public static MyProductReviewsPageObject getMyProductReviewsPage(WebDriver driver)
+	public static UserMyProductReviewsPO getUserMyProductReviewsPage(WebDriver driver)
 	{
-		return new MyProductReviewsPageObject(driver);
+		return new UserMyProductReviewsPO(driver);
+	}
+	public static AdminLoginPO getAdminLoginPage(WebDriver driver)
+	{
+		return new AdminLoginPO(driver);
+	}
+	public static AdminDashboardPO getAdminDashboardPage(WebDriver driver)
+	{
+		return new AdminDashboardPO(driver);
+	}
+	public static AdminProductPO getAdminProductPage(WebDriver driver)
+	{
+		return new AdminProductPO(driver);
 	}
 
 }

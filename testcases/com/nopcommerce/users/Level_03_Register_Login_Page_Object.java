@@ -14,10 +14,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import commons.AbstractPage;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.RegisterPageObject;
+import pageObjects.UserCustomerInforPO;
+import pageObjects.UserHomePO;
+import pageObjects.UserLoginPO;
+import pageObjects.UserRegisterPO;
 
 	
 public class Level_03_Register_Login_Page_Object extends AbstractPage {
@@ -53,10 +53,10 @@ public class Level_03_Register_Login_Page_Object extends AbstractPage {
 
 	@Test
 	public void Tc_01_Register() {
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePO(driver);
 		homePage.clickToRegisterLink();
 		
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPO(driver);
 		registerPage.clickToGenderMaleRadioButton();
 		
 		registerPage.inputToFirstnameTextBox(firstName);
@@ -80,20 +80,20 @@ public class Level_03_Register_Login_Page_Object extends AbstractPage {
 
 		registerPage.clickToLogoutLink();
 		
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePO(driver);
 	}
 
 	@Test
 	public void Tc_02_Login() {
 		homePage.clickToLoginLink();
 
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPO(driver);
 		loginPage.inputToEmailTextbox(email);
 		loginPage.inputToPasswordTextbox(pass);
 
 		loginPage.clickToLoginButton();
 
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePO(driver);
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
@@ -103,7 +103,7 @@ public class Level_03_Register_Login_Page_Object extends AbstractPage {
 	public void Tc_03_View_My_Account() {
 		homePage.clickToMyAccountLink();
 
-		customerInformPage = new CustomerInforPageObject(driver);
+		customerInformPage = new UserCustomerInforPO(driver);
 		Assert.assertTrue(customerInformPage.isGenderMaleRadioButtonSelected());
 		
 		Assert.assertEquals(customerInformPage.getFirstnameTextboxValue(),firstName);
@@ -140,8 +140,8 @@ public class Level_03_Register_Login_Page_Object extends AbstractPage {
 	@AfterClass
 	public void afterClass() {
 	}
-	HomePageObject homePage;
-	RegisterPageObject registerPage;
-	LoginPageObject loginPage;
-	CustomerInforPageObject customerInformPage;
+	UserHomePO homePage;
+	UserRegisterPO registerPage;
+	UserLoginPO loginPage;
+	UserCustomerInforPO customerInformPage;
 }

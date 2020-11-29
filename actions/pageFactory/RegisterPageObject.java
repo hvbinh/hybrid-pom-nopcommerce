@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.github.bonigarcia.wdm.config.DriverManagerType;
 import pageFactory.AbstractPage;
-import pageUIs.RegisterPageUI;
+import pageUIs.UserRegisterPageUI;
 
 public class RegisterPageObject extends AbstractPage {
 	WebDriver driver;

@@ -1,6 +1,6 @@
 package pageUIs;
 
-public class CustomerInforPageUI {
+public class UserCustomerInforPageUI {
 	public static final String GENDER_MAIL_RADIO = "//input[@id='gender-male']";
 	public static final String FIRSTNAME_TEXTBOX = "//input[@id='FirstName']";
 	public static final String LASTNAME_TEXTBOX = "//input[@id='LastName']";
