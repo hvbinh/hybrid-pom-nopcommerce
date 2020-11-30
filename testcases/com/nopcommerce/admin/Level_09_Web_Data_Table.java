@@ -103,8 +103,11 @@ public class Level_09_Web_Data_Table extends AbstractTest {
 		productPage.sleepInSecond(3);
 		productPage.checkToProductCheckboxByName("$100 Physical Gift Card");
 		
-		productPage.checkToProductCheckboxByName("$50 Physical Gift Card");
-		
+		productPage.checkToProductCheckboxByName("$50 Physical Gift Card");	
+	}
+	@Test
+	public void TC_03_Select_Deselect_All()
+	{
 		
 	}
 
