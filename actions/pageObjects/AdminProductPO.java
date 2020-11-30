@@ -57,6 +57,7 @@ public class AdminProductPO extends AbstractPage{
 		{
 			Assert.assertTrue(productCheckbox.isSelected());
 		}
+		waitAjaxLoadingInvisible(driver);
 		
 	}
 
@@ -67,15 +68,32 @@ public class AdminProductPO extends AbstractPage{
 		{
 			Assert.assertFalse(productCheckbox.isSelected());
 		}
-		
+		waitAjaxLoadingInvisible(driver);
 	}
 
 
 	public void checkToProductCheckboxByName(String nameProduct) {
 		waitToElementClickable(driver, AdminProductPageUI.PRODUCT_CHECKBOX_BY_NAME,nameProduct);
 		checkToCheckbox(driver, AdminProductPageUI.PRODUCT_CHECKBOX_BY_NAME,nameProduct);
+		waitAjaxLoadingInvisible(driver);
 		
 	}
+
+
+	public boolean areProductDetailsDisplayed(String productName, String skuID, String price, String quantity, String productType, String publishSatus)  {
+		waitToElementVisible(driver, AdminProductPageUI.PRODUCT_DETAIL_IN_TABLE, productName,skuID,price,quantity,productType,publishSatus);
+		
+		return isElementDisplayed(driver, AdminProductPageUI.PRODUCT_DETAIL_IN_TABLE,productName,skuID,price,quantity,productType,publishSatus);
+	}
+
+
+	public void selectShowNumberDropdown(String itemNumber) {
+		waitToElementClickable(driver, AdminProductPageUI.SHOW_NUMBER_ITEM_DROPDOWN);
+		selectItemInDropdown(driver, AdminProductPageUI.SHOW_NUMBER_ITEM_DROPDOWN, itemNumber);
+		waitAjaxLoadingInvisible(driver);
+		
+	}
+
 
 	
 

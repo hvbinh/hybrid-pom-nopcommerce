@@ -91,24 +91,27 @@ public class Level_09_Web_Data_Table extends AbstractTest {
 		//select all
 		productPage.checkToSelectAllCheckbox();
 		productPage.areProductCheckboxChecked();
-		productPage.sleepInSecond(3);
 		
 		// deselect all
 		productPage.uncheckToselectAllCheckbox();
 		productPage.areProductCheckboxUnchecked();
-		productPage.sleepInSecond(3);
 		
 		//special check
 		productPage.checkToProductCheckboxByName("$100 Physical Gift Card");
-		productPage.sleepInSecond(3);
 		productPage.checkToProductCheckboxByName("$100 Physical Gift Card");
 		
 		productPage.checkToProductCheckboxByName("$50 Physical Gift Card");	
 	}
 	@Test
-	public void TC_03_Select_Deselect_All()
+	public void TC_03_Displayed_All()
 	{
+		//check displayed
+		Assert.assertTrue(productPage.areProductDetailsDisplayed("Adobe Photoshop CS4","AD_CS4_PH","75","10000","Simple","true"));
+		Assert.assertTrue(productPage.areProductDetailsDisplayed("adidas Consortium Campus 80s Running Shoes","AD_C80_RS","27.56","10000","Simple","true"));
+		Assert.assertTrue(productPage.areProductDetailsDisplayed("Apple iCam","APPLE_CAM","1300","10000","Simple","true"));
 		
+		productPage.selectShowNumberDropdown("50");
+		Assert.assertTrue(productPage.areProductDetailsDisplayed("Windows 8 Pro","MS_WIN_8P","65","10000","Simple","true"));
 	}
 
 }
