@@ -81,6 +81,7 @@ public class AdminProductPO extends AbstractPage{
 
 
 	public boolean areProductDetailsDisplayed(String productName, String skuID, String price, String quantity, String productType, String publishSatus)  {
+		waitAjaxLoadingInvisible(driver);
 		waitToElementVisible(driver, AdminProductPageUI.PRODUCT_DETAIL_IN_TABLE, productName,skuID,price,quantity,productType,publishSatus);
 		
 		return isElementDisplayed(driver, AdminProductPageUI.PRODUCT_DETAIL_IN_TABLE,productName,skuID,price,quantity,productType,publishSatus);
@@ -93,6 +94,28 @@ public class AdminProductPO extends AbstractPage{
 		waitAjaxLoadingInvisible(driver);
 		
 	}
+
+
+	public boolean isInformationDisplayedAtColumnnameRowNumber(String columnName, String rowIndex, String expectedValue) {
+		//index of column
+		int columnNameIndex = countElementSize(driver, AdminProductPageUI.COLUMN_NAME_SIBLING,columnName) + 1;
+		String actualResult = getElementText(driver, AdminProductPageUI.CELL_VALUE_MIX_BY_COLUMN_AND_ROW_INDEX, rowIndex,String.valueOf(columnNameIndex));
+		return actualResult.equals(expectedValue);
+	}
+	public boolean isPublishStatusAtColumnnameAndRowNumber(String columnName, String rowIndex, String publishStatus) {
+		int columnNameIndex = countElementSize(driver, AdminProductPageUI.COLUMN_NAME_SIBLING,columnName) + 1;
+		return isElementDisplayed(driver, AdminProductPageUI.PUBLISH_STATUS_MIX_BY_COLUMN_AND_ROW_INDEX, rowIndex,String.valueOf(columnNameIndex),publishStatus);
+	}
+
+
+	public void clickToProductDetailByName(String productName) {
+		waitToElementClickable(driver, AdminProductPageUI.EDIT_ICON_BY_PRODUCT_NAME, productName);
+		clickToElement(driver, AdminProductPageUI.EDIT_ICON_BY_PRODUCT_NAME, productName);
+		waitAjaxLoadingInvisible(driver);
+	}
+
+
+
 
 
 	

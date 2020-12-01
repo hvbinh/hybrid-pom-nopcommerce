@@ -113,5 +113,23 @@ public class Level_09_Web_Data_Table extends AbstractTest {
 		productPage.selectShowNumberDropdown("50");
 		Assert.assertTrue(productPage.areProductDetailsDisplayed("Windows 8 Pro","MS_WIN_8P","65","10000","Simple","true"));
 	}
-
+	@Test
+	public void TC_04_Edit()
+	{
+		productPage.clickToProductDetailByName("$50 Physical Gift Card");
+		productPage.backToPage(driver);
+	}
+	@Test
+	public void TC_05_Position()
+	{
+		
+		Assert.assertTrue(productPage.isInformationDisplayedAtColumnnameRowNumber("Product name","2","$25 Virtual Gift Card"));
+		Assert.assertTrue(productPage.isInformationDisplayedAtColumnnameRowNumber("SKU","2","VG_CR_025"));
+		Assert.assertTrue(productPage.isInformationDisplayedAtColumnnameRowNumber("Price","2","25"));
+		Assert.assertTrue(productPage.isInformationDisplayedAtColumnnameRowNumber("Stock quantity","2",""));
+		Assert.assertTrue(productPage.isInformationDisplayedAtColumnnameRowNumber("Product type","2","Simple"));
+		Assert.assertTrue(productPage.isPublishStatusAtColumnnameAndRowNumber("Published","2","true"));
+		productPage.selectShowNumberDropdown("50");
+		Assert.assertTrue(productPage.isPublishStatusAtColumnnameAndRowNumber("Published","45","true"));
+	}
 }

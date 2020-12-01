@@ -225,6 +225,9 @@ public class AbstractPage {
 	public int countElementSize(WebDriver driver, String locator) {
 		return getElements(driver, locator).size();
 	}
+	public int countElementSize(WebDriver driver, String locator, String...values) {
+		return getElements(driver, getDynamicLocator(locator, values)).size();
+	}
 
 	public void checkToCheckbox(WebDriver driver, String locator) {
 		element = getElement(driver, locator);
