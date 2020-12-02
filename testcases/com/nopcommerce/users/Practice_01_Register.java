@@ -32,7 +32,7 @@ import pageObjects.UserRegisterPO;
 
 
 
-public class TC_01_User_Test_Cases extends AbstractTest {
+public class Practice_01_Register extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 

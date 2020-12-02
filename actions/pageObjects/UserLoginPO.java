@@ -35,4 +35,11 @@ public class UserLoginPO extends AbstractPage{
 
 
 
+	public String getEmailErrorMessage() {
+		waitToElementVisible(driver, UserLoginPageUI.EMAIL_ERROR_MESSAGE);
+		return getElementText(driver, UserLoginPageUI.EMAIL_ERROR_MESSAGE);
+	}
+
+
+
 }
