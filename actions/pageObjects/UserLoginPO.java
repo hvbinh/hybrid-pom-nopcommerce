@@ -42,4 +42,14 @@ public class UserLoginPO extends AbstractPage{
 
 
 
+	public String getNotRegisterEmailErrorMessage() {
+		waitToElementVisible(driver, UserLoginPageUI.EMAIL_NOT_REGISTER_ERROR_MESSAGE);
+		return getElementText(driver, UserLoginPageUI.EMAIL_NOT_REGISTER_ERROR_MESSAGE);
+	}
+
+
+
+
+
+
 }
