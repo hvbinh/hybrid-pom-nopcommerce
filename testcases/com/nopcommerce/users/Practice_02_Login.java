@@ -104,6 +104,29 @@ public class Practice_02_Login extends AbstractTest {
 		Assert.assertEquals(loginPage.getNotRegisterEmailErrorMessage(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
 		
 	}
+	@Test
+	public void TC_05_Login_In_With_Register_Email_And_wrong_Password() {
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		loginPage = homePage.clickToLoginLink();
+		
+		loginPage.inputToEmailTextbox(email);
+		loginPage.inputToPasswordTextbox("654321");
+		loginPage.clickToLoginButton();
+		
+		Assert.assertEquals(loginPage.getNotRegisterEmailErrorMessage(), "Login was unsuccessful. Please correct the errors and try again.\nThe credentials provided are incorrect");
+	}
+	@Test
+	public void TC_06_Login_In_With_Register_Email_And_correct_Password() {
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		loginPage = homePage.clickToLoginLink();
+		
+		loginPage.inputToEmailTextbox(email);
+		loginPage.inputToPasswordTextbox("123456");
+		loginPage.clickToLoginButton();
+		
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
+	}
 	public void Register() {
 		// 1
 		homePage = PageGeneratorManager.getUserHomePage(driver);
