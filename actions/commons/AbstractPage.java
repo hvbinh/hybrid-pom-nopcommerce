@@ -212,6 +212,10 @@ public class AbstractPage {
 		element = getElement(driver, locator);
 		return element.getAttribute(attributeName);
 	}
+	public String getElementAtribute(WebDriver driver, String locator, String attributeName,String... values) {
+		element = getElement(driver, getDynamicLocator(locator, values));
+		return element.getAttribute(attributeName);
+	}
 
 	public String getElementText(WebDriver driver, String locator) {
 		element = getElement(driver, locator);
@@ -348,6 +352,7 @@ public class AbstractPage {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = getElement(driver, locator);
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", element);
+		sleepInSecond(1);
 	}
 
 	public void sendkeyToElementByJS(WebDriver driver, String locator, String value) {
@@ -476,6 +481,28 @@ public class AbstractPage {
 	{
 		waitToElementInvisible(driver, AbstractPageUI.LOADING_ICON);
 	}
+	public void uploadFileByPanelID(WebDriver driver,String panelID, String... fileNames)
+	{
+		String filePath = GlobalConstants.UPLOAD_FOLDER;
+		String fullFileName = "";
+		for(String file: fileNames)
+		{
+			fullFileName = fullFileName + filePath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getElement(driver, getDynamicLocator(AbstractPageUI.UPLOAD_FILE_TYPE_BY_PANEL, panelID)).sendKeys(fullFileName);
+	}
+	public void clickToPlusIconByPanelID(WebDriver driver,String panelID)
+	{
+		waitToElementClickable(driver, AbstractPageUI.PLUS_ICON_PANEL, panelID);
+		String iconAttributeValue = getElementAtribute(driver, AbstractPageUI.PLUS_ICON_PANEL, "class", panelID);
+		if(iconAttributeValue.contains("fa-plus"))
+		{
+			clickToElement(driver, AbstractPageUI.PLUS_ICON_PANEL,panelID);
+			sleepInSecond(1);
+		}
+	}
+	
 
 	private WebDriverWait explicitWait;
 	private WebElement element;
@@ -483,5 +510,6 @@ public class AbstractPage {
 	private Actions action;
 	private Select select;
 	private List<WebElement> elements;
+	
 
 }

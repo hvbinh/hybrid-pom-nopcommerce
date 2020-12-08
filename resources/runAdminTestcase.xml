@@ -2,10 +2,10 @@
 <suite name="Nop Commerce" parallel="false">
 
   <test name="Run On CHROME UI">
-  <parameter name="browser" value="chrome_ui"/>
+  <parameter name="browser" value="firefox_ui"/>
   <parameter name="url" value="https://admin-demo.nopcommerce.com/"/>
     <classes>
-      <class name="com.nopcommerce.admin.Level_09_Web_Data_Table"/>
+      <class name="com.nopcommerce.admin.Level_10_Upload_File"/>
     </classes>
   </test>
 

@@ -13,4 +13,18 @@ public class AdminProductPageUI {
 	public static final String CELL_VALUE_MIX_BY_COLUMN_AND_ROW_INDEX = "//tr[%s]/td[%s]";
 	public static final String PUBLISH_STATUS_MIX_BY_COLUMN_AND_ROW_INDEX = "//tr[%s]/td[%s]/I[contains(@class,'%s-icon')]";
 	public static final String EDIT_ICON_BY_PRODUCT_NAME = "//td[text()='%s']/following-sibling::td/a";
+	public static final String PRODUCT_NAME_TEXTBOX = "//input[@id='SearchProductName']";
+	public static final String SEARCH_BUTTON = "//button[@id='search-products']";
+	public static final String EDIT_BUTTON = "//a[contains(@class,'btn-default')]";
+	public static final String PICTURE_PANEL = "//div[@id='product-pictures']";
+	
+	public static final String SPINNER_UPLOAD = "//span[contains(@class,'qq-upload-spinner')]";
+	public static final String UPLOAD_FILE_NAME = "//span[contains(@class,'qq-upload-file') and @title='%s']";
+	
+	public static final String ALT_TEXTBOX = "//input[@id='AddPictureModel_OverrideAltAttribute']";
+	public static final String TITLE_TEXTBOX = "//input[@id='AddPictureModel_OverrideTitleAttribute']";
+	public static final String ORDER_TEXTBOX = "//input[@id='AddPictureModel_DisplayOrder']";
+	public static final String ADD_PRODUCT_PICTURE_TEXTBOX = "//button[@id='addProductPicture']";
+	
+	
 }

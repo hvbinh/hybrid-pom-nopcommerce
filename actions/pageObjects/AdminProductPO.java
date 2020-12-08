@@ -115,6 +115,92 @@ public class AdminProductPO extends AbstractPage{
 	}
 
 
+	public void inputToProductNameTextbox(String productName) {
+		waitToElementVisible(driver, AdminProductPageUI.PRODUCT_NAME_TEXTBOX);
+		sendkeyToElement(driver, AdminProductPageUI.PRODUCT_NAME_TEXTBOX, productName);
+	}
+
+
+	public void clickToSearchButton() {
+		waitToElementClickable(driver, AdminProductPageUI.SEARCH_BUTTON);
+		clickToElement(driver, AdminProductPageUI.SEARCH_BUTTON);
+		waitAjaxLoadingInvisible(driver);
+	}
+
+
+	public void clickToEditButton() {
+		waitToElementClickable(driver, AdminProductPageUI.EDIT_BUTTON);
+		clickToElement(driver, AdminProductPageUI.EDIT_BUTTON);
+	}
+
+
+	public void scrollToPicturePanel() {
+		scrollToElement(driver, AdminProductPageUI.PICTURE_PANEL);
+		
+	}
+
+
+	public void inputToAltTextbox(String imageDescription) {
+		waitToElementVisible(driver, AdminProductPageUI.ALT_TEXTBOX);
+		sendkeyToElement(driver, AdminProductPageUI.ALT_TEXTBOX, imageDescription);
+		
+	}
+
+
+	public void inputToTitleTextbox(String imageTitle) {
+		waitToElementVisible(driver, AdminProductPageUI.TITLE_TEXTBOX);
+		sendkeyToElement(driver, AdminProductPageUI.TITLE_TEXTBOX, imageTitle);
+		
+	}
+
+	public void inputToOrder(String imageOrder) {
+		waitToElementVisible(driver, AdminProductPageUI.ORDER_TEXTBOX);
+		sendkeyToElement(driver, AdminProductPageUI.ORDER_TEXTBOX, imageOrder);
+	}
+
+
+	public void clickToAddProductPictureButton() {
+		waitToElementClickable(driver, AdminProductPageUI.ADD_PRODUCT_PICTURE_TEXTBOX);
+		clickToElement(driver, AdminProductPageUI.ADD_PRODUCT_PICTURE_TEXTBOX);
+		
+	}
+
+
+
+
+
+	public void clickToSaveButton() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+
+	public void clickToDeleteButton() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public boolean areImageDetailDisplayed(String string, String string2, String string3, String string4) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	public boolean areProductDisplayed(String string, String string2, String string3, String string4, String string5, String string6, String string7) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+
+	public boolean isNewPictureLoadedSuccess(String fileName) {
+		waitToElementInvisible(driver, AdminProductPageUI.SPINNER_UPLOAD);
+		return isElementDisplayed(driver, AdminProductPageUI.UPLOAD_FILE_NAME, fileName);
+	}
+
+
 
 
 
