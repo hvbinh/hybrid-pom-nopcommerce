@@ -36,10 +36,16 @@ import pageObjects.UserRegisterPO;
 
 public class Level_10_Upload_File extends AbstractTest {
 	WebDriver driver;
-	String fileName = "silver.jpg";
+	
 	AdminLoginPO loginPage;
 	AdminDashboardPO dashboardPage;
 	AdminProductPO productPage;
+	
+	String fileName = "silver.jpg";
+	String productName = "Adobe Photoshop CS4";
+	String pictureAlt ="Description";
+	String pictureTitle ="Title";
+	String pictureOrder = "1";
 
 	/**
 	 * @author admin: Binh Ha
@@ -62,49 +68,68 @@ public class Level_10_Upload_File extends AbstractTest {
 	@Test
 	public void TC_01_Upload_File() {
 		// search adobe photoshop cs4
-		productPage.inputToProductNameTextbox("Adobe Photoshop CS4");
+		productPage.inputToProductNameTextbox(productName);
 		productPage.clickToSearchButton();
 
 		// go to edit
 		productPage.clickToEditButton();
 
+		
 		// scroll to upload function
 		productPage.scrollToPicturePanel();
 
 		// click to plus icon
 		productPage.clickToPlusIconByPanelID(driver, "product-pictures");
 
+		productPage.clickToDeleteButtonByPictureTitle(pictureTitle);
+		productPage.sleepInSecond(3);
+		productPage.scrollToPicturePanel();
 		// upload one file (name,title,alt,order)
 		productPage.uploadFileByPanelID(driver, "product-pictures", fileName);
 
 		// verify file name is uploaded successfully
 		Assert.assertTrue(productPage.isNewPictureLoadedSuccess(fileName));
 
-		productPage.inputToAltTextbox("");
-		productPage.inputToTitleTextbox("");
-		productPage.inputToOrder("");
+		productPage.inputToAltTextbox(pictureAlt);
+		productPage.inputToTitleTextbox(pictureTitle);
+		productPage.clickToIconAtOrderTextbox("Increase");
 		productPage.clickToAddProductPictureButton();
 
-		// add to product picture productPage.clickToAddProductPictureButton();
 
-		// verify on picture table Assert.assertTrue(productPage.areImageDetailDisplayed("image name","Adobe Photoshop CS4","Order","Title"));
 
-		// save => go to product page productPage.clickToSaveButton();
+		// verify on picture table 
+		Assert.assertTrue(productPage.areImageDetailDisplayed(productName,pictureOrder,pictureAlt,pictureTitle));
 
-		// search adobe photoshop cs4 productPage.inputToProductNameTextbox(""); productPage.clickToSearchButton(); //verify (name/image name) => found
-		Assert.assertTrue(productPage.areProductDisplayed("image name", "Adobe Photoshop CS4", "AD_CS4_PH", "75", "10000", "Simple", "true")); // edit
+		// save => go to product page 
+		productPage.clickToSaveButton();
+		
+		// search adobe photoshop cs4 
+		productPage.inputToProductNameTextbox(productName);
+		
+		productPage.clickToSearchButton();
+		//verify (name/image name) => found
+		
+		Assert.assertTrue(productPage.areProductDisplayed(productName,productName, "AD_CS4_PH", "75", "10000", "Simple", "true")); // edit
 		productPage.clickToEditButton();
 
-		// scroll to upload function productPage.scrollToPicturePanel();
+		// scroll to upload function 
+		productPage.scrollToPicturePanel();
 
-		// delete image productPage.clickToDeleteButton();
+		// delete image 
+		productPage.clickToDeleteButtonByPictureTitle(pictureTitle);
+		
 
-		// save ->go to product page productPage.clickToSaveButton();
+		// save ->go to product page 
+		productPage.clickToSaveButton();
 
-		// search adobe photoshop cs4 productPage.inputToProductNameTextbox("");
+		// search adobe photoshop cs4 
+		productPage.inputToProductNameTextbox(productName);
+		
+		productPage.clickToSearchButton();
+		
 
 		// veriry(name, image name) => not found
-		Assert.assertTrue(productPage.areProductDisplayed("default_image", "Adobe Photoshop CS4", "AD_CS4_PH", "75", "10000", "Simple", "true"));
+		Assert.assertTrue(productPage.areProductDisplayed("default_image", productName, "AD_CS4_PH", "75", "10000", "Simple", "true"));
 
 	}
 

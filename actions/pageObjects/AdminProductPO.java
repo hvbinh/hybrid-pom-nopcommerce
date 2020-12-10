@@ -153,51 +153,53 @@ public class AdminProductPO extends AbstractPage{
 		
 	}
 
-	public void inputToOrder(String imageOrder) {
-		waitToElementVisible(driver, AdminProductPageUI.ORDER_TEXTBOX);
-		sendkeyToElement(driver, AdminProductPageUI.ORDER_TEXTBOX, imageOrder);
-	}
+
 
 
 	public void clickToAddProductPictureButton() {
 		waitToElementClickable(driver, AdminProductPageUI.ADD_PRODUCT_PICTURE_TEXTBOX);
 		clickToElement(driver, AdminProductPageUI.ADD_PRODUCT_PICTURE_TEXTBOX);
-		
+		waitAjaxLoadingInvisible(driver);
 	}
-
-
-
 
 
 	public void clickToSaveButton() {
-		// TODO Auto-generated method stub
-		
+		waitToElementClickable(driver, AdminProductPageUI.SAVE_BUTTON);
+		clickToElement(driver, AdminProductPageUI.SAVE_BUTTON);
+		waitAjaxLoadingInvisible(driver);
 	}
 
 
 
 
-	public void clickToDeleteButton() {
-		// TODO Auto-generated method stub
-		
+	public void clickToDeleteButtonByPictureTitle(String pictureTitle) {
+		waitToElementClickable(driver, AdminProductPageUI.DELETE_BUTTON_BY_PRODUCT_TITLE,pictureTitle);
+		clickToElement(driver, AdminProductPageUI.DELETE_BUTTON_BY_PRODUCT_TITLE,pictureTitle);
+		waitAlertPresence(driver);
+		acceptAlert(driver);
+		waitAjaxLoadingInvisible(driver);
 	}
 
-
-	public boolean areImageDetailDisplayed(String string, String string2, String string3, String string4) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean areImageDetailDisplayed(String productName, String pictureOrder, String pictureAlt, String pictureTitle) {
+		waitToElementVisible(driver, AdminProductPageUI.IMAGE_UPLOAD_DETAIL, productName.toLowerCase().replace(" ", "-"),pictureOrder,pictureAlt,pictureTitle);
+		return isElementDisplayed(driver,  AdminProductPageUI.IMAGE_UPLOAD_DETAIL, productName.toLowerCase().replace(" ", "-"),pictureOrder,pictureAlt,pictureTitle);
 	}
-
-
-	public boolean areProductDisplayed(String string, String string2, String string3, String string4, String string5, String string6, String string7) {
-		// TODO Auto-generated method stub
-		return false;
+	
+	public boolean areProductDisplayed(String prductOrDefaultName,String productName, String producSku, String productPrice, String productQuantity, String productType, String productStatus) {
+		waitToElementVisible(driver, AdminProductPageUI.PRODUCT_DETAIL, prductOrDefaultName.toLowerCase().replace(" ", "-"),productName,producSku,productPrice,productQuantity,productType,productStatus);
+		return isElementDisplayed(driver,  AdminProductPageUI.PRODUCT_DETAIL, prductOrDefaultName.toLowerCase().replace(" ", "-"),productName,producSku,productPrice,productQuantity,productType,productStatus);
 	}
 
 
 	public boolean isNewPictureLoadedSuccess(String fileName) {
 		waitToElementInvisible(driver, AdminProductPageUI.SPINNER_UPLOAD);
 		return isElementDisplayed(driver, AdminProductPageUI.UPLOAD_FILE_NAME, fileName);
+	}
+
+
+	public void clickToIconAtOrderTextbox(String iconValue) {
+		waitToElementVisible(driver, AdminProductPageUI.ICON_VALUE_AT_ORDER_TEXTBOX, iconValue);
+		clickToElement(driver, AdminProductPageUI.ICON_VALUE_AT_ORDER_TEXTBOX, iconValue);
 	}
 
 

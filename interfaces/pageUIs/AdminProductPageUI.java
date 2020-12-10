@@ -23,8 +23,12 @@ public class AdminProductPageUI {
 	
 	public static final String ALT_TEXTBOX = "//input[@id='AddPictureModel_OverrideAltAttribute']";
 	public static final String TITLE_TEXTBOX = "//input[@id='AddPictureModel_OverrideTitleAttribute']";
-	public static final String ORDER_TEXTBOX = "//input[@id='AddPictureModel_DisplayOrder']";
+	public static final String ICON_VALUE_AT_ORDER_TEXTBOX = "//input[@id='AddPictureModel_DisplayOrder']/parent::span//span[@title='%s value']";
 	public static final String ADD_PRODUCT_PICTURE_TEXTBOX = "//button[@id='addProductPicture']";
+	public static final String IMAGE_UPLOAD_DETAIL = "//td[@data-columnname='PictureUrl']/a[contains(@href,'%s')]/parent::td/following-sibling::td[@data-columnname='DisplayOrder' and text()='%s']/following-sibling::td[@data-columnname='OverrideAltAttribute' and text()='%s']/following-sibling::td[@data-columnname='OverrideTitleAttribute' and text()='%s']";
+	public static final String SAVE_BUTTON = "//button[@name='save']";
+	public static final String DELETE_BUTTON_BY_PRODUCT_TITLE = "//td[@data-columnname='OverrideTitleAttribute' and text()='%s']/following-sibling::td[@class=' button-column']//i[contains(@class,'fa-remove')]";
+	public static final String PRODUCT_DETAIL = "//td/img[contains(@src,'%s')]/parent::td/following-sibling::td[text()='%s']/following-sibling::td[text()='%s']/following-sibling::td[text()='%s']/following-sibling::td[text()='%s']/following-sibling::td[text()='%s']/following-sibling::td/i[contains(@class,'%s-icon')]";
 	
 	
 }
