@@ -81,8 +81,8 @@ public class Level_10_Upload_File extends AbstractTest {
 		// click to plus icon
 		productPage.clickToPlusIconByPanelID(driver, "product-pictures");
 
-		productPage.clickToDeleteButtonByPictureTitle(pictureTitle);
-		productPage.sleepInSecond(3);
+		//productPage.clickToDeleteButtonByPictureTitle(pictureTitle);
+		//productPage.sleepInSecond(3);
 		productPage.scrollToPicturePanel();
 		// upload one file (name,title,alt,order)
 		productPage.uploadFileByPanelID(driver, "product-pictures", fileName);
@@ -93,6 +93,7 @@ public class Level_10_Upload_File extends AbstractTest {
 		productPage.inputToAltTextbox(pictureAlt);
 		productPage.inputToTitleTextbox(pictureTitle);
 		productPage.clickToIconAtOrderTextbox("Increase");
+		productPage.sleepInSecond(7);
 		productPage.clickToAddProductPictureButton();
 
 
@@ -129,7 +130,7 @@ public class Level_10_Upload_File extends AbstractTest {
 		
 
 		// veriry(name, image name) => not found
-		Assert.assertTrue(productPage.areProductDisplayed("default_image", productName, "AD_CS4_PH", "75", "10000", "Simple", "true"));
+		Assert.assertTrue(productPage.areProductDisplayed("default-image",productName, "AD_CS4_PH", "75", "10000", "Simple", "true"));
 
 	}
 
