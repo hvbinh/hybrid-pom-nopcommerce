@@ -1,7 +1,8 @@
 package pageUIs;
 
 public class UserRegisterPageUI {
-	public static final String GENDER_MAIL_RADIO = "//input[@id='gender-male']";
+	public static final String GENDER_MALE_RADIO = "//input[@id='gender-male']";
+	public static final String GENDER_FEMALE_RADIO = "//input[@id='gender-female']";
 	public static final String FIRSTNAME_TEXTBOX = "//input[@id='FirstName']";
 	public static final String LASTNAME_TEXTBOX = "//input[@id='LastName']";
 	public static final String DAY_DROPDOWN = "//select[@name='DateOfBirthDay']";

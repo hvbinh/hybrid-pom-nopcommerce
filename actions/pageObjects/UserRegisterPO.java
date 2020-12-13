@@ -15,8 +15,8 @@ public class UserRegisterPO extends AbstractPage{
 	}
 
 	public void clickToGenderMaleRadioButton() {
-		waitToElementClickable(driver, UserRegisterPageUI.GENDER_MAIL_RADIO);
-		clickToElement(driver, UserRegisterPageUI.GENDER_MAIL_RADIO);
+		waitToElementClickable(driver, UserRegisterPageUI.GENDER_MALE_RADIO);
+		clickToElement(driver, UserRegisterPageUI.GENDER_MALE_RADIO);
 		
 	}
 	public void inputToFirstnameTextBox(String firstName) {
