@@ -114,10 +114,15 @@ public class Practice_03_My_Account extends AbstractTest {
 		
 		//verify
 		Assert.assertEquals(customerInforPage.getAddressFullnameValue(), updateFirstName+" "+updateLastName);
-		Assert.assertEquals(customerInforPage.getPhoneNumberValue,"0123456789");
-		Assert.assertEquals(customerInforPage.getPhoneNumberValue,"0123456789");
-		Assert.assertEquals(customerInforPage.getFaxNumberValue,"0987654321");
-		Assert.assertEquals(customerInforPage.getFaxNumberValue,"0987654321");
+		Assert.assertEquals(customerInforPage.getAddressPhoneNumberValue(),"0123456789");
+		Assert.assertEquals(customerInforPage.getAddressFaxNumberValue(),"0987654321");
+		Assert.assertEquals(customerInforPage.getAddressCompanyValue(),"0987654321");
+		Assert.assertEquals(customerInforPage.getAddressAddress1(),"123/04 Le Lai");
+		Assert.assertEquals(customerInforPage.getAddressAddress2(),"234/05 Hai Phong");
+		Assert.assertEquals(customerInforPage.getAddressCityZip(),"Da Nang, 550000");
+		Assert.assertEquals(customerInforPage.getCountry(),"Viet Nam");
+		
+		
 	}
 
 	public void Login_In_With_Register_Email_And_correct_Password() {

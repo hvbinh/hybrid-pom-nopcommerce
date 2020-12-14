@@ -9,6 +9,7 @@ import pageUIs.UserRegisterPageUI;
 public class UserCustomerInforPO extends AbstractPage{
 
 	WebDriver driver;
+
 	
 	public UserCustomerInforPO(WebDriver driver) {
 		super();
@@ -205,6 +206,55 @@ public class UserCustomerInforPO extends AbstractPage{
 		sendkeyToElement(driver, UserCustomerInforPageUI.ADDRESS_FAX_NUMBER_TEXTBOX, fax);
 		
 	}
+
+	public String getAddressFullnameValue() {
+		waitToElementVisible(driver, UserCustomerInforPageUI.);
+		return null;
+	}
+
+	public String getAddressFullnameValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getAddressPhoneNumberValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getAddressFaxNumberValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getAddressCompanyValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getAddressAddress1() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getAddressAddress2() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getAddressCityZip() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getCountry() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
 
 
 
