@@ -208,14 +208,9 @@ public class UserCustomerInforPO extends AbstractPage{
 	}
 
 	public String getAddressFullnameValue() {
-		waitToElementVisible(driver, UserCustomerInforPageUI.);
 		return null;
 	}
 
-	public String getAddressFullnameValue() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public String getAddressPhoneNumberValue() {
 		// TODO Auto-generated method stub
@@ -232,22 +227,22 @@ public class UserCustomerInforPO extends AbstractPage{
 		return null;
 	}
 
-	public String getAddressAddress1() {
+	public String getAddressAddress1Value() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getAddressAddress2() {
+	public String getAddressAddress2Value() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getAddressCityZip() {
+	public String getAddressCityZipValue() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	public String getCountry() {
+	public String getCountryValue() {
 		// TODO Auto-generated method stub
 		return null;
 	}

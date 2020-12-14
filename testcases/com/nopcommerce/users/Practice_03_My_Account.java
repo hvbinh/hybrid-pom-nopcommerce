@@ -117,10 +117,10 @@ public class Practice_03_My_Account extends AbstractTest {
 		Assert.assertEquals(customerInforPage.getAddressPhoneNumberValue(),"0123456789");
 		Assert.assertEquals(customerInforPage.getAddressFaxNumberValue(),"0987654321");
 		Assert.assertEquals(customerInforPage.getAddressCompanyValue(),"0987654321");
-		Assert.assertEquals(customerInforPage.getAddressAddress1(),"123/04 Le Lai");
-		Assert.assertEquals(customerInforPage.getAddressAddress2(),"234/05 Hai Phong");
-		Assert.assertEquals(customerInforPage.getAddressCityZip(),"Da Nang, 550000");
-		Assert.assertEquals(customerInforPage.getCountry(),"Viet Nam");
+		Assert.assertEquals(customerInforPage.getAddressAddress1Value(),"123/04 Le Lai");
+		Assert.assertEquals(customerInforPage.getAddressAddress2Value(),"234/05 Hai Phong");
+		Assert.assertEquals(customerInforPage.getAddressCityZipValue(),"Da Nang, 550000");
+		Assert.assertEquals(customerInforPage.getCountryValue(),"Viet Nam");
 		
 		
 	}

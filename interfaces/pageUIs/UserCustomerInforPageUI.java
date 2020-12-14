@@ -29,6 +29,10 @@ public class UserCustomerInforPageUI {
 	public static final String ADDRESS_FAX_NUMBER_TEXTBOX = "//input[@id='Address_FaxNumber']";
 	public static final String ADDRESS_SAVE_BUTTON = "//input[contains(@class,'save-address-button')]";
 	
+	//public static final String ADDRESS_SAVE_BUTTON = "//input[contains(@class,'save-address-button')]";
+	
+	
+	
 	
 	
 	
