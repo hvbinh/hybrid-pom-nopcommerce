@@ -57,11 +57,14 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 
 	@Test
 	public void Tc_01_Register() {
-		//verify Register link displayed
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		//verify Register, Login link displayed
+		Assert.assertTrue(homePage.isRegisterLinkDisplayed());
+		Assert.assertTrue(homePage.isLoginLinkDisplayed());
 		
 		//verify Log in link displayed
 		// 1
-		homePage = PageGeneratorManager.getUserHomePage(driver);
+		
 		registerPage = homePage.clickToRegisterLink();
 
 		// 2
@@ -92,6 +95,8 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 
 	}
 
+
+
 	@Test
 	public void Tc_02_Login() {
 		loginPage = homePage.clickToLoginLink();
@@ -108,11 +113,17 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 		
 		//verify Register link undisplayed
-		
 		//verify Log in link undisplayed
+		Assert.assertTrue(homePage.isRegisterLinkUndisplayed());
+		Assert.assertTrue(homePage.isLoginLinkUndisplayed());
+		
+		//verify tooltip item undisplayed
+		Assert.assertTrue(homePage.isTooltipUndisplayed());
+		
+		
 	}
 
-	@Test
+	//@Test
 	public void Tc_03_View_My_Account() {
 		customerInforPage = homePage.clickToMyAccountLink();
 
@@ -133,7 +144,7 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 
 	}
 
-	@Test
+	//@Test
 	public void Tc_04_Switch_Page_solution1() {
 		// customer infor -> Addresses
 		addressesPage =(UserAddressesPO) customerInforPage.openLinkByPageName(driver, "Addresses");
@@ -153,7 +164,7 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 		customerInforPage =(UserCustomerInforPO) addressesPage.openLinkByPageName(driver, "Customer info");
 
 	}
-	@Test
+	//@Test
 	public void Tc_05_Switch_Page_solution2() {
 		customerInforPage.openLinkWithPageName(driver, "Addresses");
 		addressesPage = PageGeneratorManager.getUserAddressesPage(driver);

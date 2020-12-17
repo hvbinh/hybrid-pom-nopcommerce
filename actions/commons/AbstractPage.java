@@ -1,7 +1,9 @@
 package commons;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -118,7 +120,8 @@ public class AbstractPage {
 	public WebElement getElement(WebDriver driver, String locator) {
 		return driver.findElement(getByXpath(locator));
 	}
-	public WebElement getElement(WebDriver driver, String locator,String... values) {
+
+	public WebElement getElement(WebDriver driver, String locator, String... values) {
 		return getElement(driver, getDynamicLocator(locator, values));
 	}
 
@@ -212,7 +215,8 @@ public class AbstractPage {
 		element = getElement(driver, locator);
 		return element.getAttribute(attributeName);
 	}
-	public String getElementAtribute(WebDriver driver, String locator, String attributeName,String... values) {
+
+	public String getElementAtribute(WebDriver driver, String locator, String attributeName, String... values) {
 		element = getElement(driver, getDynamicLocator(locator, values));
 		return element.getAttribute(attributeName);
 	}
@@ -221,15 +225,17 @@ public class AbstractPage {
 		element = getElement(driver, locator);
 		return element.getText();
 	}
-	public String getElementText(WebDriver driver, String locator,String... values) {
-		element = getElement(driver, locator,values);
+
+	public String getElementText(WebDriver driver, String locator, String... values) {
+		element = getElement(driver, locator, values);
 		return element.getText();
 	}
 
 	public int countElementSize(WebDriver driver, String locator) {
 		return getElements(driver, locator).size();
 	}
-	public int countElementSize(WebDriver driver, String locator, String...values) {
+
+	public int countElementSize(WebDriver driver, String locator, String... values) {
 		return getElements(driver, getDynamicLocator(locator, values)).size();
 	}
 
@@ -239,7 +245,8 @@ public class AbstractPage {
 			element.click();
 		}
 	}
-	public void checkToCheckbox(WebDriver driver, String locator,String... values) {
+
+	public void checkToCheckbox(WebDriver driver, String locator, String... values) {
 		element = getElement(driver, getDynamicLocator(locator, values));
 		if (!element.isSelected()) {
 			element.click();
@@ -405,8 +412,11 @@ public class AbstractPage {
 	}
 
 	public void waitToElementVisible(WebDriver driver, String locator) {
+
 		explicitWait = new WebDriverWait(driver, 30);
+
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByXpath(locator)));
+
 	}
 
 	public void waitToElementVisible(WebDriver driver, String locator, String... values) {
@@ -415,8 +425,12 @@ public class AbstractPage {
 	}
 
 	public void waitToElementInvisible(WebDriver driver, String locator) {
-		explicitWait = new WebDriverWait(driver, 30);
+		explicitWait = new WebDriverWait(driver, GlobalConstants.SHORT_TIME);
+		overrideImplicitWait(driver, GlobalConstants.SHORT_TIME);
+		System.out.println("start wait for invisible: "+ new Date());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
+		System.out.println("end wait for invisible: "+ new Date());
+		overrideImplicitWait(driver, GlobalConstants.LONG_TIME);
 	}
 
 	public void waitToElementInvisible(WebDriver driver, String locator, String... values) {
@@ -452,11 +466,13 @@ public class AbstractPage {
 		clickToElement(driver, AbstractPageUI.CUSTOMER_INFOR_LINK);
 		return PageGeneratorManager.getUserCustomerInforPage(driver);
 	}
+
 	// >10 page
 	public void openLinkWithPageName(WebDriver driver, String pageName) {
 		waitToElementClickable(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 		clickToElement(driver, AbstractPageUI.DYNAMIC_LINK, pageName);
 	}
+
 	public UserOrdersPO openOrdersPage(WebDriver driver) {
 		waitToElementClickable(driver, AbstractPageUI.ORDERS_LINK);
 		clickToElement(driver, AbstractPageUI.ORDERS_LINK);
@@ -473,36 +489,58 @@ public class AbstractPage {
 			return PageGeneratorManager.getUserMyProductReviewsPage(driver);
 		case "Customer info":
 			return PageGeneratorManager.getUserCustomerInforPage(driver);
-		default: 
+		default:
 			return PageGeneratorManager.getUserOrdersPage(driver);
 		}
 	}
-	public void waitAjaxLoadingInvisible(WebDriver driver)
-	{
+
+	public void waitAjaxLoadingInvisible(WebDriver driver) {
 		waitToElementInvisible(driver, AbstractPageUI.LOADING_ICON);
 	}
-	public void uploadFileByPanelID(WebDriver driver,String panelID, String... fileNames)
-	{
+
+	public void uploadFileByPanelID(WebDriver driver, String panelID, String... fileNames) {
 		String filePath = GlobalConstants.UPLOAD_FOLDER;
 		String fullFileName = "";
-		for(String file: fileNames)
-		{
+		for (String file : fileNames) {
 			fullFileName = fullFileName + filePath + file + "\n";
 		}
 		fullFileName = fullFileName.trim();
 		getElement(driver, getDynamicLocator(AbstractPageUI.UPLOAD_FILE_TYPE_BY_PANEL, panelID)).sendKeys(fullFileName);
 	}
-	public void clickToPlusIconByPanelID(WebDriver driver,String panelID)
-	{
+
+	public void clickToPlusIconByPanelID(WebDriver driver, String panelID) {
 		waitToElementClickable(driver, AbstractPageUI.PLUS_ICON_PANEL, panelID);
 		String iconAttributeValue = getElementAtribute(driver, AbstractPageUI.PLUS_ICON_PANEL, "class", panelID);
-		if(iconAttributeValue.contains("fa-plus"))
-		{
-			clickToElement(driver, AbstractPageUI.PLUS_ICON_PANEL,panelID);
+		if (iconAttributeValue.contains("fa-plus")) {
+			clickToElement(driver, AbstractPageUI.PLUS_ICON_PANEL, panelID);
 			sleepInSecond(1);
 		}
 	}
-	
+
+	public boolean isElementUndisplayed(WebDriver driver, String locator) {
+		System.out.println("start time: "+ new Date());
+		overrideImplicitWait(driver, GlobalConstants.SHORT_TIME);
+		elements = getElements(driver, locator);
+		overrideImplicitWait(driver, GlobalConstants.LONG_TIME);
+		System.out.println("start: "+ new Date().toString());
+		if (elements.size() == 0) {
+			System.out.println("element not in DOM");
+			System.out.println("end: "+ new Date().toString());
+			System.out.println("end time: "+ new Date());
+			return true;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+			System.out.println("element in DOM but not visible");
+			System.out.println("end: "+ new Date().toString());
+			return true;
+		} else {
+			System.out.println("element in DOM and visible");
+			return false;
+		}
+	}
+	public void overrideImplicitWait(WebDriver driver, long timeSecond) 
+	{
+		driver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
+	}
 
 	private WebDriverWait explicitWait;
 	private WebElement element;
@@ -510,6 +548,5 @@ public class AbstractPage {
 	private Actions action;
 	private Select select;
 	private List<WebElement> elements;
-	
 
 }
