@@ -29,7 +29,16 @@ public class UserCustomerInforPageUI {
 	public static final String ADDRESS_FAX_NUMBER_TEXTBOX = "//input[@id='Address_FaxNumber']";
 	public static final String ADDRESS_SAVE_BUTTON = "//input[contains(@class,'save-address-button')]";
 	
-	//public static final String ADDRESS_SAVE_BUTTON = "//input[contains(@class,'save-address-button')]";
+	public static final String ADDRESS_DYNAMIC_INFO_BY_NAME = "//li[@class='%s']";
+	
+	public static final String CHANGE_PASSWORD_OLD_PASSWORD_TEXTBOX = "//input[@id='OldPassword']";
+	public static final String CHANGE_PASSWORD_NEW_PASSWORD_TEXTBOX = "//input[@id='NewPassword']";
+	public static final String CHANGE_PASSWORD_CONFIRM_PASSWORD_TEXTBOX = "//input[@id='ConfirmNewPassword']";
+	public static final String CHANGE_PASSWORD_CHANGE_PASSWORD_BUTTON = "//input[contains(@class,'change-password-button')]";
+	public static final String CHANGE_PASSWORD_RESULT_MESSAGE = "//div[@class='result']";
+	public static final String LOG_IN_LINK = "//a[@class='ico-login']";
+	public static final String LOG_OUT_LINK = "//a[@class='ico-logout']";
+	
 	
 	
 	

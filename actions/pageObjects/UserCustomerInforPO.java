@@ -207,44 +207,78 @@ public class UserCustomerInforPO extends AbstractPage{
 		
 	}
 
-	public String getAddressFullnameValue() {
-		return null;
+	public String getAddressFullnameValue(String name) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,name);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,name);
 	}
 
 
-	public String getAddressPhoneNumberValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAddressPhoneNumberValue(String phone) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,phone);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,phone);
 	}
 
-	public String getAddressFaxNumberValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAddressFaxNumberValue(String fax) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,fax);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,fax);
 	}
 
-	public String getAddressCompanyValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAddressCompanyValue(String company) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,company);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,company);
 	}
 
-	public String getAddressAddress1Value() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAddressAddress1Value(String address1) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,address1);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,address1);
 	}
 
-	public String getAddressAddress2Value() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAddressAddress2Value(String address2) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,address2);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,address2);
 	}
 
-	public String getAddressCityZipValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getAddressCityZipValue(String city_state_zip) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,city_state_zip);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,city_state_zip);
 	}
 
-	public String getCountryValue() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getCountryValue(String country) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,country);
+		return getElementText(driver, UserCustomerInforPageUI.ADDRESS_DYNAMIC_INFO_BY_NAME,country);
+	}
+
+	public void inputToOldPasswordTextbox(String oldPassword) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_OLD_PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_OLD_PASSWORD_TEXTBOX,oldPassword);
+	}
+
+	public void inputToNewPasswordTextbox(String newPassword) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_NEW_PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_NEW_PASSWORD_TEXTBOX,newPassword);
+		
+	}
+
+	public void inputToConfirmPasswordTextbox(String confirmPassword) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_CONFIRM_PASSWORD_TEXTBOX);
+		sendkeyToElement(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_CONFIRM_PASSWORD_TEXTBOX,confirmPassword);
+		
+	}
+
+	public void clickToChangePasswordButton() {
+		waitToElementClickable(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_CHANGE_PASSWORD_BUTTON);
+		clickToElement(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_CHANGE_PASSWORD_BUTTON);
+	}
+
+	public String getResultMessage() {
+		waitToElementVisible(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_RESULT_MESSAGE);
+		return getElementText(driver, UserCustomerInforPageUI.CHANGE_PASSWORD_RESULT_MESSAGE);
+	}
+
+	public UserHomePO clickToLogoutLink() {
+		waitToElementVisible(driver, UserCustomerInforPageUI.LOG_OUT_LINK);
+		clickToElement(driver, UserCustomerInforPageUI.LOG_OUT_LINK);
+		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
 

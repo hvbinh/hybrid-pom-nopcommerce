@@ -97,7 +97,7 @@ public class Practice_03_My_Account extends AbstractTest {
 	public void TC_02_Add_Address() {
 		customerInforPage.clickToAddressesLeftMenu("Addresses");
 		customerInforPage.clickToAddNewButton();
-		
+
 		customerInforPage.inputToAddressFirstnameTextbox(updateFirstName);
 		customerInforPage.inputToAddressLastnameTextbox(updateLastName);
 		customerInforPage.inputToAddressEmailTextbox(updateEmail);
@@ -111,17 +111,37 @@ public class Practice_03_My_Account extends AbstractTest {
 		customerInforPage.inputToAddressPhoneTextbox("0123456789");
 		customerInforPage.inputToAddressFaxTextbox("0987654321");
 		customerInforPage.clickToAddressSaveButton();
+
+		// verify
+
+		Assert.assertTrue(customerInforPage.getAddressFullnameValue("name").contains(updateFirstName + " " + updateLastName));
+		Assert.assertTrue(customerInforPage.getAddressPhoneNumberValue("phone").contains("0123456789"));
+		Assert.assertTrue(customerInforPage.getAddressFaxNumberValue("fax").contains("0987654321"));
+		Assert.assertTrue(customerInforPage.getAddressCompanyValue("company").contains(updateCompanyName));
+		Assert.assertTrue(customerInforPage.getAddressAddress1Value("address1").contains("123/04 Le Lai"));
+		Assert.assertTrue(customerInforPage.getAddressAddress2Value("address2").contains("234/05 Hai Phong"));
+		Assert.assertTrue(customerInforPage.getAddressCityZipValue("city-state-zip").contains("Da Nang, 550000"));
+		Assert.assertTrue(customerInforPage.getCountryValue("country").contains("Viet Nam"));
+
+	}
+	@Test
+	public void TC_03_Update_Password()
+	{
+		customerInforPage.clickToAddressesLeftMenu("Change password");
+		customerInforPage.inputToOldPasswordTextbox("123456");
+		customerInforPage.inputToNewPasswordTextbox("1234567");
+		customerInforPage.inputToConfirmPasswordTextbox("1234567");
+		customerInforPage.clickToChangePasswordButton();
 		
-		//verify
-		Assert.assertEquals(customerInforPage.getAddressFullnameValue(), updateFirstName+" "+updateLastName);
-		Assert.assertEquals(customerInforPage.getAddressPhoneNumberValue(),"0123456789");
-		Assert.assertEquals(customerInforPage.getAddressFaxNumberValue(),"0987654321");
-		Assert.assertEquals(customerInforPage.getAddressCompanyValue(),"0987654321");
-		Assert.assertEquals(customerInforPage.getAddressAddress1Value(),"123/04 Le Lai");
-		Assert.assertEquals(customerInforPage.getAddressAddress2Value(),"234/05 Hai Phong");
-		Assert.assertEquals(customerInforPage.getAddressCityZipValue(),"Da Nang, 550000");
-		Assert.assertEquals(customerInforPage.getCountryValue(),"Viet Nam");
+		Assert.assertEquals(customerInforPage.getResultMessage(), "Password was changed");
+		homePage = customerInforPage.clickToLogoutLink();
+		loginPage = homePage.clickToLoginLink();
+		loginPage.inputToEmailTextbox(updateEmail);
+		loginPage.inputToPasswordTextbox("1234567");
+		homePage = loginPage.clickToLoginButton();
 		
+		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 		
 	}
 
