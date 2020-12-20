@@ -281,6 +281,74 @@ public class UserCustomerInforPO extends AbstractPage{
 		return PageGeneratorManager.getUserHomePage(driver);
 	}
 
+	public void inputToSearchTextbox(String text) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.SEARCH_TEXTBOX);
+		sendkeyToElement(driver, UserCustomerInforPageUI.SEARCH_TEXTBOX, text);
+	}
+
+	public void clickToSearchButton() {
+		waitToElementClickable(driver, UserCustomerInforPageUI.SEARCH_BUTTON);
+		clickToElement(driver, UserCustomerInforPageUI.SEARCH_BUTTON);
+	}
+
+	public void clickToProductTitleResult(String title) {
+		waitToElementClickable(driver, UserCustomerInforPageUI.SEARCH_PRODUCT_DYNAMIC_BY_TITLE,title);
+		clickToElement(driver, UserCustomerInforPageUI.SEARCH_PRODUCT_DYNAMIC_BY_TITLE,title);
+		
+	}
+
+	public void inputToReviewTitle(String title) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.REVIEW_TITLE_TEXTBOX);
+		sendkeyToElement(driver, UserCustomerInforPageUI.REVIEW_TITLE_TEXTBOX, title);
+		
+	}
+
+	public void inputToReviewText(String text) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.REVIEW_TEXT_AREA);
+		sendkeyToElement(driver, UserCustomerInforPageUI.REVIEW_TEXT_AREA, text);
+	}
+
+	public void clickToRateOption(String value) {
+		waitToElementVisible(driver,UserCustomerInforPageUI.REVIEW_RATIING_OPTION,value);
+		clickToElement(driver, UserCustomerInforPageUI.REVIEW_RATIING_OPTION,value);
+	}
+
+	public void clickToSubmitReviewButton() {
+		waitToElementVisible(driver,UserCustomerInforPageUI.REVIEW_SUBMIT_BUTTON);
+		clickToElement(driver, UserCustomerInforPageUI.REVIEW_SUBMIT_BUTTON);
+		
+	}
+
+	public void clickToMyAccountLink() {
+		waitToElementClickable(driver, UserCustomerInforPageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, UserCustomerInforPageUI.MY_ACCOUNT_LINK);
+	}
+
+	public void clickToMyProductReviewLeftMenu(String name) {
+		waitToElementClickable(driver, UserCustomerInforPageUI.LEFT_MENU_LINK_BY_NAME,name);
+		clickToElement(driver, UserCustomerInforPageUI.LEFT_MENU_LINK_BY_NAME,name);
+	}
+
+	public void clickToAddYourReviewLink() {
+		waitToElementVisible(driver, UserCustomerInforPageUI.SEARCH_ADD_YOUR_REVIEW_LINK);
+		clickToElement(driver, UserCustomerInforPageUI.SEARCH_ADD_YOUR_REVIEW_LINK);
+	}
+
+	public String getReviewTitle() {
+		waitToElementVisible(driver, UserCustomerInforPageUI.REVIEW_TITLE_TEXT);
+		return getElementText(driver, UserCustomerInforPageUI.REVIEW_TITLE_TEXT);
+	}
+
+	public String getReviewText() {
+		waitToElementVisible(driver, UserCustomerInforPageUI.REVIEW_TEXT);
+		return getElementText(driver, UserCustomerInforPageUI.REVIEW_TEXT);
+	}
+
+	public String getReviewRatingNumber(String attribute) {
+		waitToElementVisible(driver, UserCustomerInforPageUI.REVIEW_RATING_OPTION);
+		return getElementAtribute(driver, UserCustomerInforPageUI.REVIEW_RATING_OPTION, attribute);
+	}
+
 
 
 

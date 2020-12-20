@@ -38,6 +38,26 @@ public class UserCustomerInforPageUI {
 	public static final String CHANGE_PASSWORD_RESULT_MESSAGE = "//div[@class='result']";
 	public static final String LOG_IN_LINK = "//a[@class='ico-login']";
 	public static final String LOG_OUT_LINK = "//a[@class='ico-logout']";
+	public static final String MY_ACCOUNT_LINK = "//a[@class='ico-account']";
+	
+	public static final String SEARCH_TEXTBOX = "//input[@id='small-searchterms']";
+	public static final String SEARCH_BUTTON = "//input[contains(@class,'search-box-button')]";
+	public static final String SEARCH_PRODUCT_DYNAMIC_BY_TITLE = "//h2[@class='product-title']/a[text()='%s']";
+	public static final String SEARCH_ADD_YOUR_REVIEW_LINK = "//a[text()='Add your review']";
+	
+	public static final String REVIEW_TITLE_TEXTBOX = "//input[@id='AddProductReview_Title']";
+	public static final String REVIEW_TEXT_AREA = "//textarea[@id='AddProductReview_ReviewText']";
+	public static final String REVIEW_RATIING_OPTION = "//input[@value='%s']";
+	public static final String REVIEW_SUBMIT_BUTTON = "//input[contains(@class,'write-product-review-button')]";
+	public static final String REVIEW_TITLE_TEXT = "//div[@class='product-review-item'][1]//div[@class='review-title']/strong";
+	public static final String REVIEW_TEXT = "//div[@class='product-review-item'][1]//div[@class='review-content']/div[@class='review-text']";
+	public static final String REVIEW_RATING_OPTION = "//div[@class='product-review-item'][1]//div[@class='rating']/div";
+	
+
+	
+	
+	
+	
 	
 	
 	

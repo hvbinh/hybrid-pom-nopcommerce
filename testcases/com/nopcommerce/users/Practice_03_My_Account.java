@@ -144,6 +144,27 @@ public class Practice_03_My_Account extends AbstractTest {
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 		
 	}
+	@Test
+	public void TC_04_Product_Review()
+	{
+		customerInforPage = homePage.clickToMyAccountLink();
+		customerInforPage.inputToSearchTextbox("Adobe Photoshop CS4");
+		customerInforPage.clickToSearchButton();
+		customerInforPage.clickToProductTitleResult("Adobe Photoshop CS4");
+		customerInforPage.clickToAddYourReviewLink();
+		customerInforPage.inputToReviewTitle("my review adobe");
+		customerInforPage.inputToReviewText("very good");
+		customerInforPage.clickToRateOption("3");
+		customerInforPage.clickToSubmitReviewButton();
+		customerInforPage.clickToMyAccountLink();
+		customerInforPage.clickToMyProductReviewLeftMenu("My product reviews");
+		
+		Assert.assertEquals(customerInforPage.getReviewTitle(),"my review adobe");
+		Assert.assertEquals(customerInforPage.getReviewText(), "very good");
+		
+		Assert.assertTrue(customerInforPage.getReviewRatingNumber("style").contains("60%"));
+		
+	}
 
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
