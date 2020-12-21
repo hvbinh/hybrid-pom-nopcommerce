@@ -30,7 +30,7 @@ import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 
-public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
+public class Level_12_Register_Login_Assert_Verify extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
@@ -59,10 +59,11 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 	public void Tc_01_Register() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		//verify Register, Login link displayed
-		Assert.assertTrue(homePage.isRegisterLinkDisplayed());
+		//Assert.assertTrue(homePage.isRegisterLinkDisplayed());
 		//Assert.assertTrue(homePage.isLoginLinkDisplayed());
-		Assert.assertFalse(homePage.isLoginLinkDisplayed());   //failed
-		
+		verifyFalse(homePage.isRegisterLinkDisplayed()); //failed
+		verifyTrue(homePage.isLoginLinkDisplayed()); 
+
 		//verify Log in link displayed
 		// 1
 		
@@ -88,7 +89,8 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 
 		registerPage.clickToRegisterButton();
 
-		Assert.assertEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
+		//Assert.assertEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
+		verifyEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed...");
 
 		homePage = registerPage.clickToLogoutLink();
 
@@ -110,17 +112,22 @@ public class Level_11_Register_Login_Element_Undisplayed extends AbstractTest {
 
 		// 5
 
-		Assert.assertFalse(homePage.isMyAccountLinkDisplayed()); //failed
-		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
- 
+		//Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
+		//Assert.assertTrue(homePage.isLogoutLinkDisplayed());
+		verifyFalse(homePage.isMyAccountLinkDisplayed()); //failed
+		verifyTrue(homePage.isLogoutLinkDisplayed());
 		
 		//verify Register link undisplayed
 		//verify Log in link undisplayed
-		Assert.assertTrue(homePage.isRegisterLinkUndisplayed());
-		Assert.assertTrue(homePage.isLoginLinkUndisplayed());
+		//Assert.assertTrue(homePage.isRegisterLinkUndisplayed());
+		//Assert.assertTrue(homePage.isLoginLinkUndisplayed());
+		verifyTrue(homePage.isRegisterLinkUndisplayed());
+		verifyFalse(homePage.isLoginLinkUndisplayed()); //failed
+		
 		
 		//verify tooltip item undisplayed
-		Assert.assertTrue(homePage.isTooltipUndisplayed());
+		//Assert.assertTrue(homePage.isTooltipUndisplayed());
+		verifyFalse(homePage.isTooltipUndisplayed());  //failed
 		
 		
 	}
