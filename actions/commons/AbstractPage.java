@@ -188,7 +188,6 @@ public class AbstractPage {
 		elements = getElements(driver, childXpath);
 
 		for (WebElement actualItem : elements) {
-			System.out.println("actual: " + actualItem.getText());
 			if (actualItem.getText().trim().equals(expectedText)) {
 				jsExecutor = (JavascriptExecutor) driver;
 				jsExecutor.executeScript("arguments[0].scrollIntoView(true);", actualItem);
@@ -427,9 +426,7 @@ public class AbstractPage {
 	public void waitToElementInvisible(WebDriver driver, String locator) {
 		explicitWait = new WebDriverWait(driver, GlobalConstants.SHORT_TIME);
 		overrideImplicitWait(driver, GlobalConstants.SHORT_TIME);
-		System.out.println("start wait for invisible: "+ new Date());
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByXpath(locator)));
-		System.out.println("end wait for invisible: "+ new Date());
 		overrideImplicitWait(driver, GlobalConstants.LONG_TIME);
 	}
 
@@ -518,22 +515,14 @@ public class AbstractPage {
 	}
 
 	public boolean isElementUndisplayed(WebDriver driver, String locator) {
-		System.out.println("start time: "+ new Date());
 		overrideImplicitWait(driver, GlobalConstants.SHORT_TIME);
 		elements = getElements(driver, locator);
 		overrideImplicitWait(driver, GlobalConstants.LONG_TIME);
-		System.out.println("start: "+ new Date().toString());
 		if (elements.size() == 0) {
-			System.out.println("element not in DOM");
-			System.out.println("end: "+ new Date().toString());
-			System.out.println("end time: "+ new Date());
 			return true;
 		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
-			System.out.println("element in DOM but not visible");
-			System.out.println("end: "+ new Date().toString());
 			return true;
 		} else {
-			System.out.println("element in DOM and visible");
 			return false;
 		}
 	}

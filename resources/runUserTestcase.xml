@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="Nop Commerce" parallel="false">
+<suite name="Nop Commerce - user" parallel="false">
 <listeners>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	<listener class-name="commons.MethodListener"/>
+	<listener class-name="reportConfig.ExtentReportListenerVersion2"/>
 </listeners>
+
   <test name="Run On CHROME UI">
   <parameter name="browser" value="chrome_ui"/>
     <classes>
-      <class name="com.nopcommerce.users.Level_11_Register_Login_Element_Undisplayed"/>
-      <class name="com.nopcommerce.users.Level_12_Register_Login_Assert_Verify"/>
+      <class name="com.nopcommerce.users.Level_13_Register_Login_Log_Report_HTML"/>
+    </classes>
+  </test>
+  
+  <test name="Run On FIREFOX UI">
+  <parameter name="browser" value="firefox_ui"/>
+    <classes>
+      <class name="com.nopcommerce.users.Level_13_Register_Login_Log_Report_HTML"/>
     </classes>
   </test>
 <!--     <test name="Run On FIREFOX UI">
