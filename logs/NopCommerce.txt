@@ -1,34 +1,34 @@
-[INFO ] [2020-12-24 23:26:18,431] Register - Step 01: Open Home Page
-[INFO ] [2020-12-24 23:26:18,525] Register - Step 02: Verify Register link displayed
-[INFO ] [2020-12-24 23:26:18,886]  -------------------------- PASSED -------------------------- 
-[INFO ] [2020-12-24 23:26:18,888] Register - Step 03: Verify Login link displayed
-[INFO ] [2020-12-24 23:26:19,115]  -------------------------- PASSED -------------------------- 
-[INFO ] [2020-12-24 23:26:19,116] Register - Step 04: Click to Register link at Home page
-[INFO ] [2020-12-24 23:26:22,391] Register - Step 05: Click to Gender Male radio button
-[INFO ] [2020-12-24 23:26:22,662] Register - Step 06: Input to Firstname textbox with value: Tony
-[INFO ] [2020-12-24 23:26:23,019] Register - Step 07: Input to Lastname textbox with value: Buoi Sang
-[INFO ] [2020-12-24 23:26:23,355] Register - Step 08: Select Day dropdown
-[INFO ] [2020-12-24 23:26:23,717] Register - Step 09: Select Month dropdown
-[INFO ] [2020-12-24 23:26:24,068] Register - Step 10: Select Year dropdown
-[INFO ] [2020-12-24 23:26:24,412] Register - Step 11: Input to Email textbox with value: tonybuoisang44789@gmail.com
-[INFO ] [2020-12-24 23:26:24,807] Register - Step 12: Input to Company textbox with value: Tony Buoi Sang company
-[INFO ] [2020-12-24 23:26:25,196] Register - Step 13: Input to Password textbox with value: 123456
-[INFO ] [2020-12-24 23:26:25,528] Register - Step 14: Input to confirm Password textbox with value: 123456
-[INFO ] [2020-12-24 23:26:25,917] Register - Step 15: Click to Register button
-[INFO ] [2020-12-24 23:26:28,796] Register - Step 16: Verify Register success message displayed
-[INFO ] [2020-12-24 23:26:28,976]  -------------------------- PASSED -------------------------- 
-[INFO ] [2020-12-24 23:26:28,976] Register - Step 17: Click to Logout link and navigate to Home Page
-[INFO ] [2020-12-24 23:26:31,763] Login - Step 01: Open Login Page
-[INFO ] [2020-12-24 23:26:32,714] Login - Step 02: Input to Email textbox with value: tonybuoisang44789@gmail.com
-[INFO ] [2020-12-24 23:26:33,074] Login - Step 03: Input to Password textbox with value: 123456
-[INFO ] [2020-12-24 23:26:33,400] Login - Step 04: Click to Login button
-[INFO ] [2020-12-24 23:26:36,558] Login - Step 05: Verify My Account link displayed
-[INFO ] [2020-12-24 23:26:36,790]  -------------------------- PASSED -------------------------- 
-[INFO ] [2020-12-24 23:26:36,790] Login - Step 06: Verify Logout link displayed
-[INFO ] [2020-12-24 23:26:36,970]  -------------------------- PASSED -------------------------- 
-[INFO ] [2020-12-24 23:26:36,971] Login - Step 07: Verify Register link undisplayed
-[INFO ] [2020-12-24 23:26:47,176]  -------------------------- PASSED -------------------------- 
-[INFO ] [2020-12-24 23:26:47,176] Login - Step 08: Verify Login link undisplayed
-[INFO ] [2020-12-24 23:26:57,329]  -------------------------- PASSED -------------------------- 
-[INFO ] [2020-12-24 23:26:57,329] Login - Step 09: Verify Tooltip undisplayed
-[INFO ] [2020-12-24 23:26:57,604]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 22:59:29,022] Register - Step 01: Open Home Page
+[INFO ] [2020-12-27 22:59:29,035] Register - Step 02: Verify Register link displayed
+[INFO ] [2020-12-27 22:59:29,410]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 22:59:29,414] Register - Step 03: Verify Login link displayed
+[INFO ] [2020-12-27 22:59:29,650]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 22:59:29,651] Register - Step 04: Click to Register link at Home page
+[INFO ] [2020-12-27 22:59:32,855] Register - Step 05: Click to Gender Male radio button
+[INFO ] [2020-12-27 22:59:33,354] Register - Step 06: Input to Firstname textbox with value: Tony
+[INFO ] [2020-12-27 22:59:34,042] Register - Step 07: Input to Lastname textbox with value: Buoi Sang
+[INFO ] [2020-12-27 22:59:34,653] Register - Step 08: Select Day dropdown
+[INFO ] [2020-12-27 22:59:35,065] Register - Step 09: Select Month dropdown
+[INFO ] [2020-12-27 22:59:35,469] Register - Step 10: Select Year dropdown
+[INFO ] [2020-12-27 22:59:35,865] Register - Step 11: Input to Email textbox with value: tonybuoisang64432@gmail.com
+[INFO ] [2020-12-27 22:59:36,743] Register - Step 12: Input to Company textbox with value: Tony Buoi Sang company
+[INFO ] [2020-12-27 22:59:37,329] Register - Step 13: Input to Password textbox with value: 123456
+[INFO ] [2020-12-27 22:59:37,735] Register - Step 14: Input to confirm Password textbox with value: 123456
+[INFO ] [2020-12-27 22:59:38,080] Register - Step 15: Click to Register button
+[INFO ] [2020-12-27 22:59:41,012] Register - Step 16: Verify Register success message displayed
+[INFO ] [2020-12-27 22:59:41,187]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 22:59:41,188] Register - Step 17: Click to Logout link and navigate to Home Page
+[INFO ] [2020-12-27 22:59:43,629] Login - Step 01: Open Login Page
+[INFO ] [2020-12-27 22:59:44,507] Login - Step 02: Input to Email textbox with value: tonybuoisang64432@gmail.com
+[INFO ] [2020-12-27 22:59:44,882] Login - Step 03: Input to Password textbox with value: 123456
+[INFO ] [2020-12-27 22:59:45,509] Login - Step 04: Click to Login button
+[INFO ] [2020-12-27 22:59:49,223] Login - Step 05: Verify My Account link displayed
+[INFO ] [2020-12-27 22:59:49,453]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 22:59:49,453] Login - Step 06: Verify Logout link displayed
+[INFO ] [2020-12-27 22:59:49,650]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 22:59:49,651] Login - Step 07: Verify Register link undisplayed
+[INFO ] [2020-12-27 22:59:59,921]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 22:59:59,922] Login - Step 08: Verify Login link undisplayed
+[INFO ] [2020-12-27 23:00:10,151]  -------------------------- PASSED -------------------------- 
+[INFO ] [2020-12-27 23:00:10,151] Login - Step 09: Verify Tooltip undisplayed
+[INFO ] [2020-12-27 23:00:10,640]  -------------------------- FAILED -------------------------- 

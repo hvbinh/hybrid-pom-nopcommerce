@@ -137,7 +137,7 @@ public class Level_13_Register_Login_Log_Report_HTML extends AbstractTest {
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 		
 		log.info("Login - Step 09: Verify Tooltip undisplayed");
-		verifyTrue(homePage.isTooltipUndisplayed());
+		verifyFalse(homePage.isTooltipUndisplayed());
 	}
 
 	//@Test

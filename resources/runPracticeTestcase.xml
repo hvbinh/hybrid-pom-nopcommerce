@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite
-	name="Nop Commerce"
-	parallel="false"
->
-	<test name="Run On CHROME UI">
-		<parameter
-			name="browser"
-			value="chrome_ui" />
-		<classes>
-			<!-- <class name="com.nopcommerce.users.Practice_01_Register" /> -->
-			<!-- <class name="com.nopcommerce.users.Practice_02_Login" /> -->
-			<class name="com.nopcommerce.users.Practice_03_My_Account" />
-		</classes>
-	</test>
-	<!-- <test name="Run On FIREFOX UI"> <parameter name="browser" value="firefox_ui"/> <classes> <class name="com.nopcommerce.users.Level_06_Register_Login_Page_Generator_Manager"/> 
-		</classes> </test> -->
-	<!-- <test name="Run On EDGE UI"> <parameter name="browser" value="edge_chromium"/> <classes> <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/> 
-		</classes> </test> <test name="Run On CHROME HEADLESS"> <parameter name="browser" value="chrome_headless"/> <classes> <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/> 
-		</classes> </test> <test name="Run On FIREFOX HEADLESS"> <parameter name="browser" value="firefox_headless"/> <classes> <class name="com.nopcommerce.users.Level_04_Register_Login_Multiple_Browser"/> 
-		</classes> </test> -->
-</suite>
+<suite name="Nop Commerce" parallel="false">
+<listeners>
+	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+	<listener class-name="commons.MethodListener"/>
+	<listener class-name="reportConfig.ExtentReportListenerVersion2"/>
+</listeners>
+
+  <test name="Run On CHROME UI">
+  <parameter name="browser" value="firefox_ui"/>
+  <parameter name="url" value="https://admin-demo.nopcommerce.com/"/>
+    <classes>
+      <class name="com.nopcommerce.admin.Level_10_Upload_File"/>
+    </classes>
+  </test>
+
+</suite> 

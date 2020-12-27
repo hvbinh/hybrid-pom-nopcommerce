@@ -36,7 +36,7 @@ public class AbstractTest {
 		//setBrowserDriver();
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser == Browser.CHROME_UI) {
-			WebDriverManager.chromedriver().driverVersion("86.0.4240.22").setup();
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browser == Browser.FIREFOX_UI) {
 			WebDriverManager.firefoxdriver().setup();

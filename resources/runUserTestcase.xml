@@ -4,7 +4,7 @@
 	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
 	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	<listener class-name="commons.MethodListener"/>
-	<listener class-name="reportConfig.ExtentReportListenerVersion2"/>
+	<listener class-name="reportConfig.ExtentReportListenerVersion4"/>
 </listeners>
 
   <test name="Run On CHROME UI">
@@ -14,12 +14,7 @@
     </classes>
   </test>
   
-  <test name="Run On FIREFOX UI">
-  <parameter name="browser" value="firefox_ui"/>
-    <classes>
-      <class name="com.nopcommerce.users.Level_13_Register_Login_Log_Report_HTML"/>
-    </classes>
-  </test>
+
 <!--     <test name="Run On FIREFOX UI">
   <parameter name="browser" value="firefox_ui"/>
     <classes>
