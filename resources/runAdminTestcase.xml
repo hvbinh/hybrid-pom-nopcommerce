@@ -4,7 +4,10 @@
 	<listener class-name="org.uncommons.reportng.HTMLReporter"/>
 	<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	<listener class-name="commons.MethodListener"/>
-	<listener class-name="reportConfig.ExtentReportListenerVersion2"/>
+	<!-- <listener class-name="reportConfig.ExtentReportListenerVersion2"/> -->
+	<!-- <listener class-name="reportConfig.ExtentReportListenerVersion3"/> -->
+	<!-- <listener class-name="reportConfig.ExtentReportListenerVersion4"/> -->
+	<listener class-name="reportConfig.AllureTestListener"/>
 </listeners>
 
   <test name="Run On FIREFOX UI">

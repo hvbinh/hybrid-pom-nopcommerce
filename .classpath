@@ -22,16 +22,17 @@
 	<classpathentry kind="lib" path="libLog4J/commons-codec-1.11.jar"/>
 	<classpathentry kind="lib" path="libLog4J/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/gson-2.8.6.jar"/>
-	<classpathentry kind="lib" path="libExtentVersion4/bsh-2.0b4.jar"/>
-	<classpathentry kind="lib" path="libExtentVersion4/bson-3.3.0.jar"/>
-	<classpathentry kind="lib" path="libExtentVersion4/extentreports-4.0.9.jar"/>
 	<classpathentry kind="lib" path="libExtentVersion4/freemarker-2.3.23.jar"/>
 	<classpathentry kind="lib" path="libExtentVersion4/httpmime-4.5.2.jar"/>
 	<classpathentry kind="lib" path="libExtentVersion4/jcommander-1.48.jar"/>
-	<classpathentry kind="lib" path="libExtentVersion4/mongodb-driver-3.3.0.jar"/>
-	<classpathentry kind="lib" path="libExtentVersion4/mongodb-driver-core-3.3.0.jar"/>
 	<classpathentry kind="lib" path="libExtentVersion4/testng-6.9.10.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/httpclient5-5.0.1.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/httpcore5-5.0.2.jar"/>
+	<classpathentry kind="lib" path="libExtentVersion4/bsh-2.0b4.jar"/>
+	<classpathentry kind="lib" path="libExtentVersion4/bson-3.3.0.jar"/>
+	<classpathentry kind="lib" path="libExtentVersion4/extentreports-4.0.9.jar"/>
+	<classpathentry kind="lib" path="libExtentVersion4/mongodb-driver-3.3.0.jar"/>
+	<classpathentry kind="lib" path="libExtentVersion4/mongodb-driver-core-3.3.0.jar"/>
+	<classpathentry kind="lib" path="libWebDriverManager/jsoup-1.13.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
