@@ -47,5 +47,9 @@ public class PageGeneratorManager {
 	{
 		return new UserSearchPO(driver);
 	}
+	public static UserComputerMenuPO getUserComputerMenuPage(WebDriver driver)
+	{
+		return new UserComputerMenuPO(driver);
+	}
 
 }

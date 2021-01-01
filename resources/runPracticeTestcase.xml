@@ -7,7 +7,7 @@
 	<listener class-name="reportConfig.ExtentReportListenerVersion4"/>
 </listeners>
 
-  <test name="Run On CHROME UI">
+  <test name="Run On FIREFOX UI">
   <parameter name="browser" value="firefox_ui"/>
   <parameter name="url" value="https://admin-demo.nopcommerce.com/"/>
     <classes>

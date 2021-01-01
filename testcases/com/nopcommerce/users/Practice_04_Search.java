@@ -84,7 +84,110 @@ public class Practice_04_Search extends AbstractTest {
 		verifyEquals(searchPage.getNoResultMessage(), "No products were found that matched your criteria.");
 		
 	}
-
+	@Test
+	public void TC_03_Verify_Relative_Search() {
+		searchPage.inputToSearchTextbox("Lenovo");
+		searchPage.clickToSearchButton();
+		
+		verifyTrue(searchPage.getProductsResult("Lenovo IdeaCentre 600 All-in-One PC"));
+		verifyTrue(searchPage.getProductsResult("Lenovo Thinkpad X1 Carbon Laptop"));
+		
+	}
+	@Test
+	public void TC_04_Verify_Absolute_Search() {
+		searchPage.inputToSearchTextbox("Lenovo Thinkpad X1 Carbon Laptop");
+		searchPage.clickToSearchButton();
+		
+		verifyTrue(searchPage.getProductsResult("Lenovo Thinkpad X1 Carbon Laptop"));
+		
+	}
+	@Test
+	public void TC_05_Verify_Advance_Search_With_Parent_Category() {
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.uncheckSubCategoryCheckbox();
+		searchPage.clickToSearchButton();
+		
+		verifyEquals(searchPage.getNoResultMessage(), "No products were found that matched your criteria.");	
+	}
+	@Test
+	public void TC_06_Verify_Advance_Search_With_Sub_Category() {
+		
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.checkSubCategoryCheckbox();
+		searchPage.clickToSearchButton();
+		
+		verifyTrue(searchPage.getProductsResult("Apple MacBook Pro 13-inch"));
+	}
+	@Test
+	public void TC_07_Verify_Advance_Search_With_Incorrect_Manufacturer() {
+		
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.checkSubCategoryCheckbox();
+		searchPage.selectManufacturer("HP");
+		searchPage.clickToSearchButton();
+		
+		verifyEquals(searchPage.getNoResultMessage(), "No products were found that matched your criteria.");
+	}
+	@Test
+	public void TC_08_Verify_Advance_Search_With_Correct_Manufacturer() {
+		
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.checkSubCategoryCheckbox();
+		searchPage.selectManufacturer("Apple");
+		searchPage.clickToSearchButton();
+		
+		verifyTrue(searchPage.getProductsResult("Apple MacBook Pro 13-inch"));
+	}
+	@Test
+	public void TC_09_Verify_Advance_Search_Within_Price_Range() {
+		
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.checkSubCategoryCheckbox();
+		searchPage.selectManufacturer("Apple");
+		searchPage.inputToFromPriceTextbox("1000");
+		searchPage.inputToToPriceTextbox("2000");
+		searchPage.clickToSearchButton();
+		
+		verifyTrue(searchPage.getProductsResult("Apple MacBook Pro 13-inch"));
+	}
+	@Test
+	public void TC_10_Verify_Advance_Search_Price_Range_Greater_Than_Product_Price() {
+		
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.checkSubCategoryCheckbox();
+		searchPage.selectManufacturer("Apple");
+		searchPage.inputToFromPriceTextbox("1000");
+		searchPage.inputToToPriceTextbox("1700");
+		searchPage.clickToSearchButton();
+		
+		verifyEquals(searchPage.getNoResultMessage(), "No products were found that matched your criteria.");
+	}
+	@Test
+	public void TC_11_Verify_Advance_Search_Price_Range_Greater_Than_Product_Price() {
+		
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.checkSubCategoryCheckbox();
+		searchPage.selectManufacturer("Apple");
+		searchPage.inputToFromPriceTextbox("1900");
+		searchPage.inputToToPriceTextbox("5000");
+		searchPage.clickToSearchButton();
+		
+		verifyEquals(searchPage.getNoResultMessage(), "No products were found that matched your criteria.");
+	}
 	
 
 	public void Login_In_With_Register_Email_And_correct_Password() {
