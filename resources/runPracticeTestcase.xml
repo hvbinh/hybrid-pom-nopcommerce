@@ -11,7 +11,7 @@
   <parameter name="browser" value="firefox_ui"/>
   <parameter name="url" value="https://admin-demo.nopcommerce.com/"/>
     <classes>
-      <class name="com.nopcommerce.users.Practice_04_Search"/>
+      <class name="com.nopcommerce.users.Practice_05_Computer_Menu"/>
     </classes>
   </test>
 

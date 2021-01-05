@@ -13,7 +13,8 @@
   <test name="Run On CHROME UI">
   <parameter name="browser" value="chrome_ui"/>
     <classes>
-      <class name="com.nopcommerce.users.Level_13_Register_Login_Log_Report_HTML"/>
+      <class name="com.nopcommerce.common.Common_02_Cookie"/>
+      <class name="com.nopcommerce.users.Level_15_Register_Login_Share_State_Part3_Cookie"/>
     </classes>
   </test>
   

@@ -88,4 +88,20 @@ public class UserHomePO extends AbstractPage {
 		return PageGeneratorManager.getUserSearchPage(driver);
 	}
 
+	public void hoverToHeaderMenu(String headerMenu) {
+		waitToElementClickable(driver, UserHomePageUI.DYNAMIC_HEADER_MENU,headerMenu);
+		hoverMouseToElement(driver, UserHomePageUI.DYNAMIC_HEADER_MENU,headerMenu);
+		
+	}
+
+	public UserComputerPO clickToSubmenu(String values) {
+		waitToElementClickable(driver, UserHomePageUI.DYNAMIC_SUB_MENU,values);
+		clickToElement(driver, UserHomePageUI.DYNAMIC_SUB_MENU, values);
+		return PageGeneratorManager.getUserComputerMenuPage(driver);
+	}
+
+
+
+
+
 }

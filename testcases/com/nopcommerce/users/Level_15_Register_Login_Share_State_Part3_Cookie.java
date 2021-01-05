@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.filefilter.MagicNumberFileFilter;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -19,10 +20,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.nopcommerce.common.Common_01_Register;
+import com.nopcommerce.common.Common_02_Cookie;
+
 import commons.AbstractPage;
 import commons.AbstractTest;
 import net.bytebuddy.implementation.bytecode.Throw;
 import pageObjects.UserAddressesPO;
+import pageObjects.UserComputerPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
@@ -33,7 +38,7 @@ import pageObjects.UserRegisterPO;
 import pageObjects.UserSearchPO;
 import pageUIs.UserSearchPageUI;
 
-public class Practice_05_Computer_Left_Menu extends AbstractTest {
+public class Level_15_Register_Login_Share_State_Part3_Cookie extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
@@ -50,68 +55,56 @@ public class Practice_05_Computer_Left_Menu extends AbstractTest {
 
 		driver = getBrowserDriver(browserName);
 
-		// data
-		firstName = "Tony";
-		lastName = "Buoi Sang";
-		email = "tonybuoisang" + randomNumber() + "@gmail.com";
-		companyName = "Tony Buoi Sang company";
-		pass = "123456";
-		// update data
-		updateFirstName = "Automation";
-		updateLastName = "FC";
-		updateEmail = "automationfc." + randomNumber() + ".vn@gmail.com";
-		updateCompanyName = "Automation FC";
-
-		Register();
-		Login_In_With_Register_Email_And_correct_Password();
+		log.info("Precondition - Step 1: Open log in Page");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
-		searchPage = homePage.clickToSearchLink();
+		
+		log.info("Precondition - Step 2: Log in by Cookie");
+		for (Cookie cookie : Common_02_Cookie.allCookies) {
+			driver.manage().addCookie(cookie);
+		}
 
+		homePage.refreshCurrentPage(driver);
+		
+		log.info("Precondition - Step 3: Verify my account link displays");
+		verifyTrue(homePage.isMyAccountLinkDisplayed());
 	}
 
+	@Test
+	public void TC_01_Verify_Sort_Name_Ascending() {
+		
+		
+	}
+	@Test
+	public void TC_02_Verify_Sort_Name_Descending() {
+		
+		
+	}
+	@Test
+	public void TC_03_Verify_Sort_Price_From_Low_To_High() {
+		
+	}
+	@Test
+	public void TC_04_Verify_Sort_Price_From_High_To_Low() {
+
+	}
+	@Test
+	public void TC_05_Verify_Advance_Search_With_Parent_Category() {
+			
+	}
 	
+
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
 
-		loginPage.inputToEmailTextbox(email);
-		loginPage.inputToPasswordTextbox("123456");
+		loginPage.inputToEmailTextbox(Common_01_Register.email);
+		loginPage.inputToPasswordTextbox(Common_01_Register.pass);
 		loginPage.clickToLoginButton();
 
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 	}
 
-	public void Register() {
-		// 1
-		homePage = PageGeneratorManager.getUserHomePage(driver);
-		registerPage = homePage.clickToRegisterLink();
-
-		// 2
-		registerPage.clickToGenderMaleRadioButton();
-
-		registerPage.inputToFirstnameTextBox(firstName);
-
-		registerPage.inputToLastnameTextBox(lastName);
-
-		registerPage.selectDayDropdown("10");
-
-		registerPage.selectMonthDropdown("February");
-
-		registerPage.selectYearDropdown("1990");
-
-		registerPage.inputToEmailTextbox(email);
-		registerPage.inputToCompanyTextbox(companyName);
-		registerPage.inputToPasswordTextbox(pass);
-		registerPage.inputToConfirmPasswordTextbox(pass);
-
-		registerPage.clickToRegisterButton();
-
-		// Assert.assertEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
-
-		homePage = registerPage.clickToLogoutLink();
-
-	}
 
 	@AfterClass
 	public void afterClass() {
@@ -120,9 +113,6 @@ public class Practice_05_Computer_Left_Menu extends AbstractTest {
 	UserHomePO homePage;
 	UserRegisterPO registerPage;
 	UserLoginPO loginPage;
-	UserCustomerInforPO customerInforPage;
-	UserAddressesPO addressesPage;
-	UserOrdersPO ordersPage;
-	UserMyProductReviewsPO myProductPage;
 	UserSearchPO searchPage;
+	UserComputerPO computerPage;
 }

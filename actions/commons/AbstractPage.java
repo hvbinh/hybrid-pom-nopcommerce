@@ -297,6 +297,10 @@ public class AbstractPage {
 		action = new Actions(driver);
 		action.moveToElement(getElement(driver, locator)).perform();
 	}
+	public void hoverMouseToElement(WebDriver driver, String locator,String... values) {
+		action = new Actions(driver);
+		action.moveToElement(getElement(driver, getDynamicLocator(locator, values))).perform();
+	}
 
 	public void clickAndHoldToElement(WebDriver driver, String locator) {
 		action = new Actions(driver);

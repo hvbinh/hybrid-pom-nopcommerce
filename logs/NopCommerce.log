@@ -926,3 +926,56 @@
 [INFO ] [2021-01-01 23:11:55,997]  -------------------------- PASSED -------------------------- 
 [INFO ] [2021-01-01 23:11:58,763]  -------------------------- PASSED -------------------------- 
 [INFO ] [2021-01-01 23:12:01,493]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:03,266]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:05,677]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:07,239]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:07,305]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:09,579]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:12,199]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:15,155]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:18,517]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:20,932]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:23,847]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:26,968]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:29:29,962]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:29,929]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:32,103]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:34,489]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:34,557]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:36,725]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:39,069]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:42,008]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:45,164]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:48,189]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:51,161]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:54,266]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-03 22:32:57,453]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-05 07:35:08,565] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 07:35:08,599] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 07:35:10,005] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 07:41:38,928] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 07:41:38,930] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 07:41:39,213] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 07:57:03,269] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 07:57:03,271] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 07:57:04,641] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 21:48:18,389] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 21:48:18,427] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 21:48:18,725] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 21:55:50,546] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 21:55:50,548] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 21:55:50,852] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 22:19:16,588] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 22:19:16,590] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 22:22:31,799] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 22:22:31,801] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 22:22:32,091] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 22:30:03,870] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 22:30:03,872] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 22:30:04,191] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 22:36:09,419] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 22:36:09,421] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 22:36:10,760] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-05 22:40:58,920] Precondition - Step 1: Open log in Page
+[INFO ] [2021-01-05 22:40:58,922] Precondition - Step 2: Log in by Cookie
+[INFO ] [2021-01-05 22:40:59,216] Precondition - Step 3: Verify my account link displays
