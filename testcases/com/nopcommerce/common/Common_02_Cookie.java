@@ -1,35 +1,16 @@
 package com.nopcommerce.common;
 
-import java.util.Random;
 import java.util.Set;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
-import commons.AbstractPage;
 import commons.AbstractTest;
-import net.bytebuddy.implementation.bytecode.Throw;
-import pageObjects.UserAddressesPO;
-import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewsPO;
-import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 
@@ -46,7 +27,7 @@ public class Common_02_Cookie extends AbstractTest {
 	 */
 	@Parameters("browser")
 	@BeforeTest
-	public void beforeClass(String browserName) {
+	public void beforeTest(String browserName) {
 
 		driver = getBrowserDriver(browserName);
 		
@@ -107,6 +88,7 @@ public class Common_02_Cookie extends AbstractTest {
 		verifyEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
 
 		allCookies = driver.manage().getCookies();
+		System.out.println("common cookie:"+allCookies);
 		
 		driver.quit();
 	}
@@ -126,11 +108,11 @@ public class Common_02_Cookie extends AbstractTest {
 		}
 	}
 
-	@BeforeTest
-	public void afterClass() {
-		
-	}
-
+	/*
+	 * @AfterClass public void afterClass() {
+	 * 
+	 * }
+	 */
 	UserHomePO homePage;
 	UserRegisterPO registerPage;
 	UserLoginPO loginPage;

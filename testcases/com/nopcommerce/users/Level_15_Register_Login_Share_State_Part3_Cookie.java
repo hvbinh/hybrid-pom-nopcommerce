@@ -1,6 +1,7 @@
 package com.nopcommerce.users;
 
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.filefilter.MagicNumberFileFilter;
@@ -62,7 +63,9 @@ public class Level_15_Register_Login_Share_State_Part3_Cookie extends AbstractTe
 		for (Cookie cookie : Common_02_Cookie.allCookies) {
 			driver.manage().addCookie(cookie);
 		}
-
+		/*
+		 * Set<Cookie> allCookies = driver.manage().getCookies(); System.out.println("level 15 cookie:"+allCookies);
+		 */
 		homePage.refreshCurrentPage(driver);
 		
 		log.info("Precondition - Step 3: Verify my account link displays");
