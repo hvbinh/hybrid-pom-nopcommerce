@@ -8,6 +8,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
 import commons.AbstractTest;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
@@ -88,10 +90,10 @@ public class Common_02_Cookie extends AbstractTest {
 		verifyEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
 
 		allCookies = driver.manage().getCookies();
-		System.out.println("common cookie:"+allCookies);
 		
 		driver.quit();
 	}
+
 
 	
 
@@ -108,11 +110,6 @@ public class Common_02_Cookie extends AbstractTest {
 		}
 	}
 
-	/*
-	 * @AfterClass public void afterClass() {
-	 * 
-	 * }
-	 */
 	UserHomePO homePage;
 	UserRegisterPO registerPage;
 	UserLoginPO loginPage;

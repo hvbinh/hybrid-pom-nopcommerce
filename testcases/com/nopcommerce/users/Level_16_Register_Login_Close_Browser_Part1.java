@@ -1,12 +1,10 @@
 package com.nopcommerce.users;
 
 import java.util.Random;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.filefilter.MagicNumberFileFilter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,7 +20,6 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.nopcommerce.common.Common_01_Register;
-import com.nopcommerce.common.Common_02_Cookie;
 
 import commons.AbstractPage;
 import commons.AbstractTest;
@@ -39,7 +36,7 @@ import pageObjects.UserRegisterPO;
 import pageObjects.UserSearchPO;
 import pageUIs.UserSearchPageUI;
 
-public class Level_15_Register_Login_Share_State_Part3_Cookie extends AbstractTest {
+public class Level_16_Register_Login_Close_Browser_Part1 extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
@@ -56,21 +53,11 @@ public class Level_15_Register_Login_Share_State_Part3_Cookie extends AbstractTe
 
 		driver = getBrowserDriver(browserName);
 
-		log.info("Precondition - Step 1: Open log in Page");
+		Login_In_With_Register_Email_And_correct_Password();
 		homePage = PageGeneratorManager.getUserHomePage(driver);
-		loginPage = homePage.clickToLoginLink();
-		
-		log.info("Precondition - Step 2: Log in by Cookie");
-		for (Cookie cookie : Common_02_Cookie.allCookies) {
-			driver.manage().addCookie(cookie);
-		}
-		/*
-		 * Set<Cookie> allCookies = driver.manage().getCookies(); System.out.println("level 15 cookie:"+allCookies);
-		 */
-		homePage.refreshCurrentPage(driver);
-		
-		log.info("Precondition - Step 3: Verify my account link displays");
-		verifyTrue(homePage.isMyAccountLinkDisplayed());
+		homePage.hoverToHeaderMenu("Computers");
+		computerPage = homePage.clickToSubmenu("Notebooks");
+
 	}
 
 	@Test
@@ -110,8 +97,9 @@ public class Level_15_Register_Login_Share_State_Part3_Cookie extends AbstractTe
 	}
 
 
-	@AfterClass
+	@AfterClass(alwaysRun = true)
 	public void afterClass() {
+		closeBrowserAndDriver(driver);
 	}
 
 	UserHomePO homePage;

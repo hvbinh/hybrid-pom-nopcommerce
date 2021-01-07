@@ -13,8 +13,9 @@
   <test name="Run On CHROME UI">
   <parameter name="browser" value="chrome_ui"/>
     <classes>
-      <class name="com.nopcommerce.common.Common_02_Cookie"/>
-      <class name="com.nopcommerce.users.Level_15_Register_Login_Share_State_Part3_Cookie"/>
+      <!-- <class name="com.nopcommerce.common.Common_02_Cookie"/> -->
+      <class name="com.nopcommerce.users.Level_16_Register_Login_Close_Browser_Part1"/>
+      <class name="com.nopcommerce.users.Level_16_Register_Login_Close_Browser_Part2"/>
     </classes>
   </test>
   

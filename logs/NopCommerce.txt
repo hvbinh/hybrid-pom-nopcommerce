@@ -1,3 +1,2 @@
-[INFO ] [2021-01-06 22:04:29,313] Precondition - Step 1: Open log in Page
-[INFO ] [2021-01-06 22:04:29,315] Precondition - Step 2: Log in by Cookie
-[INFO ] [2021-01-06 22:04:30,861] Precondition - Step 3: Verify my account link displays
+[INFO ] [2021-01-07 07:56:53,239] OS name = windows 10
+[INFO ] [2021-01-07 07:56:53,270] 

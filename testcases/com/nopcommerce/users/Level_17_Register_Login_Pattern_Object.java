@@ -30,7 +30,7 @@ import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 
-public class Level_13_Register_Login_Log_Report_HTML extends AbstractTest {
+public class Level_17_Register_Login_Pattern_Object extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
@@ -60,7 +60,12 @@ public class Level_13_Register_Login_Log_Report_HTML extends AbstractTest {
 		log.info("Register - Step 01: Open Home Page");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 
+		log.info("Register - Step 02: Verify Register link displayed");
+		verifyTrue(homePage.isRegisterLinkDisplayed());
 		
+		log.info("Register - Step 03: Verify Login link displayed");
+		verifyTrue(homePage.isLoginLinkDisplayed()); 
+
 		log.info("Register - Step 04: Click to Register link at Home page");
 		registerPage = homePage.clickToRegisterLink();
 
@@ -119,6 +124,20 @@ public class Level_13_Register_Login_Log_Report_HTML extends AbstractTest {
 		log.info("Login - Step 04: Click to Login button");
 		homePage = loginPage.clickToLoginButton();
 
+		log.info("Login - Step 05: Verify My Account link displayed");
+		verifyTrue(homePage.isMyAccountLinkDisplayed()); 
+		
+		log.info("Login - Step 06: Verify Logout link displayed");
+		verifyTrue(homePage.isLogoutLinkDisplayed());
+		
+		log.info("Login - Step 07: Verify Register link undisplayed");
+		verifyTrue(homePage.isRegisterLinkUndisplayed());
+		
+		log.info("Login - Step 08: Verify Login link undisplayed");
+		verifyTrue(homePage.isLoginLinkUndisplayed());
+		
+		log.info("Login - Step 09: Verify Tooltip undisplayed");
+		verifyFalse(homePage.isTooltipUndisplayed());
 	}
 
 	//@Test
