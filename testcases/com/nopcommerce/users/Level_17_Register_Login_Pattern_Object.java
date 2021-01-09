@@ -54,75 +54,100 @@ public class Level_17_Register_Login_Pattern_Object extends AbstractTest {
 		pass = "123456";
 
 	}
+	@Test
+	public void Tc_01_Validate_At_Register()
+	{
+		log.info("Validate - Step 01: Open Home Page");
+		homePage = PageGeneratorManager.getUserHomePage(driver);
+		
+		log.info("Validate - Step 02: Click to Register link at Home page");
+		registerPage = homePage.clickToRegisterLink();
+		
+		log.info("Validate - Step 03: Click to Register button");
+		registerPage.clickToRegisterButton();
+		
+		log.info("Validate - Step 04: Verify error message displays at FirstName textbox");
+		verifyEquals(registerPage.getErrorMessageAtMandatoryByID(driver, "FirstName"), "First name is required.");
+		
+		log.info("Validate - Step 05: Verify error message displays at LastName textbox");
+		verifyEquals(registerPage.getErrorMessageAtMandatoryByID(driver, "LastName"), "Last name is required.");
+		
+		log.info("Validate - Step 06: Verify error message displays at Email textbox");
+		verifyEquals(registerPage.getErrorMessageAtMandatoryByID(driver, "Email"), "Email is required.");
+		
+		log.info("Validate - Step 07: Verify error message displays at Password textbox");
+		verifyEquals(registerPage.getErrorMessageAtMandatoryByID(driver, "Password"), "Password is required.");
+		
+		log.info("Validate - Step 08: Verify error message displays at Password textbox");
+		verifyEquals(registerPage.getErrorMessageAtMandatoryByID(driver, "ConfirmPassword"), "Password is required.");
+		
+		
+	}
 
 	@Test
-	public void Tc_01_Register() {
+	public void Tc_02_Register_Success() {
 		log.info("Register - Step 01: Open Home Page");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 
-		log.info("Register - Step 02: Verify Register link displayed");
-		verifyTrue(homePage.isRegisterLinkDisplayed());
-		
-		log.info("Register - Step 03: Verify Login link displayed");
-		verifyTrue(homePage.isLoginLinkDisplayed()); 
-
-		log.info("Register - Step 04: Click to Register link at Home page");
+		log.info("Register - Step 02: Click to Register link at Home page");
 		registerPage = homePage.clickToRegisterLink();
 
-		log.info("Register - Step 05: Click to Gender Male radio button");
-		registerPage.clickToGenderMaleRadioButton();
+		log.info("Register - Step 03: Click to Gender Male radio button");
+		registerPage.clickToRadioButtonByID(driver, "male");
 
-		log.info("Register - Step 06: Input to Firstname textbox with value: "+firstName);
-		registerPage.inputToFirstnameTextBox(firstName);
+		log.info("Register - Step 04: Input to Firstname textbox with value: "+firstName);
+		registerPage.inputToTexboxByID(driver, "FirstName", firstName);
 
-		log.info("Register - Step 07: Input to Lastname textbox with value: "+lastName);
-		registerPage.inputToLastnameTextBox(lastName);
+		log.info("Register - Step 05: Input to Lastname textbox with value: "+lastName);
+		registerPage.inputToTexboxByID(driver, "LastName", lastName);
 
-		log.info("Register - Step 08: Select Day dropdown");
-		registerPage.selectDayDropdown("10");
+		log.info("Register - Step 06: Select Day dropdown");
+		registerPage.selectDropdownByName(driver, "DateOfBirthDay", "10");
 
-		log.info("Register - Step 09: Select Month dropdown");
+		log.info("Register - Step 07: Select Month dropdown");
 		registerPage.selectMonthDropdown("February");
+		registerPage.selectDropdownByName(driver, "DateOfBirthMonth", "February");
 
-		log.info("Register - Step 10: Select Year dropdown");
-		registerPage.selectYearDropdown("1990");
+		log.info("Register - Step 08: Select Year dropdown");
+		registerPage.selectDropdownByName(driver, "DateOfBirthYear", "1990");
 
-		log.info("Register - Step 11: Input to Email textbox with value: "+email);
-		registerPage.inputToEmailTextbox(email);
+		log.info("Register - Step 09: Input to Email textbox with value: "+email);
+		registerPage.inputToTexboxByID(driver, "Email", email);
 		
-		log.info("Register - Step 12: Input to Company textbox with value: "+companyName);
-		registerPage.inputToCompanyTextbox(companyName);
+		log.info("Register - Step 10: Input to Company textbox with value: "+companyName);
+		registerPage.inputToTexboxByID(driver, "Company", companyName);
 		
-		log.info("Register - Step 13: Input to Password textbox with value: "+pass);
-		registerPage.inputToPasswordTextbox(pass);
+		log.info("Register - Step 11: Input to Password textbox with value: "+pass);
+		registerPage.inputToTexboxByID(driver, "Password", pass);
 		
-		log.info("Register - Step 14: Input to confirm Password textbox with value: "+pass);
-		registerPage.inputToConfirmPasswordTextbox(pass);
+		log.info("Register - Step 12: Input to confirm Password textbox with value: "+pass);
+		registerPage.inputToTexboxByID(driver, "ConfirmPassword", pass);
 
-		log.info("Register - Step 15: Click to Register button");
+		log.info("Register - Step 13: Click to Register button");
 		registerPage.clickToRegisterButton();
 
-		log.info("Register - Step 16: Verify Register success message displayed");
+		log.info("Register - Step 17: Verify Register success message displayed");
 		verifyEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
 
-		log.info("Register - Step 17: Click to Logout link and navigate to Home Page");
+		log.info("Register - Step 18: Click to Logout link and navigate to Home Page");
 		homePage = registerPage.clickToLogoutLink();
 
 	}
 
 	@Test
-	public void Tc_02_Login() {
+	public void Tc_03_Login_Success() {
 		log.info("Login - Step 01: Open Login Page");
 		loginPage = homePage.clickToLoginLink();
 
 		log.info("Login - Step 02: Input to Email textbox with value: "+email);
-		loginPage.inputToEmailTextbox(email);
+		loginPage.inputToTexboxByID(driver, "Email", email);
 		
 		log.info("Login - Step 03: Input to Password textbox with value: "+pass);
-		loginPage.inputToPasswordTextbox(pass);
+		loginPage.inputToTexboxByID(driver, "Password", pass);
 
 		log.info("Login - Step 04: Click to Login button");
-		homePage = loginPage.clickToLoginButton();
+		homePage.clickToButtonByValue(driver, "Log in");
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 
 		log.info("Login - Step 05: Verify My Account link displayed");
 		verifyTrue(homePage.isMyAccountLinkDisplayed()); 
@@ -137,64 +162,10 @@ public class Level_17_Register_Login_Pattern_Object extends AbstractTest {
 		verifyTrue(homePage.isLoginLinkUndisplayed());
 		
 		log.info("Login - Step 09: Verify Tooltip undisplayed");
-		verifyFalse(homePage.isTooltipUndisplayed());
+		verifyTrue(homePage.isTooltipUndisplayed());
 	}
 
-	//@Test
-	public void Tc_03_View_My_Account() {
-		customerInforPage = homePage.clickToMyAccountLink();
 
-		// 6
-		Assert.assertTrue(customerInforPage.isGenderMaleRadioButtonSelected());
-
-		Assert.assertEquals(customerInforPage.getFirstnameTextboxValue(), firstName);
-		Assert.assertEquals(customerInforPage.getLastnameTextboxValue(), lastName);
-
-		Assert.assertEquals(customerInforPage.getSelectedTextInDayDropdown(), "10");
-		Assert.assertEquals(customerInforPage.getSelectedTextInMonthDropdown(), "February");
-		Assert.assertEquals(customerInforPage.getSelectedTextInYearDropdown(), "1990");
-
-		Assert.assertEquals(customerInforPage.getEmailTextboxValue(), email);
-		Assert.assertEquals(customerInforPage.getCompanyTextboxValue(), companyName);
-
-		Assert.assertTrue(customerInforPage.isNewsLetterCheckboxSelected());
-
-	}
-
-	//@Test
-	public void Tc_04_Switch_Page_solution1() {
-		// customer infor -> Addresses
-		addressesPage =(UserAddressesPO) customerInforPage.openLinkByPageName(driver, "Addresses");
-		customerInforPage = (UserCustomerInforPO)addressesPage.openLinkByPageName(driver, "Customer info");
-		myProductPage =(UserMyProductReviewsPO) customerInforPage.openLinkByPageName(driver, "My product reviews");
-		customerInforPage = (UserCustomerInforPO) myProductPage.openLinkByPageName(driver, "Customer info");
-		addressesPage =(UserAddressesPO) customerInforPage.openLinkByPageName(driver, "Addresses");
-		// addresses -> my product review
-		myProductPage = (UserMyProductReviewsPO)addressesPage.openLinkByPageName(driver, "My product reviews");
-		// my product review -> order
-		ordersPage =(UserOrdersPO) myProductPage.openLinkByPageName(driver, "Order");
-
-		// order -> addresses
-		addressesPage =(UserAddressesPO) ordersPage.openLinkByPageName(driver, "Addresses");
-
-		// addresses -> customer infor
-		customerInforPage =(UserCustomerInforPO) addressesPage.openLinkByPageName(driver, "Customer info");
-
-	}
-	//@Test
-	public void Tc_05_Switch_Page_solution2() {
-		customerInforPage.openLinkWithPageName(driver, "Addresses");
-		addressesPage = PageGeneratorManager.getUserAddressesPage(driver);
-		
-		addressesPage.openLinkWithPageName(driver, "Customer info");
-		customerInforPage = PageGeneratorManager.getUserCustomerInforPage(driver);
-		
-		customerInforPage.openLinkWithPageName(driver, "My product reviews");
-		myProductPage = PageGeneratorManager.getUserMyProductReviewsPage(driver);
-		
-		
-
-	}
 	
 
 	/**
@@ -211,6 +182,7 @@ public class Level_17_Register_Login_Pattern_Object extends AbstractTest {
 
 	@AfterClass
 	public void afterClass() {
+		closeBrowserAndDriver(driver);
 	}
 
 	UserHomePO homePage;

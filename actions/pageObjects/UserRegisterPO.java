@@ -104,9 +104,9 @@ public class UserRegisterPO extends AbstractPage{
 	}
 
 	public String getRegisteredErrorMessage(String errorName) {
-		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE, errorName);
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, errorName);
 		
-		return getElementText(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE, errorName);
+		return getElementText(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, errorName);
 	}
 
 	public String getRegisteredExistedErrorMessage() {

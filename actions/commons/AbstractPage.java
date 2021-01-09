@@ -165,6 +165,11 @@ public class AbstractPage {
 		select = new Select(element);
 		select.selectByVisibleText(itemValue);
 	}
+	public void selectItemInDropdown(WebDriver driver, String locator, String itemValue,String... values) {
+		element = getElement(driver, getDynamicLocator(locator, values));
+		select = new Select(element);
+		select.selectByVisibleText(itemValue);
+	}
 
 	public String getFirstSelectedTextInDropDown(WebDriver driver, String locator) {
 		element = getElement(driver, locator);
@@ -199,6 +204,7 @@ public class AbstractPage {
 		}
 
 	}
+
 
 	public void sleepInSecond(long second) {
 
@@ -534,7 +540,32 @@ public class AbstractPage {
 	{
 		driver.manage().timeouts().implicitlyWait(timeSecond, TimeUnit.SECONDS);
 	}
-
+	public void clickToRadioButtonByID(WebDriver driver,String radioButtonID)
+	{
+		waitToElementClickable(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON_BY_ID,radioButtonID);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_RADIO_BUTTON_BY_ID,radioButtonID);
+	}
+	public void inputToTexboxByID(WebDriver driver, String textBoxID,String value)
+	{
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BY_ID, textBoxID);
+		sendkeyToElement(driver, AbstractPageUI.DYNAMIC_TEXTBOX_BY_ID, value, textBoxID);
+	}
+	public void clickToButtonByValue(WebDriver driver, String buttonValue)
+	{
+		waitToElementClickable(driver, AbstractPageUI.DYNAMIC_BUTTON_BY_VALUE,buttonValue);
+		clickToElement(driver, AbstractPageUI.DYNAMIC_BUTTON_BY_VALUE, buttonValue);
+	}
+	public void selectDropdownByName(WebDriver driver, String dropdownName,String itemValue)
+	{
+		waitToElementClickable(driver, AbstractPageUI.DYNAMIC_DROPDOWN_BY_NAME, dropdownName);
+		selectItemInDropdown(driver, AbstractPageUI.DYNAMIC_DROPDOWN_BY_NAME, itemValue, dropdownName);
+	}
+	public String getErrorMessageAtMandatoryByID(WebDriver driver, String fieldID)
+	{
+		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
+		return getElementText(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
+	}
+	
 	private WebDriverWait explicitWait;
 	private WebElement element;
 	private JavascriptExecutor jsExecutor;
