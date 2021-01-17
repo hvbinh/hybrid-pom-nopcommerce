@@ -25,7 +25,7 @@ import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewsPO;
+import pageObjects.UserProductDetailPO;
 import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
@@ -131,11 +131,11 @@ public class Level_08_Register_Login_Page_Rest_Parameter extends AbstractTest {
 		// customer infor -> Addresses
 		addressesPage =(UserAddressesPO) customerInforPage.openLinkByPageName(driver, "Addresses");
 		customerInforPage = (UserCustomerInforPO)addressesPage.openLinkByPageName(driver, "Customer info");
-		myProductPage =(UserMyProductReviewsPO) customerInforPage.openLinkByPageName(driver, "My product reviews");
+		myProductPage =(UserProductDetailPO) customerInforPage.openLinkByPageName(driver, "My product reviews");
 		customerInforPage = (UserCustomerInforPO) myProductPage.openLinkByPageName(driver, "Customer info");
 		addressesPage =(UserAddressesPO) customerInforPage.openLinkByPageName(driver, "Addresses");
 		// addresses -> my product review
-		myProductPage = (UserMyProductReviewsPO)addressesPage.openLinkByPageName(driver, "My product reviews");
+		myProductPage = (UserProductDetailPO)addressesPage.openLinkByPageName(driver, "My product reviews");
 		// my product review -> order
 		ordersPage =(UserOrdersPO) myProductPage.openLinkByPageName(driver, "Order");
 
@@ -184,5 +184,5 @@ public class Level_08_Register_Login_Page_Rest_Parameter extends AbstractTest {
 	UserCustomerInforPO customerInforPage;
 	UserAddressesPO addressesPage;
 	UserOrdersPO ordersPage;
-	UserMyProductReviewsPO myProductPage;
+	UserProductDetailPO myProductPage;
 }

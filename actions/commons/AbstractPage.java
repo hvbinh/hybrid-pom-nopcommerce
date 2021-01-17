@@ -18,13 +18,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInforPO;
-import pageObjects.UserMyProductReviewsPO;
 import pageObjects.UserOrdersPO;
+import pageObjects.UserProductDetailPO;
 import pageObjects.PageGeneratorManager;
 import pageUIs.AbstractPageUI;
 import pageUIs.UserAddressesPageUI;
 import pageUIs.UserCustomerInforPageUI;
-import pageUIs.UserMyProductReviewsPageUI;
 import pageUIs.UserOrdersPageUI;
 
 public class AbstractPage {
@@ -462,11 +461,10 @@ public class AbstractPage {
 		return PageGeneratorManager.getUserAddressesPage(driver);
 	}
 
-	public UserMyProductReviewsPO openMyProductReviewsPage(WebDriver driver) {
-		waitToElementClickable(driver, AbstractPageUI.MY_PRODUCT_REVIEWS_LINK);
-		clickToElement(driver, AbstractPageUI.MY_PRODUCT_REVIEWS_LINK);
-		return PageGeneratorManager.getUserMyProductReviewsPage(driver);
-	}
+	/*
+	 * public UserProductReviewsPO openMyProductReviewsPage(WebDriver driver) { waitToElementClickable(driver, AbstractPageUI.MY_PRODUCT_REVIEWS_LINK);
+	 * clickToElement(driver, AbstractPageUI.MY_PRODUCT_REVIEWS_LINK); return PageGeneratorManager.getUserMyProductReviewsPage(driver); }
+	 */
 
 	public UserCustomerInforPO openCustomerInforPage(WebDriver driver) {
 		waitToElementClickable(driver, AbstractPageUI.CUSTOMER_INFOR_LINK);
@@ -564,6 +562,11 @@ public class AbstractPage {
 	{
 		waitToElementVisible(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
 		return getElementText(driver, AbstractPageUI.DYNAMIC_ERROR_MESSAGE_BY_ID, fieldID);
+	}
+	public UserProductDetailPO clickToProductTitleByName(WebDriver driver, String productName) {
+		waitToElementClickable(driver, AbstractPageUI.DYNAMIC_LINK_BY_NAME, productName);
+		clickToElement(driver,AbstractPageUI.DYNAMIC_LINK_BY_NAME, productName);
+		return PageGeneratorManager.getUserProductDetailPO(driver);
 	}
 	
 	private WebDriverWait explicitWait;

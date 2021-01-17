@@ -27,9 +27,9 @@ public class PageGeneratorManager {
 	{
 		return new UserOrdersPO(driver);
 	}
-	public static UserMyProductReviewsPO getUserMyProductReviewsPage(WebDriver driver)
+	public static UserProductDetailPO getUserMyProductReviewsPage(WebDriver driver)
 	{
-		return new UserMyProductReviewsPO(driver);
+		return new UserProductDetailPO(driver);
 	}
 	public static AdminLoginPO getAdminLoginPage(WebDriver driver)
 	{
@@ -50,6 +50,14 @@ public class PageGeneratorManager {
 	public static UserComputerPO getUserComputerMenuPage(WebDriver driver)
 	{
 		return new UserComputerPO(driver);
+	}
+	public static UserProductDetailPO getUserProductDetailPO(WebDriver driver)
+	{
+		return new UserProductDetailPO(driver);
+	}
+	public static UserWishlistPO getUserWishlistPO(WebDriver driver)
+	{
+		return new UserWishlistPO(driver);
 	}
 
 }

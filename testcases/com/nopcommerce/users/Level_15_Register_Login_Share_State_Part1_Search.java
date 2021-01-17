@@ -28,7 +28,7 @@ import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewsPO;
+import pageObjects.UserProductDetailPO;
 import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;

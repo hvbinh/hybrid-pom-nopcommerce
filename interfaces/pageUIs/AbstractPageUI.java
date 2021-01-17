@@ -20,4 +20,6 @@ public class AbstractPageUI {
 	public static final String DYNAMIC_DROPDOWN_BY_NAME = "//select[@name='%s']";
 	public static final String DYNAMIC_BUTTON_BY_VALUE = "//input[@value='%s']";
 	
+	public static final String DYNAMIC_LINK_BY_NAME = "//h2[@class='product-title']/a[text()='%s']";
+	
 }

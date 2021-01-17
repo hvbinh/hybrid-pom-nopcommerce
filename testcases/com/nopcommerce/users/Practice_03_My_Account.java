@@ -26,7 +26,7 @@ import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewsPO;
+import pageObjects.UserProductDetailPO;
 import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
@@ -219,5 +219,5 @@ public class Practice_03_My_Account extends AbstractTest {
 	UserCustomerInforPO customerInforPage;
 	UserAddressesPO addressesPage;
 	UserOrdersPO ordersPage;
-	UserMyProductReviewsPO myProductPage;
+	UserProductDetailPO myProductPage;
 }

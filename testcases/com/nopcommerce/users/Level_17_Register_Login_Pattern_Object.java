@@ -25,7 +25,7 @@ import pageObjects.UserAddressesPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewsPO;
+import pageObjects.UserProductDetailPO;
 import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
@@ -191,5 +191,5 @@ public class Level_17_Register_Login_Pattern_Object extends AbstractTest {
 	UserCustomerInforPO customerInforPage;
 	UserAddressesPO addressesPage;
 	UserOrdersPO ordersPage;
-	UserMyProductReviewsPO myProductPage;
+	UserProductDetailPO myProductPage;
 }

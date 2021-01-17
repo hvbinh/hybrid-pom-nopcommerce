@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPage;
 import pageUIs.AbstractPageUI;
-import pageUIs.UserMyProductReviewsPageUI;
+import pageUIs.UserProductDetailPageUI;
 import pageUIs.UserOrdersPageUI;
 
 public class UserOrdersPO extends AbstractPage{

@@ -27,14 +27,14 @@ import pageObjects.UserComputerPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
-import pageObjects.UserMyProductReviewsPO;
+import pageObjects.UserProductDetailPO;
 import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 import pageObjects.UserSearchPO;
 import pageUIs.UserSearchPageUI;
 
-public class Practice_05_Computer_Menu extends AbstractTest {
+public class Practice_05_Sort_Dislay_Paging extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
@@ -130,7 +130,7 @@ public class Practice_05_Computer_Menu extends AbstractTest {
 	UserCustomerInforPO customerInforPage;
 	UserAddressesPO addressesPage;
 	UserOrdersPO ordersPage;
-	UserMyProductReviewsPO myProductPage;
+	UserProductDetailPO myProductPage;
 	UserSearchPO searchPage;
 	UserComputerPO computerPage;
 }

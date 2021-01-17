@@ -7,11 +7,12 @@
 	<listener class-name="reportConfig.ExtentReportListenerVersion4"/>
 </listeners>
 
-  <test name="Run On FIREFOX UI">
-  <parameter name="browser" value="firefox_ui"/>
+  <test name="Run On CHROME UI">
+  <parameter name="browser" value="chrome_ui"/>
   <parameter name="url" value="https://admin-demo.nopcommerce.com/"/>
     <classes>
-      <class name="com.nopcommerce.users.Practice_05_Computer_Menu"/>
+      <class name="com.nopcommerce.common.Common_01_Register"/>
+      <class name="com.nopcommerce.users.Practice_06_Wishlist_Compage"/>
     </classes>
   </test>
 

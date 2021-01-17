@@ -1,45 +1,6 @@
-[INFO ] [2021-01-09 23:43:02,513] Validate - Step 01: Open Home Page
-[INFO ] [2021-01-09 23:43:02,525] Validate - Step 02: Click to Register link at Home page
-[INFO ] [2021-01-09 23:43:05,994] Validate - Step 03: Click to Register button
-[INFO ] [2021-01-09 23:43:06,460] Validate - Step 04: Verify error message displays at FirstName textbox
-[INFO ] [2021-01-09 23:43:06,699]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:06,700] Validate - Step 05: Verify error message displays at LastName textbox
-[INFO ] [2021-01-09 23:43:06,939]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:06,939] Validate - Step 06: Verify error message displays at Email textbox
-[INFO ] [2021-01-09 23:43:07,222]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:07,222] Validate - Step 07: Verify error message displays at Password textbox
-[INFO ] [2021-01-09 23:43:07,466]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:07,467] Validate - Step 08: Verify error message displays at Password textbox
-[INFO ] [2021-01-09 23:43:07,701]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:07,709] Register - Step 01: Open Home Page
-[INFO ] [2021-01-09 23:43:07,710] Register - Step 02: Click to Register link at Home page
-[INFO ] [2021-01-09 23:43:09,469] Register - Step 03: Click to Gender Male radio button
-[INFO ] [2021-01-09 23:43:09,814] Register - Step 04: Input to Firstname textbox with value: Tony
-[INFO ] [2021-01-09 23:43:10,258] Register - Step 05: Input to Lastname textbox with value: Buoi Sang
-[INFO ] [2021-01-09 23:43:10,701] Register - Step 06: Select Day dropdown
-[INFO ] [2021-01-09 23:43:11,179] Register - Step 07: Select Month dropdown
-[INFO ] [2021-01-09 23:43:11,925] Register - Step 08: Select Year dropdown
-[INFO ] [2021-01-09 23:43:12,397] Register - Step 09: Input to Email textbox with value: tonybuoisang137056@gmail.com
-[INFO ] [2021-01-09 23:43:13,015] Register - Step 10: Input to Company textbox with value: Tony Buoi Sang company
-[INFO ] [2021-01-09 23:43:13,428] Register - Step 11: Input to Password textbox with value: 123456
-[INFO ] [2021-01-09 23:43:13,758] Register - Step 12: Input to confirm Password textbox with value: 123456
-[INFO ] [2021-01-09 23:43:14,079] Register - Step 13: Click to Register button
-[INFO ] [2021-01-09 23:43:15,362] Register - Step 17: Verify Register success message displayed
-[INFO ] [2021-01-09 23:43:15,535]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:15,535] Register - Step 18: Click to Logout link and navigate to Home Page
-[INFO ] [2021-01-09 23:43:18,145] Login - Step 01: Open Login Page
-[INFO ] [2021-01-09 23:43:19,253] Login - Step 02: Input to Email textbox with value: tonybuoisang137056@gmail.com
-[INFO ] [2021-01-09 23:43:19,842] Login - Step 03: Input to Password textbox with value: 123456
-[INFO ] [2021-01-09 23:43:20,370] Login - Step 04: Click to Login button
-[INFO ] [2021-01-09 23:43:22,612] Login - Step 05: Verify My Account link displayed
-[INFO ] [2021-01-09 23:43:22,898]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:22,899] Login - Step 06: Verify Logout link displayed
-[INFO ] [2021-01-09 23:43:23,109]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:23,110] Login - Step 07: Verify Register link undisplayed
-[INFO ] [2021-01-09 23:43:33,340]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:33,341] Login - Step 08: Verify Login link undisplayed
-[INFO ] [2021-01-09 23:43:43,519]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:43,520] Login - Step 09: Verify Tooltip undisplayed
-[INFO ] [2021-01-09 23:43:43,812]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-09 23:43:43,815] OS name = windows 10
-[INFO ] [2021-01-09 23:43:44,866] ---------- QUIT BROWSER SUCCESS ----------
+[INFO ] [2021-01-18 00:12:48,687]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-18 00:12:51,937]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-18 00:12:54,466]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-18 00:12:54,549]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-18 00:12:54,637]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-18 00:12:54,711]  -------------------------- PASSED -------------------------- 

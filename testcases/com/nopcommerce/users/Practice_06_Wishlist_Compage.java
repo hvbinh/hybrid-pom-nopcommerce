@@ -1,17 +1,6 @@
 package com.nopcommerce.users;
 
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.filefilter.MagicNumberFileFilter;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -21,9 +10,7 @@ import org.testng.annotations.Test;
 
 import com.nopcommerce.common.Common_01_Register;
 
-import commons.AbstractPage;
 import commons.AbstractTest;
-import net.bytebuddy.implementation.bytecode.Throw;
 import pageObjects.UserAddressesPO;
 import pageObjects.UserComputerPO;
 import pageObjects.UserCustomerInforPO;
@@ -34,9 +21,9 @@ import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 import pageObjects.UserSearchPO;
-import pageUIs.UserSearchPageUI;
+import pageObjects.UserWishlistPO;
 
-public class Level_16_Register_Login_Close_Browser_Part1 extends AbstractTest {
+public class Practice_06_Wishlist_Compage extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
@@ -55,34 +42,31 @@ public class Level_16_Register_Login_Close_Browser_Part1 extends AbstractTest {
 
 		Login_In_With_Register_Email_And_correct_Password();
 		homePage = PageGeneratorManager.getUserHomePage(driver);
-		homePage.hoverToHeaderMenu("Computers");
-		computerPage = homePage.clickToSubmenu("Notebooks");
-
-	}
-
-	@Test
-	public void TC_01_Verify_Sort_Name_Ascending() {
-		
+		searchPage = homePage.clickToSearchLink();
 		
 	}
 	@Test
-	public void TC_02_Verify_Sort_Name_Descending() {
+	public void TC_01_Add_Product_To_Whishlist()
+	{
+		searchPage.inputToSearchTextbox("Apple MacBook Pro");
+		searchPage.checkToAdvanceSearchCheckbox();
+		searchPage.selectCategory("Computers");
+		searchPage.checkSubCategoryCheckbox();
+		searchPage.selectManufacturer("Apple");
+		searchPage.clickToSearchButton();
 		
+		verifyTrue(searchPage.getProductsResult("Apple MacBook Pro 13-inch"));
 		
+		productDetailPage = searchPage.clickToProductTitleByName(driver, "Apple MacBook Pro 13-inch");
+		productDetailPage.clickToAddToWishlistButton("add-to-wishlist");
+		verifyEquals(productDetailPage.getNotificationSuccessMessage(), "The product has been added to your wishlist");
+		productDetailPage.closeNotificationSuccessMessage();
+		wishlistPage = productDetailPage.clickToWishlistHeaderLink("wishlist-label");
+		verifyEquals(wishlistPage.getProductName("product-name"), "Apple MacBook Pro 13-inch");
+		verifyEquals(wishlistPage.getSKU("sku-number"), "AP_MBP_13");
+		verifyEquals(wishlistPage.getPrice("product-unit-price"), "$1,800.00");
+		verifyEquals(wishlistPage.getQuantity(), "2");	
 	}
-	@Test
-	public void TC_03_Verify_Sort_Price_From_Low_To_High() {
-		
-	}
-	@Test
-	public void TC_04_Verify_Sort_Price_From_High_To_Low() {
-
-	}
-	@Test
-	public void TC_05_Verify_Advance_Search_With_Parent_Category() {
-			
-	}
-	
 
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
@@ -96,15 +80,22 @@ public class Level_16_Register_Login_Close_Browser_Part1 extends AbstractTest {
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 	}
 
+	
 
-	@AfterClass(alwaysRun = true)
+	@AfterClass
 	public void afterClass() {
-		closeBrowserAndDriver(driver);
 	}
 
 	UserHomePO homePage;
 	UserRegisterPO registerPage;
 	UserLoginPO loginPage;
+	UserCustomerInforPO customerInforPage;
+	UserAddressesPO addressesPage;
+	UserOrdersPO ordersPage;
+	UserProductDetailPO myProductPage;
 	UserSearchPO searchPage;
 	UserComputerPO computerPage;
+	UserProductDetailPO productDetailPage;
+	UserWishlistPO wishlistPage;
+	
 }
