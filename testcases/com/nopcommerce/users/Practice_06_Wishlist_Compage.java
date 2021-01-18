@@ -21,6 +21,7 @@ import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
 import pageObjects.UserSearchPO;
+import pageObjects.UserShoppingCartPO;
 import pageObjects.UserWishlistPO;
 
 public class Practice_06_Wishlist_Compage extends AbstractTest {
@@ -61,13 +62,26 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 		productDetailPage.clickToAddToWishlistButton("add-to-wishlist");
 		verifyEquals(productDetailPage.getNotificationSuccessMessage(), "The product has been added to your wishlist");
 		productDetailPage.closeNotificationSuccessMessage();
+		
 		wishlistPage = productDetailPage.clickToWishlistHeaderLink("wishlist-label");
 		verifyEquals(wishlistPage.getProductName("product-name"), "Apple MacBook Pro 13-inch");
 		verifyEquals(wishlistPage.getSKU("sku-number"), "AP_MBP_13");
 		verifyEquals(wishlistPage.getPrice("product-unit-price"), "$1,800.00");
 		verifyEquals(wishlistPage.getQuantity(), "2");	
+		
+		wishlistPage.clickToWishlistShareLink();
+		verifyEquals(wishlistPage.getWishlistPageTitle(), "Wishlist of "+Common_01_Register.firstName+" "+Common_01_Register.lastName);
 	}
-
+	@Test
+	public void TC_02_Add_Product_To_Cart_From_Wishlist()
+	{
+		wishlistPage.clickToAddToCartCheckbox();
+		String wishlistNumber = wishlistPage.getWishlistNumber();
+		shoppingCartPage = wishlistPage.clickToAddToCartButton();
+		String shoppingCartNumber = shoppingCartPage.getWishlistNumber();
+		verifyEquals(wishlistNumber, shoppingCartNumber);
+		
+	}
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
@@ -80,7 +94,6 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 	}
 
-	
 
 	@AfterClass
 	public void afterClass() {
@@ -97,5 +110,6 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 	UserComputerPO computerPage;
 	UserProductDetailPO productDetailPage;
 	UserWishlistPO wishlistPage;
+	UserShoppingCartPO shoppingCartPage;
 	
 }

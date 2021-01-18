@@ -52,6 +52,7 @@ public class UserCustomerInforPageUI {
 	public static final String REVIEW_TITLE_TEXT = "//div[@class='product-review-item'][1]//div[@class='review-title']/strong";
 	public static final String REVIEW_TEXT = "//div[@class='product-review-item'][1]//div[@class='review-content']/div[@class='review-text']";
 	public static final String REVIEW_RATING_OPTION = "//div[@class='product-review-item'][1]//div[@class='rating']/div";
+	public static final String REVIEW_PRODUCT_LEFT_MENU = "//a[@href='/customer/productreviews']";
 	
 
 	

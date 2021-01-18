@@ -26,6 +26,7 @@ import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
 import pageObjects.UserProductDetailPO;
+import pageObjects.UserProductReviewPO;
 import pageObjects.UserOrdersPO;
 import pageObjects.PageGeneratorManager;
 import pageObjects.UserRegisterPO;
@@ -127,6 +128,7 @@ public class Level_07_Register_Login_Page_Switch_Page_Type extends AbstractTest 
 	}
 
 	@Test
+	// dang sai, can sua
 	public void Tc_04_Switch_Page() {
 		// customer infor -> Addresses
 		addressesPage = customerInforPage.openAddressesPage(driver);
@@ -170,5 +172,5 @@ public class Level_07_Register_Login_Page_Switch_Page_Type extends AbstractTest 
 	UserCustomerInforPO customerInforPage;
 	UserAddressesPO addressesPage;
 	UserOrdersPO ordersPage;
-	UserProductDetailPO myProductPage;
+	UserProductReviewPO myProductPage;
 }

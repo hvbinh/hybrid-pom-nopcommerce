@@ -18,7 +18,7 @@ public class Common_01_Register extends AbstractTest {
 	WebDriver driver;
 	Select selectDay, selectMonth, selectYear;
 
-	String firstName, lastName, companyName,  confirmPass;
+	public static String firstName, lastName, companyName,  confirmPass;
 	public static String email, pass;
 	
 

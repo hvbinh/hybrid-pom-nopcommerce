@@ -349,6 +349,12 @@ public class UserCustomerInforPO extends AbstractPage{
 		return getElementAtribute(driver, UserCustomerInforPageUI.REVIEW_RATING_OPTION, attribute);
 	}
 
+	public UserProductReviewPO openMyProductReviewsPage(WebDriver driver2) {
+		waitToElementClickable(driver2, UserCustomerInforPageUI.REVIEW_PRODUCT_LEFT_MENU);
+		clickToElement(driver2, UserCustomerInforPageUI.REVIEW_PRODUCT_LEFT_MENU);
+		return PageGeneratorManager.getUserProductReviewPO(driver2);
+	}
+
 
 
 

@@ -59,5 +59,13 @@ public class PageGeneratorManager {
 	{
 		return new UserWishlistPO(driver);
 	}
+	public static UserProductReviewPO getUserProductReviewPO(WebDriver driver)
+	{
+		return new UserProductReviewPO(driver);
+	}
+	public static UserShoppingCartPO getUserShoppingCartPO(WebDriver driver)
+	{
+		return new UserShoppingCartPO(driver);
+	}
 
 }

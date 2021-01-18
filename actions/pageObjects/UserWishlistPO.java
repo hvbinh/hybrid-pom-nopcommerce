@@ -36,10 +36,33 @@ public class UserWishlistPO extends AbstractPage{
 		waitToElementVisible(driver, UserWishlistPageUI.PRODUCT_QUANTITY_BY_VALUE);
 		return getElementAtribute(driver, UserWishlistPageUI.PRODUCT_QUANTITY_BY_VALUE, "value");
 	}
-	
 
+	public void clickToWishlistShareLink() {
+		waitToElementClickable(driver, UserWishlistPageUI.WISHLIST_URL_SHARING);
+		clickToElement(driver, UserWishlistPageUI.WISHLIST_URL_SHARING);
+		
+	}
 
+	public String getWishlistPageTitle() {
+		waitToElementVisible(driver, UserWishlistPageUI.WISHLIST_PAGE_TITLE);
+		return getElementText(driver, UserWishlistPageUI.WISHLIST_PAGE_TITLE);
+	}
 
+	public void clickToAddToCartCheckbox() {
+		waitToElementClickable(driver, UserWishlistPageUI.ADD_TO_CART_CHECKBOX);
+		clickToElement(driver, UserWishlistPageUI.ADD_TO_CART_CHECKBOX);
+	}
+
+	public UserShoppingCartPO clickToAddToCartButton() {
+		waitToElementClickable(driver, UserWishlistPageUI.ADD_TO_CART_BUTTON);
+		clickToElement(driver, UserWishlistPageUI.ADD_TO_CART_BUTTON);
+		return PageGeneratorManager.getUserShoppingCartPO(driver);
+	}
+
+	public String getWishlistNumber() {
+		waitToElementVisible(driver, UserWishlistPageUI.WISHLIST_NUMBER);
+		return getElementText(driver, UserWishlistPageUI.WISHLIST_NUMBER);
+	}	
 
 
 }
