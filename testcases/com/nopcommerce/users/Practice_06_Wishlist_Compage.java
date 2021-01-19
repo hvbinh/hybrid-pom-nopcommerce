@@ -82,6 +82,15 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 		verifyEquals(wishlistNumber, shoppingCartNumber);
 		
 	}
+	@Test
+	public void TC_03_Remove_Product_From_Wishlist()
+	{
+		wishlistPage = shoppingCartPage.clickToWishlistHeadermenu();
+		wishlistPage.clickToRemoveFromCartCheckbox();
+		wishlistPage.clickToUpdateWishlistButton();
+		verifyEquals(wishlistPage.getWishlistNumber(),"(0)");
+		
+	}
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();

@@ -13,6 +13,10 @@ public class UserWishlistPageUI {
 	public static final String ADD_TO_CART_BUTTON = "//input[@name='addtocartbutton']";
 	public static final String WISHLIST_NUMBER = "//span[@class='wishlist-qty']";
 	
+	public static final String REMOVE_CHECKBOX = "//input[@name='removefromcart']";
+	public static final String UPDATE_WISHLIST_BUTTON = "//input[@name='updatecart']";
+	
+	
 	
 	
 

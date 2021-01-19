@@ -22,6 +22,12 @@ public class UserShoppingCartPO extends AbstractPage{
 		return getElementText(driver, UserShoppingCartPageUI.SHOPPING_CART_NUMBER);
 	}
 
+	public UserWishlistPO clickToWishlistHeadermenu() {
+		waitToElementClickable(driver, UserShoppingCartPageUI.WISHLIST_HEADER_MENU);
+		clickToElement(driver, UserShoppingCartPageUI.WISHLIST_HEADER_MENU);
+		return PageGeneratorManager.getUserWishlistPO(driver);
+	}
+
 
 
 

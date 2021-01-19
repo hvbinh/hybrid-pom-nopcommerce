@@ -62,6 +62,16 @@ public class UserWishlistPO extends AbstractPage{
 	public String getWishlistNumber() {
 		waitToElementVisible(driver, UserWishlistPageUI.WISHLIST_NUMBER);
 		return getElementText(driver, UserWishlistPageUI.WISHLIST_NUMBER);
+	}
+
+	public void clickToRemoveFromCartCheckbox() {
+		waitToElementClickable(driver, UserWishlistPageUI.REMOVE_CHECKBOX);
+		clickToElement(driver, UserWishlistPageUI.REMOVE_CHECKBOX);
+	}
+
+	public void clickToUpdateWishlistButton() {
+		waitToElementClickable(driver, UserWishlistPageUI.UPDATE_WISHLIST_BUTTON);
+		clickToElement(driver, UserWishlistPageUI.UPDATE_WISHLIST_BUTTON);
 	}	
 
 
