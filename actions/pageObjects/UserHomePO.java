@@ -97,7 +97,7 @@ public class UserHomePO extends AbstractPage {
 	public UserComputerPO clickToSubmenu(String values) {
 		waitToElementClickable(driver, UserHomePageUI.DYNAMIC_SUB_MENU,values);
 		clickToElement(driver, UserHomePageUI.DYNAMIC_SUB_MENU, values);
-		return PageGeneratorManager.getUserComputerMenuPage(driver);
+		return PageGeneratorManager.getUserComputerPage(driver);
 	}
 
 

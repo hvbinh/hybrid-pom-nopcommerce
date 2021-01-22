@@ -47,7 +47,7 @@ public class PageGeneratorManager {
 	{
 		return new UserSearchPO(driver);
 	}
-	public static UserComputerPO getUserComputerMenuPage(WebDriver driver)
+	public static UserComputerPO getUserComputerPage(WebDriver driver)
 	{
 		return new UserComputerPO(driver);
 	}
@@ -66,6 +66,10 @@ public class PageGeneratorManager {
 	public static UserShoppingCartPO getUserShoppingCartPO(WebDriver driver)
 	{
 		return new UserShoppingCartPO(driver);
+	}
+	public static UserCompareProductPO getUserCompareProductPO(WebDriver driver)
+	{
+		return new UserCompareProductPO(driver);
 	}
 
 }

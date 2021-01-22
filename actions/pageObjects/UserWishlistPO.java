@@ -72,6 +72,17 @@ public class UserWishlistPO extends AbstractPage{
 	public void clickToUpdateWishlistButton() {
 		waitToElementClickable(driver, UserWishlistPageUI.UPDATE_WISHLIST_BUTTON);
 		clickToElement(driver, UserWishlistPageUI.UPDATE_WISHLIST_BUTTON);
+	}
+
+	public void hoverToComputersHeaderMenu() {
+		waitToElementVisible(driver, UserWishlistPageUI.COMPUTER_HEADER_MENU);
+		hoverMouseToElement(driver, UserWishlistPageUI.COMPUTER_HEADER_MENU);
+	}
+
+	public UserComputerPO clickToDesktopSubMenu() {
+		waitToElementClickable(driver, UserWishlistPageUI.DESKTOP_SUB_MENU);
+		clickToElement(driver, UserWishlistPageUI.DESKTOP_SUB_MENU);
+		return PageGeneratorManager.getUserComputerPage(driver);
 	}	
 
 

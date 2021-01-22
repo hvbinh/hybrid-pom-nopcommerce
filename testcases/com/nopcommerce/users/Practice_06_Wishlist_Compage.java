@@ -12,6 +12,7 @@ import com.nopcommerce.common.Common_01_Register;
 
 import commons.AbstractTest;
 import pageObjects.UserAddressesPO;
+import pageObjects.UserCompareProductPO;
 import pageObjects.UserComputerPO;
 import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
@@ -44,53 +45,86 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 		Login_In_With_Register_Email_And_correct_Password();
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		searchPage = homePage.clickToSearchLink();
-		
+
 	}
+
 	@Test
-	public void TC_01_Add_Product_To_Whishlist()
-	{
+	public void TC_01_Add_Product_To_Whishlist() {
 		searchPage.inputToSearchTextbox("Apple MacBook Pro");
 		searchPage.checkToAdvanceSearchCheckbox();
 		searchPage.selectCategory("Computers");
 		searchPage.checkSubCategoryCheckbox();
 		searchPage.selectManufacturer("Apple");
 		searchPage.clickToSearchButton();
-		
+
 		verifyTrue(searchPage.getProductsResult("Apple MacBook Pro 13-inch"));
-		
+
 		productDetailPage = searchPage.clickToProductTitleByName(driver, "Apple MacBook Pro 13-inch");
 		productDetailPage.clickToAddToWishlistButton("add-to-wishlist");
 		verifyEquals(productDetailPage.getNotificationSuccessMessage(), "The product has been added to your wishlist");
 		productDetailPage.closeNotificationSuccessMessage();
-		
+
 		wishlistPage = productDetailPage.clickToWishlistHeaderLink("wishlist-label");
 		verifyEquals(wishlistPage.getProductName("product-name"), "Apple MacBook Pro 13-inch");
 		verifyEquals(wishlistPage.getSKU("sku-number"), "AP_MBP_13");
 		verifyEquals(wishlistPage.getPrice("product-unit-price"), "$1,800.00");
-		verifyEquals(wishlistPage.getQuantity(), "2");	
-		
+		verifyEquals(wishlistPage.getQuantity(), "2");
+
 		wishlistPage.clickToWishlistShareLink();
-		verifyEquals(wishlistPage.getWishlistPageTitle(), "Wishlist of "+Common_01_Register.firstName+" "+Common_01_Register.lastName);
+		verifyEquals(wishlistPage.getWishlistPageTitle(), "Wishlist of " + Common_01_Register.firstName + " " + Common_01_Register.lastName);
 	}
+
 	@Test
-	public void TC_02_Add_Product_To_Cart_From_Wishlist()
-	{
+	public void TC_02_Add_Product_To_Cart_From_Wishlist() {
 		wishlistPage.clickToAddToCartCheckbox();
 		String wishlistNumber = wishlistPage.getWishlistNumber();
 		shoppingCartPage = wishlistPage.clickToAddToCartButton();
 		String shoppingCartNumber = shoppingCartPage.getWishlistNumber();
 		verifyEquals(wishlistNumber, shoppingCartNumber);
-		
+
 	}
+
 	@Test
-	public void TC_03_Remove_Product_From_Wishlist()
-	{
+	public void TC_03_Remove_Product_From_Wishlist() {
 		wishlistPage = shoppingCartPage.clickToWishlistHeadermenu();
 		wishlistPage.clickToRemoveFromCartCheckbox();
 		wishlistPage.clickToUpdateWishlistButton();
-		verifyEquals(wishlistPage.getWishlistNumber(),"(0)");
-		
+		verifyEquals(wishlistPage.getWishlistNumber(), "(0)");
+
 	}
+
+	@Test
+	public void TC_04_Add_Product_To_Compare() {
+
+		wishlistPage.hoverToComputersHeaderMenu();
+		computerPage = wishlistPage.clickToDesktopSubMenu();
+
+		log.info("click add to compare list on Build your own computer");
+		computerPage.clickAddToCompareListButtonByHrefProduct("build-your-own-computer");
+
+		log.info("verify notificaiton message displayed");
+		verifyTrue(computerPage.notificationSuccessMessageDisplay());
+		
+		log.info("close notification message");
+		computerPage.closeNotificationSuccessMessage();
+
+		log.info("click add to compare list on Lenovo IdeaCentre 600 All-in-One PC");
+		computerPage.clickAddToCompareListButtonByHrefProduct("lenovo-ideacentre-600-all-in-one-pc");
+
+		log.info("verify notificaiton message displayed");
+		verifyTrue(computerPage.notificationSuccessMessageDisplay());
+		
+		log.info("close notification message"); 
+		computerPage.sleepInSecond(2); 
+		computerPage.closeNotificationSuccessMessage();
+	
+		 
+
+		log.info("click to compare product list in footer");
+		compareProductPage = computerPage.clickToCompareProductListFooterLink();
+
+	}
+
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
@@ -102,7 +136,6 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 	}
-
 
 	@AfterClass
 	public void afterClass() {
@@ -120,5 +153,6 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 	UserProductDetailPO productDetailPage;
 	UserWishlistPO wishlistPage;
 	UserShoppingCartPO shoppingCartPage;
-	
+	UserCompareProductPO compareProductPage;
+
 }

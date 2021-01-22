@@ -16,6 +16,9 @@ public class UserWishlistPageUI {
 	public static final String REMOVE_CHECKBOX = "//input[@name='removefromcart']";
 	public static final String UPDATE_WISHLIST_BUTTON = "//input[@name='updatecart']";
 	
+	public static final String COMPUTER_HEADER_MENU = "//ul[contains(@class,'notmobile')]//a[@href='/computers']";
+	public static final String DESKTOP_SUB_MENU = "//ul[contains(@class,'notmobile')]//a[@href='/desktops']";
+	
 	
 	
 	

@@ -10,4 +10,6 @@ public class UserProductDetailPageUI {
 	public static final String SKU = "//div[@class='sku']/span[@class='value']";
 	public static final String PRICE = "//div[@class='product-price']/span";
 	
+	
+	
 }
