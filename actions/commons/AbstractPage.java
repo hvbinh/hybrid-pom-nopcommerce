@@ -269,7 +269,14 @@ public class AbstractPage {
 	}
 
 	public boolean isElementDisplayed(WebDriver driver, String locator, String... values) {
-		return getElement(driver, getDynamicLocator(locator, values)).isDisplayed();
+		try {
+			return getElement(driver, getDynamicLocator(locator, values)).isDisplayed();
+		}catch(Exception e)
+		{
+			System.out.println("execption: "+e);
+			return false;
+		}
+		
 	}
 
 	public boolean isElementEnabled(WebDriver driver, String locator) {

@@ -36,6 +36,18 @@ public class UserComputerPO extends AbstractPage{
 		return isElementDisplayed(driver, UserComputerPageUI.NOTIFICATION_SUCCESS_MESSAGE);
 	}
 
+	public UserProductDetailPO clickToProductNameByHref(String href) {
+		waitToElementClickable(driver, UserComputerPageUI.DYNAMIC_PRODUCT_NAME_BY_HREF, href);
+		clickToElement(driver, UserComputerPageUI.DYNAMIC_PRODUCT_NAME_BY_HREF, href, href);
+		return PageGeneratorManager.getUserProductDetailPO(driver);
+	}
+
+	public UserRecentlyViewedProductPO clickToRerentlyViewedProductPage() {
+		waitToElementClickable(driver, UserComputerPageUI.RECENTLY_VIEWED_PRODUCT_FOOTER_LINK);
+		clickToElement(driver, UserComputerPageUI.RECENTLY_VIEWED_PRODUCT_FOOTER_LINK);
+		return PageGeneratorManager.getUserRecentlyViewedProductPO(driver);
+	}
+
 
 
 

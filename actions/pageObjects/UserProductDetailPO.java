@@ -41,6 +41,11 @@ public class UserProductDetailPO extends AbstractPage{
 		waitToElementClickable(driver, UserProductDetailPageUI.NOTIFICATION_CLOSE_BUTTON);
 		clickToElement(driver, UserProductDetailPageUI.NOTIFICATION_CLOSE_BUTTON);
 	}
+
+	public UserComputerPO navigateBack() {
+		backToPage(driver);
+		return PageGeneratorManager.getUserComputerPage(driver);
+	}
 	
 
 

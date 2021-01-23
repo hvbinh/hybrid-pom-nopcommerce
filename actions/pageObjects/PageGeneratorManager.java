@@ -71,5 +71,9 @@ public class PageGeneratorManager {
 	{
 		return new UserCompareProductPO(driver);
 	}
+	public static UserRecentlyViewedProductPO getUserRecentlyViewedProductPO(WebDriver driver)
+	{
+		return new UserRecentlyViewedProductPO(driver);
+	}
 
 }

@@ -11,16 +11,13 @@ import org.testng.annotations.Test;
 import com.nopcommerce.common.Common_01_Register;
 
 import commons.AbstractTest;
-import pageObjects.UserAddressesPO;
 import pageObjects.UserCompareProductPO;
 import pageObjects.UserComputerPO;
-import pageObjects.UserCustomerInforPO;
 import pageObjects.UserHomePO;
 import pageObjects.UserLoginPO;
 import pageObjects.UserProductDetailPO;
-import pageObjects.UserOrdersPO;
+import pageObjects.UserRecentlyViewedProductPO;
 import pageObjects.PageGeneratorManager;
-import pageObjects.UserRegisterPO;
 import pageObjects.UserSearchPO;
 import pageObjects.UserShoppingCartPO;
 import pageObjects.UserWishlistPO;
@@ -118,10 +115,53 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 		computerPage.sleepInSecond(2); 
 		computerPage.closeNotificationSuccessMessage();
 	
-		 
 
 		log.info("click to compare product list in footer");
 		compareProductPage = computerPage.clickToCompareProductListFooterLink();
+
+		log.info("verify that Lenovo IdeaCentre 600 All-in-One PC displays");
+		verifyTrue(compareProductPage.compareProductDisplayByHref("lenovo-ideacentre-600-all-in-one-pc"));
+		
+		log.info("verify that Build your own computer displays");
+		verifyTrue(compareProductPage.compareProductDisplayByHref("build-your-own-computer"));
+		
+	}
+	@Test
+	public void TC_05_Recently_View_Products() {
+		log.info("hover on Computer header menu then click on notebooks submenu");
+		compareProductPage.hoverMouseToComputerHeader();
+		computerPage = compareProductPage.clickToNotebooksSubmenu();
+		
+		log.info("view product detail Asus N551JK-XO076H Laptop");
+		myProductPage = computerPage.clickToProductNameByHref("asus-n551jk-xo076h-laptop");
+		computerPage = myProductPage.navigateBack();
+		
+		log.info("view product detail HP Envy 6-1180ca 15.6-Inch Sleekbook");
+		myProductPage = computerPage.clickToProductNameByHref("hp-envy-6-1180ca-156-inch-sleekbook");
+		computerPage = myProductPage.navigateBack();
+		
+		log.info("view product detail HP Spectre XT Pro UltraBook");
+		myProductPage = computerPage.clickToProductNameByHref("hp-spectre-xt-pro-ultrabook");
+		computerPage = myProductPage.navigateBack();
+		
+		log.info("view product detail Lenovo Thinkpad X1 Carbon Laptop");
+		myProductPage = computerPage.clickToProductNameByHref("lenovo-thinkpad-x1-carbon-laptop");
+		computerPage = myProductPage.navigateBack();
+		
+		log.info("view product detail Samsung Series 9 NP900X4C Premium Ultrabook");
+		myProductPage = computerPage.clickToProductNameByHref("samsung-series-9-np900x4c-premium-ultrabook");
+		computerPage = myProductPage.navigateBack();
+		
+		log.info("click to recently viewed products footer link");
+		recentlyViewedProductPage = computerPage.clickToRerentlyViewedProductPage();
+		
+		log.info("verify 3 recently viewed products show");
+		verifyEquals(recentlyViewedProductPage.getProductNameWithHref("hp-spectre-xt-pro-ultrabook"), "HP Spectre XT Pro UltraBook");
+		verifyEquals(recentlyViewedProductPage.getProductNameWithHref("lenovo-thinkpad-x1-carbon-laptop"), "Lenovo Thinkpad X1 Carbon Laptop");
+		verifyEquals(recentlyViewedProductPage.getProductNameWithHref("samsung-series-9-np900x4c-premium-ultrabook"), "Samsung Series 9 NP900X4C Premium Ultrabook");
+		
+		log.info("other products should not show");
+		verifyFalse(recentlyViewedProductPage.isProductDisplayWithHref("asus-n551jk-xo076h-laptop"));
 
 	}
 
@@ -142,11 +182,7 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 	}
 
 	UserHomePO homePage;
-	UserRegisterPO registerPage;
 	UserLoginPO loginPage;
-	UserCustomerInforPO customerInforPage;
-	UserAddressesPO addressesPage;
-	UserOrdersPO ordersPage;
 	UserProductDetailPO myProductPage;
 	UserSearchPO searchPage;
 	UserComputerPO computerPage;
@@ -154,5 +190,6 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 	UserWishlistPO wishlistPage;
 	UserShoppingCartPO shoppingCartPage;
 	UserCompareProductPO compareProductPage;
+	UserRecentlyViewedProductPO recentlyViewedProductPage;
 
 }

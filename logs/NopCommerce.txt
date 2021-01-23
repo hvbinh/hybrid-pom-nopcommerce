@@ -1,18 +1,35 @@
-[INFO ] [2021-01-22 23:43:48,090]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:50,659]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:52,564]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:52,644]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:52,736]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:52,823]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:53,639]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:56,678]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:43:59,207]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:44:00,312] click add to compare list on Build your own computer
-[INFO ] [2021-01-22 23:44:00,517] verify notificaiton message displayed
-[INFO ] [2021-01-22 23:44:00,930]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:44:00,930] close notification message
-[INFO ] [2021-01-22 23:44:01,340] click add to compare list on Lenovo IdeaCentre 600 All-in-One PC
-[INFO ] [2021-01-22 23:44:01,755] verify notificaiton message displayed
-[INFO ] [2021-01-22 23:44:01,973]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-01-22 23:44:01,973] close notification message
-[INFO ] [2021-01-22 23:44:04,105] click to compare product list in footer
+[INFO ] [2021-01-23 23:40:52,758]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:40:55,533]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:40:58,221]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:40:58,303]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:40:58,386]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:40:58,473]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:00,043]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:01,784]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:04,157]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:05,318] click add to compare list on Build your own computer
+[INFO ] [2021-01-23 23:41:05,506] verify notificaiton message displayed
+[INFO ] [2021-01-23 23:41:06,640]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:06,640] close notification message
+[INFO ] [2021-01-23 23:41:06,808] click add to compare list on Lenovo IdeaCentre 600 All-in-One PC
+[INFO ] [2021-01-23 23:41:07,187] verify notificaiton message displayed
+[INFO ] [2021-01-23 23:41:07,403]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:07,404] close notification message
+[INFO ] [2021-01-23 23:41:09,566] click to compare product list in footer
+[INFO ] [2021-01-23 23:41:10,402] verify that Lenovo IdeaCentre 600 All-in-One PC displays
+[INFO ] [2021-01-23 23:41:10,500]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:10,500] verify that Build your own computer displays
+[INFO ] [2021-01-23 23:41:10,584]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:10,588] hover on Computer header menu then click on notebooks submenu
+[INFO ] [2021-01-23 23:41:11,767] view product detail Asus N551JK-XO076H Laptop
+[INFO ] [2021-01-23 23:41:13,677] view product detail HP Envy 6-1180ca 15.6-Inch Sleekbook
+[INFO ] [2021-01-23 23:41:15,390] view product detail HP Spectre XT Pro UltraBook
+[INFO ] [2021-01-23 23:41:16,995] view product detail Lenovo Thinkpad X1 Carbon Laptop
+[INFO ] [2021-01-23 23:41:18,785] view product detail Samsung Series 9 NP900X4C Premium Ultrabook
+[INFO ] [2021-01-23 23:41:21,276] click to recently viewed products footer link
+[INFO ] [2021-01-23 23:41:22,160] verify 3 recently viewed products show
+[INFO ] [2021-01-23 23:41:22,260]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:22,340]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:22,426]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-23 23:41:22,426] other products should not show
+[INFO ] [2021-01-23 23:41:52,499]  -------------------------- PASSED -------------------------- 
