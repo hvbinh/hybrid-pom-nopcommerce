@@ -100,6 +100,12 @@ public class UserHomePO extends AbstractPage {
 		return PageGeneratorManager.getUserComputerPage(driver);
 	}
 
+	public UserComputerPO clickToProductTitleByName(String productTitle) {
+		waitToElementClickable(driver, UserHomePageUI.DYNAMIC_PRODUCT_TITLE, productTitle);
+		clickToElement(driver, UserHomePageUI.DYNAMIC_PRODUCT_TITLE, productTitle);
+		return PageGeneratorManager.getUserComputerPage(driver);
+	}
+
 
 
 

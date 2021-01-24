@@ -10,5 +10,7 @@ public class UserHomePageUI {
 	
 	public static final String DYNAMIC_HEADER_MENU = "//ul[@class='top-menu notmobile']//a[contains(text(),'%s')]";
 	public static final String DYNAMIC_SUB_MENU = "//ul[@class='top-menu notmobile']//a[contains(text(),'%s')]";
+	
+	public static final String DYNAMIC_PRODUCT_TITLE = "//a[text()='Build your own computer']";
 
 }

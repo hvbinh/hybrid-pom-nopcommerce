@@ -20,7 +20,7 @@ public class UserRecentlyViewedProductPO extends AbstractPage{
 	}
 
 	public boolean isProductDisplayWithHref(String href) {
-		//waitToElementInvisible(driver, UserRecentlyViewProductPageUI.DYNAMIC_PRODUCT_NAME_BY_HREF, href);
+		waitToElementInvisible(driver, UserRecentlyViewProductPageUI.DYNAMIC_PRODUCT_NAME_BY_HREF, href);
 		return isElementDisplayed(driver, UserRecentlyViewProductPageUI.DYNAMIC_PRODUCT_NAME_BY_HREF, href);
 	}
 
