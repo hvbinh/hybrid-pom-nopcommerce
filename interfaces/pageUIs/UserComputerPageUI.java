@@ -8,4 +8,12 @@ public class UserComputerPageUI {
 	public static final String NOTIFICATION_SUCCESS_MESSAGE = "//div[@class='bar-notification success']";
 	public static final String DYNAMIC_PRODUCT_NAME_BY_HREF = "//h2[@class='product-title']/a[@href='/%s']";
 	
+	public static final String HDD_400_GB_RADIO = "//label[text()='400 GB [+$100.00]']";
+	public static final String OS_VISTA_PREMIUM_RADIO = "//label[text()='%s']";
+	public static final String SOFTWARE_MICROSOFT_OFFICE_CHECKBOX = "//label[text()='Microsoft Office [+$50.00]']";
+	public static final String SOFTWARE_ACROBAT_READER_CHECKBOX = "//label[text()='Acrobat Reader [+$10.00]']";
+	public static final String SOFTWARE_TOTAL_COMMANDER_CHECKBOX = "//label[text()='Total Commander [+$5.00]']";
+	public static final String ADD_TO_CART_BUTTON = "//input[@id='add-to-cart-button-1']";
+	public static final String DYNAMIC_CHECKBOX_BY_LABEL = "//label[text()='%s']/preceding-sibling::input";
+	
 }

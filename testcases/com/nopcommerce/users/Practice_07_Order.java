@@ -49,13 +49,29 @@ public class Practice_07_Order extends AbstractTest {
 		log.info("Add to cart - Step 1: Hover mouse to Computer header menu");
 		homePage.hoverToHeaderMenu("Computers");
 		
-		log.info("Add to cart - Step 1: Click to Desktop submenu");
+		log.info("Add to cart - Step 2: Click to Desktop submenu");
 		homePage.clickToSubmenu("Desktops");
 		
-		log.info("Add to cart - Step 1: Product name build your own computer");
+		log.info("Add to cart - Step 3: Product name build your own computer");
 		computerPage = homePage.clickToProductTitleByName("Build your own computer");
 		
+		log.info("Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'");
+		computerPage.selectProcessorByName("product_attribute_1","2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]");
 		
+		log.info("Add to cart - Step 5: select RAM: 8.00 GHz");
+		computerPage.selectRAMByName("product_attribute_2","4GB [+$20.00]");
+		
+		log.info("Add to cart - Step 6: HDD select 400 GB");
+		computerPage.selectHDDRadioByLabel("400 GB [+$100.00]");
+		
+		log.info("Add to cart - Step 7: OS select Vista Premium");
+		computerPage.selectOS("Vista Premium [+$60.00]");
+		
+		log.info("Add to cart - Step 8: Software check all options");
+		computerPage.selectAllSoftware("Microsoft Office [+$50.00]","Acrobat Reader [+$10.00]","Total Commander [+$5.00]");
+		
+		log.info("Add to cart - Step 9: Click to Add to Cart button");
+		computerPage.clicAddToCartButton();
 	}
 	
 	public void Login_In_With_Register_Email_And_correct_Password() {

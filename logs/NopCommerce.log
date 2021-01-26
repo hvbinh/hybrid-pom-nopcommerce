@@ -1872,3 +1872,85 @@
 [INFO ] [2021-01-23 23:41:22,426]  -------------------------- PASSED -------------------------- 
 [INFO ] [2021-01-23 23:41:22,426] other products should not show
 [INFO ] [2021-01-23 23:41:52,499]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:17,781]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:22,434]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:24,386]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:24,466]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:24,551]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:24,630]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:25,427]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:29,187]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:30,944]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:32,826] click add to compare list on Build your own computer
+[INFO ] [2021-01-24 22:19:33,002] verify notificaiton message displayed
+[INFO ] [2021-01-24 22:19:33,423]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:33,423] close notification message
+[INFO ] [2021-01-24 22:19:33,745] click add to compare list on Lenovo IdeaCentre 600 All-in-One PC
+[INFO ] [2021-01-24 22:19:34,113] verify notificaiton message displayed
+[INFO ] [2021-01-24 22:19:34,313]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:34,313] close notification message
+[INFO ] [2021-01-24 22:19:36,470] click to compare product list in footer
+[INFO ] [2021-01-24 22:19:37,978] verify that Lenovo IdeaCentre 600 All-in-One PC displays
+[INFO ] [2021-01-24 22:19:38,068]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:38,069] verify that Build your own computer displays
+[INFO ] [2021-01-24 22:19:38,154]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:38,159] hover on Computer header menu then click on notebooks submenu
+[INFO ] [2021-01-24 22:19:39,360] view product detail Asus N551JK-XO076H Laptop
+[INFO ] [2021-01-24 22:19:42,755] view product detail HP Envy 6-1180ca 15.6-Inch Sleekbook
+[INFO ] [2021-01-24 22:19:44,920] view product detail HP Spectre XT Pro UltraBook
+[INFO ] [2021-01-24 22:19:47,163] view product detail Lenovo Thinkpad X1 Carbon Laptop
+[INFO ] [2021-01-24 22:19:49,115] view product detail Samsung Series 9 NP900X4C Premium Ultrabook
+[INFO ] [2021-01-24 22:19:51,101] click to recently viewed products footer link
+[INFO ] [2021-01-24 22:19:51,962] verify 3 recently viewed products show
+[INFO ] [2021-01-24 22:19:52,043]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:52,141]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:52,259]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 22:19:52,259] other products should not show
+[INFO ] [2021-01-24 22:20:52,462]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-24 23:28:32,720] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-24 23:28:32,946] Add to cart - Step 1: Click to Desktop submenu
+[INFO ] [2021-01-24 23:28:34,557] Add to cart - Step 1: Product name build your own computer
+[INFO ] [2021-01-24 23:44:47,196] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-24 23:44:47,420] Add to cart - Step 1: Click to Desktop submenu
+[INFO ] [2021-01-24 23:44:49,001] Add to cart - Step 1: Product name build your own computer
+[INFO ] [2021-01-24 23:45:55,447] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-24 23:45:55,674] Add to cart - Step 1: Click to Desktop submenu
+[INFO ] [2021-01-24 23:45:57,306] Add to cart - Step 1: Product name build your own computer
+[INFO ] [2021-01-25 22:10:01,543] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-25 22:10:01,853] Add to cart - Step 1: Click to Desktop submenu
+[INFO ] [2021-01-25 22:10:13,363] Add to cart - Step 1: Product name build your own computer
+[INFO ] [2021-01-26 22:30:09,859] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-26 22:30:10,095] Add to cart - Step 1: Click to Desktop submenu
+[INFO ] [2021-01-26 22:30:11,985] Add to cart - Step 1: Product name build your own computer
+[INFO ] [2021-01-26 22:30:15,026] Add to cart - Step 1: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-26 22:38:04,420] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-26 22:38:04,656] Add to cart - Step 1: Click to Desktop submenu
+[INFO ] [2021-01-26 22:38:06,387] Add to cart - Step 1: Product name build your own computer
+[INFO ] [2021-01-26 22:38:09,017] Add to cart - Step 1: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-26 22:41:50,064] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-26 22:41:50,289] Add to cart - Step 1: Click to Desktop submenu
+[INFO ] [2021-01-26 22:41:52,097] Add to cart - Step 1: Product name build your own computer
+[INFO ] [2021-01-26 22:41:54,756] Add to cart - Step 1: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-26 22:41:55,004] Add to cart - Step 1: select RAM: 8.00 GHz
+[INFO ] [2021-01-26 22:41:55,004] Add to cart - Step 1: HDD select 400 GB
+[INFO ] [2021-01-26 22:41:55,004] Add to cart - Step 1: OS select Vista Premium
+[INFO ] [2021-01-26 22:41:55,005] Add to cart - Step 1: Software check all options
+[INFO ] [2021-01-26 22:41:55,005] Add to cart - Step 1: Click to Add to Cart button
+[INFO ] [2021-01-26 23:58:37,109] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-26 23:58:37,325] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-01-26 23:58:38,297] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-01-26 23:58:40,091] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-26 23:58:40,274] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-01-26 23:58:40,531] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-01-26 23:58:40,696] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-01-26 23:58:40,849] Add to cart - Step 8: Software check all options
+[INFO ] [2021-01-26 23:58:41,203] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-01-27 00:05:45,013] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-27 00:05:45,278] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-01-27 00:05:46,325] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-01-27 00:05:48,937] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-27 00:05:49,132] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-01-27 00:05:49,385] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-01-27 00:05:49,539] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-01-27 00:05:49,711] Add to cart - Step 8: Software check all options
+[INFO ] [2021-01-27 00:05:50,176] Add to cart - Step 9: Click to Add to Cart button
