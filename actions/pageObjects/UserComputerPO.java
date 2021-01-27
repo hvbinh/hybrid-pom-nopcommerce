@@ -91,14 +91,68 @@ public class UserComputerPO extends AbstractPage{
 		{
 			clickToElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,totalCommander);
 		}
-		
-		
-		
 	}
 
 	public void clicAddToCartButton() {
-		// TODO Auto-generated method stub
+		waitToElementClickable(driver, UserComputerPageUI.ADD_TO_CART_BUTTON);
+		clickToElement(driver, UserComputerPageUI.ADD_TO_CART_BUTTON);
+	}
+
+	public boolean notificationSuccessDisplays() {
+		waitToElementVisible(driver, UserComputerPageUI.NOTIFICATION_SUCCESS_MESSAGE);
+		return isElementDisplayed(driver, UserComputerPageUI.NOTIFICATION_SUCCESS_MESSAGE);
+	}
+
+	public void closeNotificationSuccess() {
+		waitToElementVisible(driver, UserComputerPageUI.NOTIFICATION_CLOSE_BUTTON);
+		clickToElement(driver, UserComputerPageUI.NOTIFICATION_CLOSE_BUTTON);
 		
+	}
+
+	public void hoverMouseToShoppingCartMenu() {
+		waitToElementVisible(driver, UserComputerPageUI.SHOPPING_CART_HEADER_MENU);
+		hoverMouseToElement(driver, UserComputerPageUI.SHOPPING_CART_HEADER_MENU);
+	}
+
+	public String getProductTitleInShoppingCart() {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_TITLE_TEXT);
+		return getElementText(driver, UserComputerPageUI.PRODUCT_TITLE_TEXT);
+	}
+
+	public boolean processorDisplay(String processor) {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		return element.getText().contains(processor);
+	}
+
+	public boolean RAMDisplay(String RAM) {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		return element.getText().contains(RAM);
+	}
+
+	public boolean HDDDisplay(String HDD) {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		return element.getText().contains(HDD);
+	}
+
+	public boolean OSDisplay(String OS) {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		return element.getText().contains(OS);
+	}
+
+	public boolean softwareDisplay(String software) {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_ATTRIBUTE_TEXT);
+		return element.getText().contains(software);
+	}
+
+	public boolean priceDisplay(String price) {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_PRICE_TEXT);
+		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_PRICE_TEXT);
+		return element.getText().contains(price);
 	}
 
 

@@ -16,4 +16,12 @@ public class UserComputerPageUI {
 	public static final String ADD_TO_CART_BUTTON = "//input[@id='add-to-cart-button-1']";
 	public static final String DYNAMIC_CHECKBOX_BY_LABEL = "//label[text()='%s']/preceding-sibling::input";
 	
+	public static final String SHOPPING_CART_HEADER_MENU = "//li[@id='topcartlink']";
+	public static final String COUNT_NUMBER_IN_CART_TEXT = "//div[@class='count']";
+	public static final String PRODUCT_TITLE_TEXT = "//div[@class='name']";
+	public static final String PRODUCT_ATTRIBUTE_TEXT = "//div[@class='attributes']";
+	public static final String PRODUCT_PRICE_TEXT = "//div[@class='price']";
+	
+	
+	
 }

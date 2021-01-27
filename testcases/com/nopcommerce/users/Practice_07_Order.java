@@ -72,6 +72,31 @@ public class Practice_07_Order extends AbstractTest {
 		
 		log.info("Add to cart - Step 9: Click to Add to Cart button");
 		computerPage.clicAddToCartButton();
+		
+		log.info("Add to cart - Step 10: Verify notification success displays");
+		verifyTrue(computerPage.notificationSuccessDisplays());
+		
+		log.info("Add to cart - Step 11: Close notification success");
+		computerPage.closeNotificationSuccess();
+		
+		log.info("Add to cart - Step 12: Hover mouse on shopping cart menu");
+		computerPage.hoverMouseToShoppingCartMenu();
+		
+		log.info("Add to cart - Step 13: Verify product title shows");
+		verifyEquals(computerPage.getProductTitleInShoppingCart(), "Build your own computer");
+		
+		log.info("Add to cart - Step 14: Verify attribute shows");
+		verifyTrue(computerPage.processorDisplay("2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]"));
+		verifyTrue(computerPage.RAMDisplay("4GB [+$20.00]"));
+		verifyTrue(computerPage.HDDDisplay("400 GB [+$100.00]"));
+		verifyTrue(computerPage.OSDisplay("Vista Premium [+$60.00]"));
+		verifyTrue(computerPage.softwareDisplay("Microsoft Office [+$50.00]"));
+		verifyTrue(computerPage.softwareDisplay("Acrobat Reader [+$10.00]"));
+		verifyTrue(computerPage.softwareDisplay("Total Commander [+$5.00]"));
+		
+		log.info("Add to cart - Step 15: Verify price show");
+		verifyTrue(computerPage.priceDisplay("$1,460.00"));
+		
 	}
 	
 	public void Login_In_With_Register_Email_And_correct_Password() {
