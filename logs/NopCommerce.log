@@ -1954,3 +1954,74 @@
 [INFO ] [2021-01-27 00:05:49,539] Add to cart - Step 7: OS select Vista Premium
 [INFO ] [2021-01-27 00:05:49,711] Add to cart - Step 8: Software check all options
 [INFO ] [2021-01-27 00:05:50,176] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-01-27 21:22:22,237] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-27 21:22:22,605] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-01-27 21:22:23,850] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-01-27 21:22:27,817] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-27 21:22:28,203] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-01-27 21:22:28,667] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-01-27 21:22:28,949] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-01-27 21:22:29,229] Add to cart - Step 8: Software check all options
+[INFO ] [2021-01-27 21:22:30,016] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-01-27 21:50:38,432] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-27 21:50:38,774] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-01-27 21:50:40,692] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-01-27 21:50:43,766] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-27 21:50:44,150] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-01-27 21:50:44,611] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-01-27 21:50:44,871] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-01-27 21:50:45,130] Add to cart - Step 8: Software check all options
+[INFO ] [2021-01-27 21:50:45,948] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-01-27 21:50:46,242] Add to cart - Step 10: Notification success displays
+[INFO ] [2021-01-27 21:50:46,955]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 21:50:46,955] Add to cart - Step 11: Close notification success
+[INFO ] [2021-01-27 23:05:09,152] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-27 23:05:09,480] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-01-27 23:05:12,295] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-01-27 23:05:14,965] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-27 23:05:15,348] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-01-27 23:05:15,817] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-01-27 23:05:16,079] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-01-27 23:05:16,335] Add to cart - Step 8: Software check all options
+[INFO ] [2021-01-27 23:05:17,144] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-01-27 23:05:17,428] Add to cart - Step 10: Verify notification success displays
+[INFO ] [2021-01-27 23:05:18,087]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:18,088] Add to cart - Step 11: Close notification success
+[INFO ] [2021-01-27 23:05:18,487] Add to cart - Step 12: Hover mouse on shopping cart menu
+[INFO ] [2021-01-27 23:05:18,795] Add to cart - Step 13: Verify product title shows
+[INFO ] [2021-01-27 23:05:19,596]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:19,596] Add to cart - Step 14: Verify attribute shows
+[INFO ] [2021-01-27 23:05:19,765]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:19,881]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:19,992]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:20,124]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:20,288]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:20,453]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:20,593]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:05:20,594] Add to cart - Step 15: Verify price show
+[INFO ] [2021-01-27 23:05:20,763]  -------------------------- FAILED -------------------------- 
+[INFO ] [2021-01-27 23:07:52,593] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-01-27 23:07:52,952] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-01-27 23:07:54,828] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-01-27 23:07:57,348] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-01-27 23:07:57,823] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-01-27 23:07:58,307] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-01-27 23:07:58,565] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-01-27 23:07:58,846] Add to cart - Step 8: Software check all options
+[INFO ] [2021-01-27 23:07:59,684] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-01-27 23:07:59,984] Add to cart - Step 10: Verify notification success displays
+[INFO ] [2021-01-27 23:08:00,599]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:00,599] Add to cart - Step 11: Close notification success
+[INFO ] [2021-01-27 23:08:01,026] Add to cart - Step 12: Hover mouse on shopping cart menu
+[INFO ] [2021-01-27 23:08:01,360] Add to cart - Step 13: Verify product title shows
+[INFO ] [2021-01-27 23:08:02,156]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:02,157] Add to cart - Step 14: Verify attribute shows
+[INFO ] [2021-01-27 23:08:02,328]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:02,439]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:02,557]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:02,674]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:02,788]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:02,900]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:03,016]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-01-27 23:08:03,017] Add to cart - Step 15: Verify price show
+[INFO ] [2021-01-27 23:08:03,200]  -------------------------- PASSED -------------------------- 

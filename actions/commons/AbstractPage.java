@@ -509,7 +509,8 @@ public class AbstractPage {
 	public void waitAjaxLoadingInvisible(WebDriver driver) {
 		waitToElementInvisible(driver, AbstractPageUI.LOADING_ICON);
 	}
-
+	/* nopcommer project */
+	
 	public void uploadFileByPanelID(WebDriver driver, String panelID, String... fileNames) {
 		String filePath = GlobalConstants.UPLOAD_FOLDER;
 		String fullFileName = "";
