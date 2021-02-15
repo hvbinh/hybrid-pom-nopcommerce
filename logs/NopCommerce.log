@@ -2025,3 +2025,40 @@
 [INFO ] [2021-01-27 23:08:03,016]  -------------------------- PASSED -------------------------- 
 [INFO ] [2021-01-27 23:08:03,017] Add to cart - Step 15: Verify price show
 [INFO ] [2021-01-27 23:08:03,200]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:18:13,654] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-02-13 22:18:20,928] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-02-13 22:18:23,874] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-02-13 22:18:29,014] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-02-13 22:18:33,275] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-02-13 22:18:36,836] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-02-13 22:18:39,019] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-02-13 22:18:40,787] Add to cart - Step 8: Software check all options
+[INFO ] [2021-02-13 22:18:45,839] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-02-13 22:18:47,509] Add to cart - Step 10: Verify notification success displays
+[INFO ] [2021-02-13 22:18:50,844]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:18:50,844] Add to cart - Step 11: Close notification success
+[INFO ] [2021-02-13 22:41:11,515] Add to cart - Step 1: Hover mouse to Computer header menu
+[INFO ] [2021-02-13 22:41:11,933] Add to cart - Step 2: Click to Desktop submenu
+[INFO ] [2021-02-13 22:41:13,844] Add to cart - Step 3: Product name build your own computer
+[INFO ] [2021-02-13 22:41:16,776] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
+[INFO ] [2021-02-13 22:41:17,177] Add to cart - Step 5: select RAM: 8.00 GHz
+[INFO ] [2021-02-13 22:41:17,658] Add to cart - Step 6: HDD select 400 GB
+[INFO ] [2021-02-13 22:41:17,922] Add to cart - Step 7: OS select Vista Premium
+[INFO ] [2021-02-13 22:41:18,176] Add to cart - Step 8: Software check all options
+[INFO ] [2021-02-13 22:41:19,003] Add to cart - Step 9: Click to Add to Cart button
+[INFO ] [2021-02-13 22:41:19,278] Add to cart - Step 10: Verify notification success displays
+[INFO ] [2021-02-13 22:41:19,960]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:19,960] Add to cart - Step 11: Close notification success
+[INFO ] [2021-02-13 22:41:20,334] Add to cart - Step 12: Hover mouse on shopping cart menu
+[INFO ] [2021-02-13 22:41:20,635] Add to cart - Step 13: Verify product title shows
+[INFO ] [2021-02-13 22:41:21,475]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:21,475] Add to cart - Step 14: Verify attribute shows
+[INFO ] [2021-02-13 22:41:21,647]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:21,786]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:21,914]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:22,034]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:22,145]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:22,268]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:52,600]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-13 22:41:52,600] Add to cart - Step 15: Verify price show
+[INFO ] [2021-02-13 22:45:26,802]  -------------------------- PASSED -------------------------- 

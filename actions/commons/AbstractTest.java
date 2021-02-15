@@ -32,7 +32,7 @@ public class AbstractTest {
 		log = LogFactory.getLog(getClass());
 	}
 
-	protected WebDriver getBrowserDriver(String browserName) {
+	protected synchronized WebDriver getBrowserDriver(String browserName) {
 		//setBrowserDriver();
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser == Browser.CHROME_UI) {
@@ -66,7 +66,7 @@ public class AbstractTest {
 
 		return driver;
 	}
-	protected WebDriver getBrowserDriver(String browserName, String url) {
+	protected synchronized WebDriver getBrowserDriver(String browserName, String url) {
 		//setBrowserDriver();
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser == Browser.CHROME_UI) {
