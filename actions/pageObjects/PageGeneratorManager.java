@@ -75,5 +75,9 @@ public class PageGeneratorManager {
 	{
 		return new UserRecentlyViewedProductPO(driver);
 	}
+	public static UserEditProductInShoppingCartPO getUserEditProductInShoppingCartPO(WebDriver driver)
+	{
+		return new UserEditProductInShoppingCartPO(driver);
+	}
 
 }

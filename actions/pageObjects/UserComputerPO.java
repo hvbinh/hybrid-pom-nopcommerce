@@ -63,8 +63,8 @@ public class UserComputerPO extends AbstractPage{
 	}
 
 	public void selectHDDRadioByLabel(String hddName) {
-		waitToElementClickable(driver, UserComputerPageUI.HDD_400_GB_RADIO,hddName);
-		clickToElement(driver, UserComputerPageUI.HDD_400_GB_RADIO,hddName);
+		waitToElementClickable(driver, UserComputerPageUI.DYNAMIC_HDD_RADIO,hddName);
+		clickToElement(driver, UserComputerPageUI.DYNAMIC_HDD_RADIO,hddName);
 	}
 
 	public void selectOS(String osName) {
@@ -91,6 +91,27 @@ public class UserComputerPO extends AbstractPage{
 		{
 			clickToElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,totalCommander);
 		}
+	}
+	public void selectOneSoftware(String msOffice,String acrobatReader, String totalCommander) {
+		waitToElementClickable(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,msOffice);
+		waitToElementClickable(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,acrobatReader);
+		waitToElementClickable(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,totalCommander);
+		WebElement element = getElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL, msOffice);
+		if(!element.isSelected())
+		{
+			clickToElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,msOffice);
+		}
+		element = getElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL, acrobatReader);
+		if(element.isSelected())
+		{
+			clickToElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,acrobatReader);
+		}
+		element = getElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL, totalCommander);
+		if(element.isSelected())
+		{
+			clickToElement(driver, UserComputerPageUI.DYNAMIC_CHECKBOX_BY_LABEL,totalCommander);
+		}
+		
 	}
 
 	public void clicAddToCartButton() {
@@ -153,6 +174,17 @@ public class UserComputerPO extends AbstractPage{
 		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_PRICE_TEXT);
 		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_PRICE_TEXT);
 		return element.getText().contains(price);
+	}
+
+	public UserShoppingCartPO clickOnShoppingCartLink() {
+		waitToElementClickable(driver, UserComputerPageUI.SHOPPING_CART_HEADER_MENU);
+		clickToElement(driver, UserComputerPageUI.SHOPPING_CART_HEADER_MENU);
+		return PageGeneratorManager.getUserShoppingCartPO(driver);
+	}
+
+	public void updateQuantity(String quantity) {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_QUANTITY);
+		sendkeyToElement(driver, UserComputerPageUI.PRODUCT_QUANTITY, quantity);
 	}
 
 

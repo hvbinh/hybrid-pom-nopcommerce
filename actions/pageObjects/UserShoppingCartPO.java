@@ -28,6 +28,14 @@ public class UserShoppingCartPO extends AbstractPage{
 		return PageGeneratorManager.getUserWishlistPO(driver);
 	}
 
+	public UserComputerPO clickOnEditLink() {
+		waitToElementClickable(driver, UserShoppingCartPageUI.EDIT_LINK);
+		clickToElement(driver, UserShoppingCartPageUI.EDIT_LINK);
+		return PageGeneratorManager.getUserComputerPage(driver);
+	}
+
+	
+
 
 
 

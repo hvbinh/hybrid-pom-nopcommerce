@@ -45,7 +45,7 @@ public class Practice_07_Order extends AbstractTest {
 	}
 
 	@Test
-	public void Add_Product_To_Cart() {
+	public void TC_01_Add_Product_To_Cart() {
 		log.info("Add to cart - Step 1: Hover mouse to Computer header menu");
 		homePage.hoverToHeaderMenu("Computers");
 
@@ -98,7 +98,35 @@ public class Practice_07_Order extends AbstractTest {
 		verifyTrue(computerPage.priceDisplay("$1,460.00"));
 
 	}
-
+	@Test
+	public void TC_02_Edit_Product_In_Shopping_Cart() {
+		log.info("Edit product - Step 01: Click on shoping cart link");
+		shoppingCartPage=computerPage.clickOnShoppingCartLink();
+		
+		log.info("Edit product - Step 02: Click on edit link");
+		computerPage = shoppingCartPage.clickOnEditLink();
+		
+		log.info("Edit product - Step 03: Select processor 2.2 GHz");
+		computerPage.selectProcessorByName("product_attribute_1", "2.2 GHz Intel Pentium Dual-Core E2200");
+		
+		log.info("Edit product - Step 04: Select RAM 4.0 GB");
+		computerPage.selectRAMByName("product_attribute_2", "4GB [+$20.00]");
+		
+		log.info("Edit product - Step 05: Select HDD 320 GB");
+		computerPage.selectHDDRadioByLabel("320 GB");
+		
+		log.info("Edit product - Step 06: Select OS vista home");
+		computerPage.selectOS("Vista Home [+$50.00]");
+		
+		log.info("Edit product - Step 07: Select software Microsoft Office");
+		computerPage.selectOneSoftware("Microsoft Office [+$50.00]", "Acrobat Reader [+$10.00]", "Total Commander [+$5.00]");
+		
+		log.info("Edit product - Step 08: increase number proto to 2");
+		computerPage.updateQuantity("2");
+		
+		
+		
+	}
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
@@ -110,6 +138,7 @@ public class Practice_07_Order extends AbstractTest {
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 	}
+	
 
 	@AfterClass
 	public void afterClass() {
