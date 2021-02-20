@@ -121,9 +121,36 @@ public class Practice_07_Order extends AbstractTest {
 		log.info("Edit product - Step 07: Select software Microsoft Office");
 		computerPage.selectOneSoftware("Microsoft Office [+$50.00]", "Acrobat Reader [+$10.00]", "Total Commander [+$5.00]");
 		
-		log.info("Edit product - Step 08: increase number proto to 2");
+		log.info("Edit product - Step 08: Increase number proto to 2");
 		computerPage.updateQuantity("2");
 		
+		log.info("Edit product - Step 09: Click to Update button");
+		computerPage.clickToUpdateButton();
+		
+		log.info("Add to cart - Step 10: Verify notification success displays");
+		verifyTrue(computerPage.notificationSuccessDisplays());
+
+		log.info("Add to cart - Step 11: Close notification success");
+		computerPage.closeNotificationSuccess();
+		
+		log.info("Edit product - Step 12: Verify that product price: $1,320");
+		verifyEquals(computerPage.getProductPrice(), "$1,320.00"); 
+		
+		log.info("Add to cart - Step 13: Hover mouse on shopping cart menu");
+		computerPage.hoverMouseToShoppingCartMenu();
+
+		log.info("Add to cart - Step 14: Verify product title shows");
+		verifyEquals(computerPage.getProductTitleInShoppingCart(), "Build your own computer");
+
+		log.info("Add to cart - Step 15: Verify attribute shows");
+		verifyTrue(computerPage.processorDisplay("2.2 GHz Intel Pentium Dual-Core E2200"));
+		verifyTrue(computerPage.RAMDisplay("4GB [+$20.00]"));
+		verifyTrue(computerPage.HDDDisplay("320 GB"));
+		verifyTrue(computerPage.OSDisplay("Vista Home [+$50.00]"));
+		verifyTrue(computerPage.softwareDisplay("Microsoft Office [+$50.00]"));
+
+		log.info("Add to cart - Step 16: Verify price show");
+		verifyTrue(computerPage.priceDisplay("$2,640.00"));
 		
 		
 	}

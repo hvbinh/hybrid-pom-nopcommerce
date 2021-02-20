@@ -5,7 +5,7 @@ public class UserComputerPageUI {
 	public static final String NOTIFICATION_CLOSE_BUTTON = "//span[@title='Close']";
 	public static final String COMPARE_PRODUCT_LIST_FOOTER_LINK = "//div[@class='footer']//a[@href='/compareproducts']";
 	public static final String RECENTLY_VIEWED_PRODUCT_FOOTER_LINK = "//div[@class='footer']//a[@href='/recentlyviewedproducts']";
-	public static final String NOTIFICATION_SUCCESS_MESSAGE = "//div[@class='bar-notification success']";
+	public static final String NOTIFICATION_SUCCESS_MESSAGE = "//div[@class='bar-notification success']/p";
 	public static final String DYNAMIC_PRODUCT_NAME_BY_HREF = "//h2[@class='product-title']/a[@href='/%s']";
 	
 	public static final String DYNAMIC_HDD_RADIO = "//label[text()='%s']";
@@ -23,6 +23,9 @@ public class UserComputerPageUI {
 	public static final String PRODUCT_PRICE_TEXT = "//div[@class='price']";
 	
 	public static final String PRODUCT_QUANTITY = "//input[@id='product_enteredQuantity_1']";
+	public static final String PRODUCT_PRICE = "//div[@class='product-price']/span";
+	public static final String UPDATE_BUTTON = "//input[@id='add-to-cart-button-1']";
+	public static final String TOTAL_PRICE_IN_SHOPPING_CART = "//div[@class='totals']/strong";
 	
 	
 	

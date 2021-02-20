@@ -171,8 +171,8 @@ public class UserComputerPO extends AbstractPage{
 	}
 
 	public boolean priceDisplay(String price) {
-		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_PRICE_TEXT);
-		WebElement element = getElement(driver, UserComputerPageUI.PRODUCT_PRICE_TEXT);
+		waitToElementVisible(driver, UserComputerPageUI.TOTAL_PRICE_IN_SHOPPING_CART);
+		WebElement element = getElement(driver, UserComputerPageUI.TOTAL_PRICE_IN_SHOPPING_CART);
 		return element.getText().contains(price);
 	}
 
@@ -185,6 +185,16 @@ public class UserComputerPO extends AbstractPage{
 	public void updateQuantity(String quantity) {
 		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_QUANTITY);
 		sendkeyToElement(driver, UserComputerPageUI.PRODUCT_QUANTITY, quantity);
+	}
+
+	public void clickToUpdateButton() {
+		waitToElementClickable(driver, UserComputerPageUI.UPDATE_BUTTON);
+		clickToElement(driver, UserComputerPageUI.UPDATE_BUTTON);
+	}
+
+	public String getProductPrice() {
+		waitToElementVisible(driver, UserComputerPageUI.PRODUCT_PRICE);
+		return getElementText(driver, UserComputerPageUI.PRODUCT_PRICE);
 	}
 
 
