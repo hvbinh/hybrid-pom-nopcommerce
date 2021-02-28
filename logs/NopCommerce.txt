@@ -1,33 +1,40 @@
-[INFO ] [2021-02-18 23:42:30,295] Add to cart - Step 1: Hover mouse to Computer header menu
-[INFO ] [2021-02-18 23:42:30,652] Add to cart - Step 2: Click to Desktop submenu
-[INFO ] [2021-02-18 23:42:31,850] Add to cart - Step 3: Product name build your own computer
-[INFO ] [2021-02-18 23:42:34,181] Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'
-[INFO ] [2021-02-18 23:42:34,658] Add to cart - Step 5: select RAM: 8.00 GHz
-[INFO ] [2021-02-18 23:42:35,162] Add to cart - Step 6: HDD select 400 GB
-[INFO ] [2021-02-18 23:42:35,449] Add to cart - Step 7: OS select Vista Premium
-[INFO ] [2021-02-18 23:42:35,736] Add to cart - Step 8: Software check all options
-[INFO ] [2021-02-18 23:42:36,649] Add to cart - Step 9: Click to Add to Cart button
-[INFO ] [2021-02-18 23:42:36,957] Add to cart - Step 10: Verify notification success displays
-[INFO ] [2021-02-18 23:42:38,253]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:38,254] Add to cart - Step 11: Close notification success
-[INFO ] [2021-02-18 23:42:38,659] Add to cart - Step 12: Hover mouse on shopping cart menu
-[INFO ] [2021-02-18 23:42:38,987] Add to cart - Step 13: Verify product title shows
-[INFO ] [2021-02-18 23:42:39,842]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:39,842] Add to cart - Step 14: Verify attribute shows
-[INFO ] [2021-02-18 23:42:40,003]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,114]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,227]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,339]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,447]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,554]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,682]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,682] Add to cart - Step 15: Verify price show
-[INFO ] [2021-02-18 23:42:40,850]  -------------------------- PASSED -------------------------- 
-[INFO ] [2021-02-18 23:42:40,857] Edit product - Step 01: Click on shoping cart link
-[INFO ] [2021-02-18 23:42:42,523] Edit product - Step 02: Click on edit link
-[INFO ] [2021-02-18 23:42:45,815] Edit product - Step 03: Select processor 2.2 GHz
-[INFO ] [2021-02-18 23:42:46,437] Edit product - Step 04: Select RAM 4.0 GB
-[INFO ] [2021-02-18 23:42:46,819] Edit product - Step 05: Select HDD 320 GB
-[INFO ] [2021-02-18 23:42:47,077] Edit product - Step 06: Select OS vista home
-[INFO ] [2021-02-18 23:42:47,341] Edit product - Step 07: Select software Microsoft Office
-[INFO ] [2021-02-18 23:42:48,122] Edit product - Step 08: increase number proto to 2
+[INFO ] [2021-02-28 23:50:33,702] Validate - Step 01: Open Home Page
+[INFO ] [2021-02-28 23:50:33,703] Validate - Step 02: Click to Register link at Home page
+[INFO ] [2021-02-28 23:50:38,777] Validate - Step 03: Click to Register button
+[INFO ] [2021-02-28 23:50:39,200] Validate - Step 04: Verify error message displays at FirstName textbox
+[INFO ] [2021-02-28 23:50:39,406]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:39,406] Validate - Step 05: Verify error message displays at LastName textbox
+[INFO ] [2021-02-28 23:50:39,595]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:39,596] Validate - Step 06: Verify error message displays at Email textbox
+[INFO ] [2021-02-28 23:50:39,791]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:39,792] Validate - Step 07: Verify error message displays at Password textbox
+[INFO ] [2021-02-28 23:50:39,992]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:39,992] Validate - Step 08: Verify error message displays at Password textbox
+[INFO ] [2021-02-28 23:50:40,184]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:40,190] Register - Step 01: Open Home Page
+[INFO ] [2021-02-28 23:50:40,190] Register - Step 02: Click to Register link at Home page
+[INFO ] [2021-02-28 23:50:41,939] Register - Step 03: Click to Gender Male radio button
+[INFO ] [2021-02-28 23:50:42,234] Register - Step 04: Input to Firstname textbox with value: Tony
+[INFO ] [2021-02-28 23:50:42,639] Register - Step 05: Input to Lastname textbox with value: Buoi Sang
+[INFO ] [2021-02-28 23:50:43,014] Register - Step 06: Select Day dropdown
+[INFO ] [2021-02-28 23:50:43,402] Register - Step 07: Select Month dropdown
+[INFO ] [2021-02-28 23:50:43,982] Register - Step 08: Select Year dropdown
+[INFO ] [2021-02-28 23:50:44,329] Register - Step 09: Input to Email textbox with value: tonybuoisang894358@gmail.com
+[INFO ] [2021-02-28 23:50:44,724] Register - Step 10: Input to Company textbox with value: Tony Buoi Sang company
+[INFO ] [2021-02-28 23:50:45,110] Register - Step 11: Input to Password textbox with value: 123456
+[INFO ] [2021-02-28 23:50:45,502] Register - Step 12: Input to confirm Password textbox with value: 123456
+[INFO ] [2021-02-28 23:50:45,832] Register - Step 13: Click to Register button
+[INFO ] [2021-02-28 23:50:47,982] Register - Step 17: Verify Register success message displayed
+[INFO ] [2021-02-28 23:50:48,209]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:48,209] Register - Step 18: Click to Logout link and navigate to Home Page
+[INFO ] [2021-02-28 23:50:51,875] Login - Step 01: Open Login Page
+[INFO ] [2021-02-28 23:50:52,791] Login - Step 02: Input to Email textbox with value: tonybuoisang894358@gmail.com
+[INFO ] [2021-02-28 23:50:53,156] Login - Step 03: Input to Password textbox with value: 123456
+[INFO ] [2021-02-28 23:50:53,476] Login - Step 04: Click to Login button
+[INFO ] [2021-02-28 23:50:55,047] Login - Step 05: Verify My Account link displayed
+[INFO ] [2021-02-28 23:50:55,263]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:55,264] Login - Step 06: Verify Logout link displayed
+[INFO ] [2021-02-28 23:50:55,455]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:50:55,455] Login - Step 07: Verify Register link undisplayed
+[INFO ] [2021-02-28 23:51:05,674]  -------------------------- PASSED -------------------------- 
+[INFO ] [2021-02-28 23:51:05,674] Login - Step 08: Verify Login link undisplayed

@@ -13,7 +13,14 @@
   <test name="Run On CHROME UI">
   <parameter name="browser" value="chrome_ui"/>
     <classes>
-      <!-- <class name="com.nopcommerce.common.Common_02_Cookie"/> -->
+      <class name="com.nopcommerce.common.Common_02_Cookie"/>
+      <class name="com.nopcommerce.users.Level_17_Register_Login_Pattern_Object"/>
+    </classes>
+  </test>
+  <test name="Run On FIREFOX UI">
+  <parameter name="browser" value="firefox_ui"/>
+    <classes>
+      <class name="com.nopcommerce.common.Common_02_Cookie"/>
       <class name="com.nopcommerce.users.Level_17_Register_Login_Pattern_Object"/>
     </classes>
   </test>

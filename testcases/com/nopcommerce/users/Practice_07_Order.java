@@ -51,9 +51,11 @@ public class Practice_07_Order extends AbstractTest {
 
 		log.info("Add to cart - Step 2: Click to Desktop submenu");
 		homePage.clickToSubmenu("Desktops");
+		showBrowserConsoleLogs(driver);
 
 		log.info("Add to cart - Step 3: Product name build your own computer");
 		computerPage = homePage.clickToProductTitleByName("Build your own computer");
+		showBrowserConsoleLogs(driver);
 
 		log.info("Add to cart - Step 4: select processor: 2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]'");
 		computerPage.selectProcessorByName("product_attribute_1", "2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]");
@@ -72,6 +74,7 @@ public class Practice_07_Order extends AbstractTest {
 
 		log.info("Add to cart - Step 9: Click to Add to Cart button");
 		computerPage.clicAddToCartButton();
+		showBrowserConsoleLogs(driver);
 
 		log.info("Add to cart - Step 10: Verify notification success displays");
 		verifyTrue(computerPage.notificationSuccessDisplays());
@@ -98,44 +101,48 @@ public class Practice_07_Order extends AbstractTest {
 		verifyTrue(computerPage.priceDisplay("$1,460.00"));
 
 	}
+
 	@Test
 	public void TC_02_Edit_Product_In_Shopping_Cart() {
 		log.info("Edit product - Step 01: Click on shoping cart link");
-		shoppingCartPage=computerPage.clickOnShoppingCartLink();
-		
+		shoppingCartPage = computerPage.clickOnShoppingCartLink();
+		showBrowserConsoleLogs(driver);
+
 		log.info("Edit product - Step 02: Click on edit link");
 		computerPage = shoppingCartPage.clickOnEditLink();
-		
+		showBrowserConsoleLogs(driver);
+
 		log.info("Edit product - Step 03: Select processor 2.2 GHz");
 		computerPage.selectProcessorByName("product_attribute_1", "2.2 GHz Intel Pentium Dual-Core E2200");
-		
+
 		log.info("Edit product - Step 04: Select RAM 4.0 GB");
 		computerPage.selectRAMByName("product_attribute_2", "4GB [+$20.00]");
-		
+
 		log.info("Edit product - Step 05: Select HDD 320 GB");
 		computerPage.selectHDDRadioByLabel("320 GB");
-		
+
 		log.info("Edit product - Step 06: Select OS vista home");
 		computerPage.selectOS("Vista Home [+$50.00]");
-		
+
 		log.info("Edit product - Step 07: Select software Microsoft Office");
 		computerPage.selectOneSoftware("Microsoft Office [+$50.00]", "Acrobat Reader [+$10.00]", "Total Commander [+$5.00]");
-		
+
 		log.info("Edit product - Step 08: Increase number proto to 2");
 		computerPage.updateQuantity("2");
-		
+
 		log.info("Edit product - Step 09: Click to Update button");
 		computerPage.clickToUpdateButton();
-		
+		showBrowserConsoleLogs(driver);
+
 		log.info("Add to cart - Step 10: Verify notification success displays");
 		verifyTrue(computerPage.notificationSuccessDisplays());
 
 		log.info("Add to cart - Step 11: Close notification success");
 		computerPage.closeNotificationSuccess();
-		
+
 		log.info("Edit product - Step 12: Verify that product price: $1,320");
-		verifyEquals(computerPage.getProductPrice(), "$1,320.00"); 
-		
+		verifyEquals(computerPage.getProductPrice(), "$1,320.00");
+
 		log.info("Add to cart - Step 13: Hover mouse on shopping cart menu");
 		computerPage.hoverMouseToShoppingCartMenu();
 
@@ -151,9 +158,25 @@ public class Practice_07_Order extends AbstractTest {
 
 		log.info("Add to cart - Step 16: Verify price show");
 		verifyTrue(computerPage.priceDisplay("$2,640.00"));
-		
-		
+
 	}
+	@Test
+	public void TC_03_Remove_From_Cart() {
+		log.info("Remove frome cart - Step 01: Click on Go to cart button");
+		computerPage.clickOnGoToCartButton();
+		showBrowserConsoleLogs(driver);
+		
+		log.info("Remove frome cart - Step 01: Click on remove checkbox");
+		computerPage.ClickOnRemoveCheckbox("COMP_CUST");
+		
+		log.info("Remove frome cart - Step 01: Click on Update Shopping Cart button");
+		computerPage.clickOnUpdateShoppingCartButton();
+		showBrowserConsoleLogs(driver);
+		
+		log.info("Remove frome cart - Step 01: Verify that 'Your Shopping Cart is empty!' displays");
+		verifyTrue(computerPage.shoppingCartEmptyDisplay());
+	}
+
 	public void Login_In_With_Register_Email_And_correct_Password() {
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		loginPage = homePage.clickToLoginLink();
@@ -165,7 +188,6 @@ public class Practice_07_Order extends AbstractTest {
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		Assert.assertTrue(homePage.isLogoutLinkDisplayed());
 	}
-	
 
 	@AfterClass
 	public void afterClass() {

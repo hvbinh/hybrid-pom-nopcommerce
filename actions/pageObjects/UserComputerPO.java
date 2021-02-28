@@ -197,6 +197,26 @@ public class UserComputerPO extends AbstractPage{
 		return getElementText(driver, UserComputerPageUI.PRODUCT_PRICE);
 	}
 
+	public void clickOnGoToCartButton() {
+		waitToElementClickable(driver, UserComputerPageUI.GO_TO_CART_BUTTON);
+		clickToElement(driver, UserComputerPageUI.GO_TO_CART_BUTTON);
+	}
+
+	public void ClickOnRemoveCheckbox(String SKU) {
+		waitToElementClickable(driver, UserComputerPageUI.DYNAMIC_REMOVE_CHECKBOX_BY_SKU, SKU);
+		clickToElement(driver, UserComputerPageUI.DYNAMIC_REMOVE_CHECKBOX_BY_SKU, SKU);
+	}
+
+	public void clickOnUpdateShoppingCartButton() {
+		waitToElementClickable(driver, UserComputerPageUI.UPDATE_CART_BUTTON);
+		clickToElement(driver, UserComputerPageUI.UPDATE_CART_BUTTON);
+	}
+
+	public boolean shoppingCartEmptyDisplay() {
+		waitToElementVisible(driver, UserComputerPageUI.NOTIFICATION_NO_DATA);
+		return isElementDisplayed(driver, UserComputerPageUI.NOTIFICATION_NO_DATA);
+	}
+
 
 
 

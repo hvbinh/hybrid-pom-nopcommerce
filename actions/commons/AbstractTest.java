@@ -1,6 +1,9 @@
 package commons;
 
 
+import java.io.File;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +15,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogEntry;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -37,10 +43,45 @@ public class AbstractTest {
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser == Browser.CHROME_UI) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			
+			//disable log
+			System.setProperty("webdriver.chrome.args", "--disable-logging");
+			System.setProperty("webdriver.chrome.silentOutput", "true");
+			
+			//add extension
+			File file = new File(projectFolder + File.separator+"browserExtentions"+File.separator+"extension_2_0_9_0.crx");
+			ChromeOptions options = new ChromeOptions();
+			options.addExtensions(file);
+			
+			//change language in browser
+			options.addArguments("--lang=vi");
+			options.addArguments("--disable-inforbars");
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-geolocation");
+			
+			options.setExperimentalOption("useAutomationExtension", false);
+			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+			
+			driver = new ChromeDriver(options);
 		} else if (browser == Browser.FIREFOX_UI) {
 			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
+			
+			//disable log
+			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,projectFolder+ File.separator+"browserLog"+File.separator+"firefox.log");
+			
+			//add extension
+			FirefoxProfile profile = new FirefoxProfile();
+			File translate = new File(projectFolder + File.separator+"browserExtentions"+File.separator+"to_google_translate-4.1.0-fx.xpi");
+			profile.addExtension(translate);
+			FirefoxOptions options = new FirefoxOptions();
+			options.setProfile(profile);
+			
+			//change language in browser
+			options.addPreference("intl.accept_languages", "vi-vn,vi,en-us,en");
+			options.addPreference("network.trr.send_accept-language_headers","true");
+			
+			driver = new FirefoxDriver(options);
 		} else if (browser == Browser.EDGE_CHROMIUM) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
@@ -256,6 +297,18 @@ public class AbstractTest {
 			log.info("---------- QUIT BROWSER SUCCESS ----------");
 		} catch (Exception e) {
 			log.info(e.getMessage());
+		}
+	}
+	protected void showBrowserConsoleLogs(WebDriver driver)
+	{
+		if(driver.toString().contains("chrome"))
+		{
+			LogEntries logs = driver.manage().logs().get("browser");
+			List<LogEntry> logList = logs.getAll();
+			for(LogEntry logging: logList)
+			{
+				System.out.println("----------"+logging.getLevel().toString()+"---------\n"+logging.getMessage());
+			}
 		}
 	}
 }

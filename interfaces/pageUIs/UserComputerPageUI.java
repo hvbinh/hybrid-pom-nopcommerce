@@ -27,6 +27,11 @@ public class UserComputerPageUI {
 	public static final String UPDATE_BUTTON = "//input[@id='add-to-cart-button-1']";
 	public static final String TOTAL_PRICE_IN_SHOPPING_CART = "//div[@class='totals']/strong";
 	
+	public static final String GO_TO_CART_BUTTON = "//input[@value='Go to cart']";
+	public static final String DYNAMIC_REMOVE_CHECKBOX_BY_SKU = "//span[text()='%s']/parent::td/preceding-sibling::td/input";
+	public static final String UPDATE_CART_BUTTON = "//input[@name='updatecart']";
+	public static final String NOTIFICATION_NO_DATA = "//div[@class='no-data']";
+	
 	
 	
 }
