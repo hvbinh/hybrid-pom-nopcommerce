@@ -130,12 +130,30 @@ public class AbstractPage {
 
 	public void clickToElement(WebDriver driver, String locator, String... values) {
 		element = getElement(driver, getDynamicLocator(locator, values));
-		element.click();
+		
+		if(driver.toString().toLowerCase().contains("internet explorer"))
+		{
+			clickToElementByJS(driver, locator, values);
+			sleepInSecond(3);
+		}
+		else
+		{
+			element.click();
+		}
 	}
 
 	public void clickToElement(WebDriver driver, String locator) {
 		element = getElement(driver, locator);
-		element.click();
+		if(driver.toString().toLowerCase().contains("internet explorer"))
+		{
+			clickToElementByJS(driver, locator);
+			sleepInSecond(3);
+		}
+		else
+		{
+			element.click();
+		}
+		
 	}
 
 	public void sendkeyToElement(WebDriver driver, String locator, String value, String... values) {
@@ -367,6 +385,11 @@ public class AbstractPage {
 	public void clickToElementByJS(WebDriver driver, String locator) {
 		jsExecutor = (JavascriptExecutor) driver;
 		element = getElement(driver, locator);
+		jsExecutor.executeScript("arguments[0].click();", element);
+	}
+	public void clickToElementByJS(WebDriver driver, String locator,String...values) {
+		jsExecutor = (JavascriptExecutor) driver;
+		element = getElement(driver, getDynamicLocator(locator, values));
 		jsExecutor.executeScript("arguments[0].click();", element);
 	}
 

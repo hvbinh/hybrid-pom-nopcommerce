@@ -121,7 +121,7 @@ public class Level_13_Register_Login_Log_Report_HTML extends AbstractTest {
 
 	}
 
-	//@Test
+	@Test
 	public void Tc_03_View_My_Account() {
 		customerInforPage = homePage.clickToMyAccountLink();
 

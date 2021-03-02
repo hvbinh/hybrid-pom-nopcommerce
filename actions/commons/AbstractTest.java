@@ -1,8 +1,8 @@
 package commons;
 
-
 import java.io.File;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -16,71 +16,92 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogEntry;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 public class AbstractTest {
-	
+
 	private WebDriver driver;
 	private String projectFolder = System.getProperty("user.dir");
 	private String osName = System.getProperty("os.name");
 	// define log variable
 	protected final Log log;
-	
-	protected AbstractTest()
-	{
-		//init log
+
+	protected AbstractTest() {
+		// init log
 		log = LogFactory.getLog(getClass());
 	}
 
 	protected synchronized WebDriver getBrowserDriver(String browserName) {
-		//setBrowserDriver();
+		// setBrowserDriver();
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser == Browser.CHROME_UI) {
 			WebDriverManager.chromedriver().setup();
-			
-			//disable log
+
+			// disable log
 			System.setProperty("webdriver.chrome.args", "--disable-logging");
 			System.setProperty("webdriver.chrome.silentOutput", "true");
-			
-			//add extension
-			File file = new File(projectFolder + File.separator+"browserExtentions"+File.separator+"extension_2_0_9_0.crx");
+
+			// add extension
+			File file = new File(projectFolder + File.separator + "browserExtentions" + File.separator + "extension_2_0_9_0.crx");
 			ChromeOptions options = new ChromeOptions();
 			options.addExtensions(file);
-			
-			//change language in browser
+
+			// change language in browser
 			options.addArguments("--lang=vi");
+
+			// disable inforbar/notification/location
 			options.addArguments("--disable-inforbars");
 			options.addArguments("--disable-notifications");
 			options.addArguments("--disable-geolocation");
-			
+			// incognito
+			options.addArguments("--incognito");
+
 			options.setExperimentalOption("useAutomationExtension", false);
 			options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-			
+
+			// add save/download
+			HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+			chromePrefs.put("profile.default_content_settings_popups", 0);
+			chromePrefs.put("download.default_directory", projectFolder + File.separator + "downloadFiles");
+			options.setExperimentalOption("pref", chromePrefs);
+
 			driver = new ChromeDriver(options);
 		} else if (browser == Browser.FIREFOX_UI) {
 			WebDriverManager.firefoxdriver().setup();
-			
-			//disable log
+
+			// disable log
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
-			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,projectFolder+ File.separator+"browserLog"+File.separator+"firefox.log");
-			
-			//add extension
+			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, projectFolder + File.separator + "browserLog" + File.separator + "firefox.log");
+
+			// add extension
 			FirefoxProfile profile = new FirefoxProfile();
-			File translate = new File(projectFolder + File.separator+"browserExtentions"+File.separator+"to_google_translate-4.1.0-fx.xpi");
+			File translate = new File(projectFolder + File.separator + "browserExtentions" + File.separator + "to_google_translate-4.1.0-fx.xpi");
 			profile.addExtension(translate);
 			FirefoxOptions options = new FirefoxOptions();
 			options.setProfile(profile);
-			
-			//change language in browser
+
+			// change language in browser
 			options.addPreference("intl.accept_languages", "vi-vn,vi,en-us,en");
-			options.addPreference("network.trr.send_accept-language_headers","true");
-			
+			options.addPreference("network.trr.send_accept-language_headers", "true");
+
+			// private
+			options.addArguments("-private");
+
+			// add save/download
+			options.addPreference("browser.download.folderList", 2);
+			options.addPreference("browser.download.dir", projectFolder + File.separator + "downloadFiles");
+			options.addPreference("browser.download.useDownloadDir", true);
+			options.addPreference("browser.helperApps.neverAsk.saveToDisk", "multipart/x-zip,application/zip, " + "application/x-zip-compressed,application/x-compressed," + "application/msword,application/csv,text/csv,image/png ,"
+					+ "image/jpeg, application/pdf, text/html,text/plain,  application/excel, " + "application/vnd.ms-excel, application/x-excel, application/x-msexcel, " + "application/octet-stream");
+			options.addPreference("pdfjs.disabled", true);
+
 			driver = new FirefoxDriver(options);
 		} else if (browser == Browser.EDGE_CHROMIUM) {
 			WebDriverManager.edgedriver().setup();
@@ -97,6 +118,11 @@ public class AbstractTest {
 			options.setHeadless(true);
 			options.addArguments("window-size=1920x1080");
 			driver = new FirefoxDriver(options);
+		} else if (browser == Browser.SAFARI) {
+			driver = new SafariDriver();
+		} else if (browser == Browser.IE) {
+			WebDriverManager.iedriver().arch32().setup();
+			driver = new InternetExplorerDriver();
 		} else {
 			throw new RuntimeException("please input valid browser name");
 		}
@@ -107,11 +133,12 @@ public class AbstractTest {
 
 		return driver;
 	}
+
 	protected synchronized WebDriver getBrowserDriver(String browserName, String url) {
-		//setBrowserDriver();
+		// setBrowserDriver();
 		Browser browser = Browser.valueOf(browserName.toUpperCase());
 		if (browser == Browser.CHROME_UI) {
-			WebDriverManager.chromedriver().setup(); //.driverVersion("86.0.4240.22").setup();
+			WebDriverManager.chromedriver().setup(); // .driverVersion("86.0.4240.22").setup();
 			driver = new ChromeDriver();
 		} else if (browser == Browser.FIREFOX_UI) {
 			WebDriverManager.firefoxdriver().setup();
@@ -190,6 +217,7 @@ public class AbstractTest {
 		Random random = new Random();
 		return random.nextInt(999999);
 	}
+
 	private boolean checkTrue(boolean condition) {
 		boolean pass = true;
 		try {
@@ -251,9 +279,11 @@ public class AbstractTest {
 	protected boolean verifyEquals(Object actual, Object expected) {
 		return checkEquals(actual, expected);
 	}
+
 	public WebDriver getDriver() {
 		return driver;
 	}
+
 	protected void closeBrowserAndDriver(WebDriver driver) {
 		try {
 			// Get ra tên của OS và convert qua chữ thường
@@ -265,7 +295,7 @@ public class AbstractTest {
 			if (driver != null) {
 				driver.quit();
 			}
-			
+
 			// Quit driver executable file in Task Manager
 			if (driver.toString().toLowerCase().contains("chrome")) {
 				if (osName.toLowerCase().contains("mac")) {
@@ -299,17 +329,14 @@ public class AbstractTest {
 			log.info(e.getMessage());
 		}
 	}
-	protected void showBrowserConsoleLogs(WebDriver driver)
-	{
-		if(driver.toString().contains("chrome"))
-		{
+
+	protected void showBrowserConsoleLogs(WebDriver driver) {
+		if (driver.toString().contains("chrome")) {
 			LogEntries logs = driver.manage().logs().get("browser");
 			List<LogEntry> logList = logs.getAll();
-			for(LogEntry logging: logList)
-			{
-				System.out.println("----------"+logging.getLevel().toString()+"---------\n"+logging.getMessage());
+			for (LogEntry logging : logList) {
+				System.out.println("----------" + logging.getLevel().toString() + "---------\n" + logging.getMessage());
 			}
 		}
 	}
 }
-
