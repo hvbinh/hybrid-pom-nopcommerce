@@ -174,7 +174,7 @@ public class Practice_07_Order extends AbstractTest {
 		showBrowserConsoleLogs(driver);
 		
 		log.info("Remove frome cart - Step 01: Verify that 'Your Shopping Cart is empty!' displays");
-		log.info("Remove frome cart - Step 01: Verify that 'Your Shopping Cart is empty!' displays update testing 1");
+		log.info("Remove frome cart - Step 01: Verify that 'Your Shopping Cart is empty!' displays update testing 1aaaaaaaaaaaaaaa");
 		verifyTrue(computerPage.shoppingCartEmptyDisplay());
 	}
 
