@@ -166,7 +166,7 @@ public class Practice_07_Order extends AbstractTest {
 		computerPage.clickOnGoToCartButton();
 		showBrowserConsoleLogs(driver);
 		
-		log.info("Remove frome cart - Step 01: Click on remove checkbox");
+		log.info("Remove frome cart - Step 01: Click on remove checkbox ");
 		computerPage.ClickOnRemoveCheckbox("COMP_CUST");
 		
 		log.info("Remove frome cart - Step 01: Click on Update Shopping Cart button");
