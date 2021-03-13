@@ -29,10 +29,6 @@ public class Practice_06_Wishlist_Compage extends AbstractTest {
 	String firstName, lastName, email, companyName, pass, confirmPass;
 	String updateFirstName, updateLastName, updateEmail, updateCompanyName;
 
-	/**
-	 * @author admin: Binh Ha
-	 * 
-	 */
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
